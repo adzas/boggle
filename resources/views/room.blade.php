@@ -1,16 +1,22 @@
 @extends('layouts.app')
 @section('content')
-    
 
-<h1>Witaj w pokoju nr {{ $id }}</h1>
+<div class="contentRoom">
 
+    <h1>Pokoju nr {{ $room->id }}</h1>
 
-<input type="hidden" name="idRoom" value="{{$id}}">
-<a href="{{ url("/generateWordsArray/{$id}")}}">Wygeneruj tablicę słów</a>
+    <input type="hidden" name="idRoom" value="{{$room->id}}">
+    <button onclick="generateArray()">Generuj nowe litery</button>
 
-<button onclick="generateArray()">Generuj litery</button>
+    <div class="array">
+        @if (!empty($room->letters))
+            wygenerowano: {{ $room->created }}
+            @foreach ($room->getLetters() as $letter)
+                <div class="word">{{ $letter }}</div>
+            @endforeach
+        @endif
+    </div>
 
-<div class="array">
 </div>
 
 <script>
@@ -20,7 +26,7 @@
         $('.array').html('');
         const idRoom = $('input[name="idRoom"]').val(); 
         $.ajax({
-            url: "/LaRakt/public/generateWordsArray/" + idRoom,
+            url: "/LaRakt/public/generateLettersArray/" + idRoom,
             type: 'get',
             dataType: 'json',
             success: function(res){
@@ -33,7 +39,5 @@
         })
     }
 </script>
-
-
 
 @endsection

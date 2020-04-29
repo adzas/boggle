@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Room;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
-    public function generate()
+    public function generate($id)
     {
         $value = $this->randomLetters();
+        $room = Room::find($id);
+        $room->created = date('Y-m-d H:i:s');
+        $room->letters = json_encode($value);
+        $room->save();
         return $value;
-        return array('Ą', 'B');
-        //return json_decode($value, true);
     }
 
     function randomLetters() {

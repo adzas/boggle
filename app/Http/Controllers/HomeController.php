@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Room;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,11 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $rooms = Room::all();
+        return view('welcome')->with('rooms', $rooms);
     }
 
     public function room($id)
     {
-        return view('room')->with('id', $id);
+        $room = Room::find($id);
+        return view('room')->with('room', $room);
     }
 }

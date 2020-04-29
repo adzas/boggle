@@ -21,11 +21,9 @@
 
                 <h2>Rooms:</h2>
 
-                <?php $rooms = [1, 2, 3, 4]; ?>
-
                 @foreach ($rooms as $room)
                 <div class="float-left">
-                    <a href={{ url('room/'.$room) }} class="room rectangle-100" >{{ $room }}</a>
+                    <a href={{ url('room/'.$room->id) }} class="room rectangle-100" >{{ $room->id }}</a>
                 </div>
                 @endforeach
                 <div class="clear-both"></div>
