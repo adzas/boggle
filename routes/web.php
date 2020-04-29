@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/room/{id}', 'HomeController@room')->name('room');
+Route::get('/generateWordsArray/{id}', 'RoomController@generate');
 
 //Auth::routes();
 
