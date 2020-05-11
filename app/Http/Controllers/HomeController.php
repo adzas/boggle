@@ -33,4 +33,10 @@ class HomeController extends Controller
         $room = Room::find($id);
         return view('room')->with('room', $room);
     }
+
+
+    public function reactHome()
+    {
+        return view('home');
+    }
 }

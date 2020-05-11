@@ -17,6 +17,7 @@
 
             <div class="app">
 
+                <a href="{{url('reactHome')}}">React</a>
                 <h1>Boggle Online</h1>
 
                 <h2>Rooms:</h2>
