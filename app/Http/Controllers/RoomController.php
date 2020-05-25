@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Room;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
+    public function checkLogin()
+    {
+        dd(Session::get('_token'));
+    }
+
+
     public function generate($id)
     {
         $value = $this->randomLetters();
@@ -80,6 +87,14 @@ class RoomController extends Controller
         $alphabet = $this->addLetter($alphabet, $Z, ((5*42) + (6*4) + 3));
         $alphabet = $this->addLetter($alphabet, $N, ((5*42) + (5*4) + 1));
         $alphabet = $this->addLetter($alphabet, $R, ((4*42) + (6*4) + 4));
+        
+        $alphabet = $this->addLetter($alphabet, $W, ((4*42) + (6*4) + 2));
+        $alphabet = $this->addLetter($alphabet, $S, ((4*42) + (3*4) + 1));
+        $alphabet = $this->addLetter($alphabet, $T, ((3*42) + (9*4) + 4));
+        $alphabet = $this->addLetter($alphabet, $C, ((3*42) + (9*4) + 3));
+        $alphabet = $this->addLetter($alphabet, $Y, ((3*42) + (7*4) + 3));
+        $alphabet = $this->addLetter($alphabet, $K, ((3*42) + (5*4) + 0));
+        $alphabet = $this->addLetter($alphabet, $D, ((3*42) + (2*4) + 2));
         
         $alphabet = $this->addLetter($alphabet, $P, ((3*42) + (1*4) + 1));
         $alphabet = $this->addLetter($alphabet, $M, ((2*42) + (8*4) + 0));
