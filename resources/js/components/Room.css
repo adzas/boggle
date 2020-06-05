@@ -1,0 +1,15 @@
+.room {
+    float: left;
+}
+
+.containerFroButton {
+    width: 100%;
+}
+
+.generateNewLettersArrayButton {
+    width: 200px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

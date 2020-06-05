@@ -4,17 +4,41 @@ namespace App\Http\Controllers;
 
 use Session;
 use App\Room;
+use App\Player;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
-    public function checkLogin()
+    public function checkLogin(Request $request)
     {
-        dd(Session::get('_token'));
+        $room = $request->input('room');
+        $token = Session::get('_token');
+        $player = Player::select('nick', 'room', 'state', 'arrayWords')
+            ->where('token', $token)
+            ->first();
+           
+        if($player)
+        {
+            if($player->room == $room)
+                return $player;
+            else
+                return null;
+        }
+        else
+        {
+            return null;
+        }
     }
 
 
-    public function generate($id)
+    public function login(Request $request)
+    {
+        $player = Player::select('nick', 'room', 'state', 'arrayWords')->first();
+        return $player;
+    }
+
+
+    public function generateLettersArray($id)
     {
         $value = $this->randomLetters();
         $room = Room::find($id);
@@ -22,6 +46,28 @@ class RoomController extends Controller
         $room->letters = json_encode($value);
         $room->save();
         return $value;
+    }
+
+
+    public function generate(Request $request)
+    {
+        $id = $request->input('id');
+        $getOldArray = $request->input('checkOldArray');
+        
+        if($getOldArray === 'false')
+        {
+            $value = $this->randomLetters();
+            $room = Room::find($id);
+            $room->created = date('Y-m-d H:i:s');
+            $room->letters = json_encode($value);
+            $room->save();
+            return $value;
+        }
+        else
+        {
+            $room = Room::find($id);
+            return $room->letters;
+        }
     }
 
     function randomLetters() {

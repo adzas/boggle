@@ -12,11 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/reactHome', 'HomeController@reactHome');
-Route::get('/', 'HomeController@index');
-Route::get('/room/{id}', 'HomeController@room')->name('room');
-Route::get('/generateLettersArray/{id}', 'RoomController@generate');
+//Route::get('/reactHome', 'HomeController@reactHome');
+Route::get('/', 'HomeController@reactHome');
+Route::get('/reactRoom/{id}', 'HomeController@reactRoom');
+//Route::get('/', 'HomeController@index');
+//Route::get('/room/{id}', 'HomeController@room')->name('room');
+Route::get('/generateLettersArray/{id}', 'RoomController@generateLettersArray');
+Route::get('/generate', 'RoomController@generate');
 Route::get('/checkLogin', 'RoomController@checkLogin');
+Route::get('/checkLettersArray', 'RoomController@checkLettersArray');
+Route::post('/login', 'RoomController@login');
 
 //Auth::routes();
 

@@ -1,0 +1,55 @@
+
+.backgroundModal {
+    width: 100%;
+    height: 100vh;   
+    background-color: #222;
+    opacity: .7;
+    position: fixed;
+}
+
+.backgroundModalLogin {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+
+.modalContent {
+    width: 300px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    position: relative;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    opacity: 1;
+}
+
+.modalHeader {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: 700;
+}
+
+.LoginRow {
+    align-items: center;
+}
+
+.LoginRow > label {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.LoginRow > input {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.loginButton {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+}

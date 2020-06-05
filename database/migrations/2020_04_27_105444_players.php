@@ -18,7 +18,8 @@ class Players extends Migration
             $table->text('nick');
             $table->integer('room')->nullable();
             $table->text('arrayWords');
-            $table->datetime('active');
+            $table->integer('state');
+            $table->text('token');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class Players extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boggle');
+        Schema::dropIfExists('players');
     }
 }

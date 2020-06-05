@@ -1,0 +1,11 @@
+.letter {
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    padding: 10px;
+    text-align: center;
+    float: left;
+    background-color: #eee;
+    margin: 5px;
+    box-sizing: unset;
+}
