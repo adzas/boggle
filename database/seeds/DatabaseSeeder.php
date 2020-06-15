@@ -13,6 +13,5 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UserSeeder::class);
-        Room::create(['letters' => null , 'created' => date('Y-m-d H:i:s')]);
     }
 }

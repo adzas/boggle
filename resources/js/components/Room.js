@@ -10,7 +10,7 @@ import OtherPlayers from './OtherPlayers/OtherPlayers.js';
 import ModalLogin from './ModalLogin/ModalLogin.js';
 
 
-function Room() {
+function Room({roomId}) {
         
     const path = 'http://127.0.0.1/boggle/public/';
     const counter = 60;
@@ -74,7 +74,7 @@ function Room() {
         const adress = 'generate';
         axios.get(path + adress, {
           params: {
-            id: 1, 
+            id: roomId, 
             checkOldArray: checkOldArray
           }
         })
@@ -105,7 +105,7 @@ function Room() {
   
 
   const checkLogin = () => {
-    const adress = 'checkLogin?room=1';
+    const adress = `checkLogin?room=${roomId}`;
     axios.get(path + adress)
     .then(function (response) {
       if(response.data.length != 0)
@@ -177,7 +177,7 @@ function Room() {
 
   const getPlayers = () => {
     console.log('pobiera graczy');
-    const adress = 'getPlayers?room=1';
+    const adress = `getPlayers?room=${roomId}`;
     axios.get(path + adress)
     .then(function (response) {
       console.log(response.data.length);

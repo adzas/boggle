@@ -28,10 +28,10 @@ function Boggle(props) {
                 renders the first one that matches the current URL. */}
             <Switch>
               <Route path="/1">
-                <Room id="1" />
+                <Room id="1" roomId="1" />
               </Route>
               <Route path="/2">
-                <Room id="2" />
+                <Room id="2" roomId="2" />
               </Route>
               <Route path="/">
                 <Home />

@@ -70690,11 +70690,13 @@ function Boggle(props) {
   }, "Room 2"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     path: "/1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Room__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    id: "1"
+    id: "1",
+    roomId: "1"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     path: "/2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Room__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    id: "2"
+    id: "2",
+    roomId: "2"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     path: "/"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Home, null)))));
@@ -71463,7 +71465,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function Room() {
+function Room(_ref) {
+  var roomId = _ref.roomId;
   var path = 'http://127.0.0.1/boggle/public/';
   var counter = 60;
 
@@ -71561,7 +71564,7 @@ function Room() {
       var adress = 'generate';
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress, {
         params: {
-          id: 1,
+          id: roomId,
           checkOldArray: checkOldArray
         }
       }).then(function (response) {
@@ -71582,7 +71585,7 @@ function Room() {
   };
 
   var checkLogin = function checkLogin() {
-    var adress = 'checkLogin?room=1';
+    var adress = "checkLogin?room=".concat(roomId);
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
       if (response.data.length != 0) {
         setPlayerHandler(response.data);
@@ -71636,7 +71639,7 @@ function Room() {
 
   var getPlayers = function getPlayers() {
     console.log('pobiera graczy');
-    var adress = 'getPlayers?room=1';
+    var adress = "getPlayers?room=".concat(roomId);
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
       console.log(response.data.length);
 

@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\DB;
 class RoomController extends Controller
 {
 
+    /**
+     * Zwrata użytkownika z sesji
+     */
     public function getPlayerWithSession()
     {
         $token = session()->getId();
@@ -29,6 +32,9 @@ class RoomController extends Controller
     }
 
 
+    /**
+     * Sprawdza czy użytkownik jest zalogowany w sesji w tym pokoju
+     */
     public function checkLogin(Request $request)
     {
         $room = $request->get('room');
@@ -48,6 +54,10 @@ class RoomController extends Controller
     }
 
 
+
+    /**
+     * Loguje gracza do pokoju
+     */
     public function login(Request $request)
     {
         //return $session_id = session()->getId();
@@ -71,6 +81,9 @@ class RoomController extends Controller
 
 
 
+    /**
+     * Pobiera graczy z danego pokoju
+     */
     public function getPlayers(Request $request)
     {
         $room = $request->get('room');
@@ -83,6 +96,9 @@ class RoomController extends Controller
     }
 
 
+    /**
+     * Zapisuje słowa znalezione przez gracza
+     */
     public function saveWords(Request $request)
     {
         $string = '';
@@ -104,40 +120,61 @@ class RoomController extends Controller
     }
 
 
+    /**
+     * Generuje tablicę polskich znaków
+     */
     public function generateLettersArray($id)
     {
         $value = $this->randomLetters();
         $room = Room::find($id);
-        $room->created = date('Y-m-d H:i:s');
         $room->letters = json_encode($value);
         $room->save();
         return $value;
     }
 
 
+    /**
+     * Generuje tablicę polskich znaków lub pobiera już istniejącą tablicę przypisaną do pokoju
+     */
     public function generate(Request $request)
     {
         $id = $request->input('id');
         $getOldArray = $request->input('checkOldArray');
         
-        DB::table('players')
-            ->where('room', $id)
-            ->update(['arrayWords' => '']);
-
-        if($getOldArray === 'false')
+        if(!empty($id))
         {
-            $value = $this->randomLetters();
             $room = Room::find($id);
-            $room->created = date('Y-m-d H:i:s');
-            $room->letters = json_encode($value);
-            $room->save();
-            return $value;
+            if(!!$room)
+            {
+                DB::table('players')
+                    ->where('room', $id)
+                    ->update(['arrayWords' => '']);
+        
+                if($getOldArray === 'false')
+                {
+                    $value = $this->randomLetters();
+                    $room->letters = json_encode($value);
+                    $room->save();
+                    return $value;
+                }
+                else
+                {
+                    $room = Room::find($id);
+                    return $room->letters;
+                }
+            }
+            else
+            {
+                $value = $this->randomLetters();
+                $room = new Room;
+                $room->letters = json_encode($value);
+                $room->wasChanged();
+                $room->save();
+                return $value;
+            }
         }
         else
-        {
-            $room = Room::find($id);
-            return $room->letters;
-        }
+            return false;
     }
 
     function randomLetters() {
