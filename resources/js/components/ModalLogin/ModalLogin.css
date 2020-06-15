@@ -53,3 +53,14 @@
     padding: 10px;
     width: 100%;
 }
+
+/* Alert */
+.centerModal {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+}

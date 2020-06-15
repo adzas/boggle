@@ -1,15 +1,36 @@
-.room {
-    float: left;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+html, body {
+    font-family: 'Lato', sans-serif;
 }
+
 
 .containerFroButton {
     width: 100%;
 }
 
-.generateNewLettersArrayButton {
-    width: 200px;
-    padding: 10px;
+.center {
+    width: 300px;
     margin-left: auto;
     margin-right: auto;
     display: block;
+    text-align: center;
+}
+
+.errorAlert {
+    margin-top: 10px;
+    padding: 10px;    
+    border: 1.5px solid #d33;
+    background-color: #faa;
+    color: #511;
+}
+
+.loader {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    display: block;
+    text-align: center;
 }

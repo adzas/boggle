@@ -1,5 +1,7 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^127.0.0.1/boggle$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^127.0.0.1/boggle$
+RewriteCond %{REQUEST_URI} !public/
+RewriteRule (.*) /public/$1 [L]
 
-
-RewriteEngine On
-
-Header set Access-Control-Allow-Origin "http://localhost:3000"
+Header set Access-Control-Allow-Origin *

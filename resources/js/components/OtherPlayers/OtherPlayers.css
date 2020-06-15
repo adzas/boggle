@@ -1,6 +1,6 @@
 .player {
     width: 200px;
-    height: auto;
+    height: 200px;
     background-color: #ddd;
     border: 1px solid #222;
     box-sizing: border-box;

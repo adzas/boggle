@@ -17,7 +17,8 @@ function Boggle(props) {
               <nav>
                 <ul>
                   <li className="room">
-                    <Link to="/boggle/public/room1">Room 1</Link>
+                    <Link to="/1">Room 1</Link>
+                    <Link to="/2">Room 2</Link>
                   </li>
                 </ul>
               </nav>
@@ -26,8 +27,11 @@ function Boggle(props) {
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
             <Switch>
-              <Route path="/boggle/public/room1">
+              <Route path="/1">
                 <Room id="1" />
+              </Route>
+              <Route path="/2">
+                <Room id="2" />
               </Route>
               <Route path="/">
                 <Home />

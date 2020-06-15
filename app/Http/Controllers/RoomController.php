@@ -6,18 +6,35 @@ use Session;
 use App\Room;
 use App\Player;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RoomController extends Controller
 {
-    public function checkLogin(Request $request)
+
+    public function getPlayerWithSession()
     {
-        $room = $request->input('room');
-        $token = Session::get('_token');
-        $player = Player::select('nick', 'room', 'state', 'arrayWords')
+        $token = session()->getId();
+        $p = Player::select('id')
             ->where('token', $token)
             ->first();
-           
-        if($player)
+        if(!!$p)
+        {
+            $player = Player::select('id', 'nick', 'room', 'state', 'arrayWords')
+                ->where('id', $p->id)
+                ->first();
+            return $player;
+        }
+        else
+            return false;
+    }
+
+
+    public function checkLogin(Request $request)
+    {
+        $room = $request->get('room');
+        $player = $this->getPlayerWithSession();
+
+        if(!!$player)
         {
             if($player->room == $room)
                 return $player;
@@ -33,8 +50,57 @@ class RoomController extends Controller
 
     public function login(Request $request)
     {
-        $player = Player::select('nick', 'room', 'state', 'arrayWords')->first();
-        return $player;
+        //return $session_id = session()->getId();
+        $nick = $request->get('nick');
+        $isSet = Player::select('id')->where('nick', $nick)->first();
+        if(empty($isSet))
+        {
+            $player = new Player;
+            $player->nick = $nick;
+            $player->room = 1;
+            $player->arrayWords = '';
+            $player->state = 1;
+            $player->token = session()->getId();
+            $player->save();
+
+            return $player;
+        }
+        else
+            return false;
+    }
+
+
+
+    public function getPlayers(Request $request)
+    {
+        $room = $request->get('room');
+        $p = $this->getPlayerWithSession();
+        $players = Player::select('id', 'nick', 'room', 'state', 'arrayWords')
+            ->where('room', $room)
+            ->where('id', '!=', $p->id)
+            ->get();
+        return $players;
+    }
+
+
+    public function saveWords(Request $request)
+    {
+        $string = '';
+        $words = $request->get('words');
+        foreach ($words as $word) {
+            $string.= $word . ',';
+        }
+        $string = substr($string, 0, -1);
+
+        $player = $this->getPlayerWithSession();
+        if(!!$player)
+        {
+            $player->arrayWords = $string;
+            $player->save();
+            return $player;
+        }
+        else
+            return false;
     }
 
 
@@ -54,6 +120,10 @@ class RoomController extends Controller
         $id = $request->input('id');
         $getOldArray = $request->input('checkOldArray');
         
+        DB::table('players')
+            ->where('room', $id)
+            ->update(['arrayWords' => '']);
+
         if($getOldArray === 'false')
         {
             $value = $this->randomLetters();

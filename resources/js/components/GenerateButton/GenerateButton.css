@@ -1,0 +1,21 @@
+.containerFroButton {
+    width: 200px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.generateNewLettersArrayButton {
+    width: 200px;
+    padding: 10px;
+    display: block;
+}
+
+.half {
+    width: 100px;
+    float: left;
+}
+
+.d-none {
+    display: none;
+}
