@@ -3,8 +3,17 @@ import './Player.css';
 
 function Player(props) {
 
-    const { player, saveWords, counter, justWord, handleInputChange } = props;
-    const { nick, state, arrayWords } = player;
+    const { 
+        player, 
+        saveWords, 
+        checkWords, 
+        counter, 
+        justWord, 
+        handleInputChange, 
+        isStart,
+        checkPlayers
+    } = props;
+    const { nick, state, arrayWords, stateWords } = player;
 
     const [ thisIsOtherPlayer, setThisIsOtherPlayer ] = useState(true);
 
@@ -47,16 +56,36 @@ function Player(props) {
                 </div>
             :
                 <div className="contentPlayer">
-                    <input 
-                        className="newWord" 
-                        value={justWord}
-                        placeholder="Nowe słowo" 
-                        onKeyUp={saveWords}
-                        onChange={handleInputChange}
-                    />
+                    {!isStart ? 
+                        <div>
+                            <button 
+                                className="checkPlayerButton"
+                                onClick={checkPlayers}
+                            >
+                                Check Players
+                            </button>
+                            <button 
+                                className="checkPlayerButton"
+                                onClick={checkWords}
+                            >
+                                Check my words
+                            </button>
+                        </div>
+                    :
+                        <input 
+                            className="newWord" 
+                            value={justWord}
+                            placeholder="Nowe słowo" 
+                            onKeyUp={saveWords}
+                            onChange={handleInputChange}
+                        />
+                    }
                     <ol>
                         {maping ? arrayWords.map((word, i) => {
-                            return <li key={i} >{word}</li>
+                            return  <li key={i} >
+                                        {word}
+                                        {stateWords.length > 0 && stateWords[i]==1 ? ' + ' : ''}
+                                    </li>
                         }) : ''}
                     </ol>
                 </div>

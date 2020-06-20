@@ -17,7 +17,7 @@ function Room({roomId}) {
     const [loginAuthorization, setLoginAuthorization] = useState(false);
     const [load, setLoad] = useState(false);
     const [timer, setTimer] = useState(counter);
-    const [player, setPlayer] = useState({nick: null, arrayWords: [], state: 0});
+    const [player, setPlayer] = useState({nick: null, room: 0, arrayWords: [], stateWords: [], state: 0});
     const [otherPlayers, setOtherPlayers] = useState([]);
     const [isStart, setIsStart] = useState(false);
     const [error, setError] = useState(null);
@@ -28,14 +28,25 @@ function Room({roomId}) {
   
     const [lettersArray, setLettersArray] = useState(
       [
-        '..', '..', '..', '..',
-        '..', '..', '..', '..',
-        '..', '..', '..', '..',
-        '..', '..', '..', '..',
+        'A', 'B', '?', '?',
+        '?', 'C', '?', '?',
+        'A', 'D', 'E', '?',
+        '?', '?', '?', '?',
       ]
     );
 
+
+    const checkIfWordCanBeMaked = (word) => {
+
+      /* for (let i = 0; i < word.length; i++) {
+        var element = word.chartAt(i);
+        console.log('e: ' + element);
+      } */
+    }
+
     useEffect(() => {
+
+        checkIfWordCanBeMaked('ABCD');
 
         setTimeout(() => {
           if(timer != 0 && isStart)
@@ -59,13 +70,48 @@ function Room({roomId}) {
     }, [endRound]);
 
 
+    /**
+     * sprawdza czy zostałeś już zalogowany w tej sesji
+     */
+    useEffect(()=>{
+      checkLogin();
+      getPlayers();
+    }, [roomId])
+
+
+    useEffect(()=>{
+        getPlayers();
+    }, [loginAuthorization])
+
+    window.onbeforeunload = (e) => {
+      console.log(e);
+      getPlayers();
+    }
+
+
+    const checkWords = () => {
+      
+      axios.get(path + 'checkDictionary', {
+        params: {
+          "room": roomId,
+          "words": player.arrayWords
+        }
+      }).then(function(response) {
+        setPlayerHandler(response.data);
+      }).catch(function(error) {
+        console.log(error);
+      })
+    }
+
     const generateLettersArray = (checkOldArray) => {
       
       setLoad(true);
       setIsStart(false);
       setPlayer({
         nick: player.nick, 
+        room: player.room,
         arrayWords: [], 
+        stateWords: [], 
         state: player.state
       });
       getPlayers();
@@ -104,6 +150,18 @@ function Room({roomId}) {
     }
   
 
+  const resetRoom = () => {
+    const adress = `resetRoom?room=${roomId}`;
+    axios.get(path + adress)
+      .then(function(response) {
+        console.log('resetRoom: ' + response.data);
+        checkLogin();
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  }
+
   const checkLogin = () => {
     const adress = `checkLogin?room=${roomId}`;
     axios.get(path + adress)
@@ -112,6 +170,10 @@ function Room({roomId}) {
       {
         setPlayerHandler(response.data);
         setLoginAuthorization(true);
+      }
+      else
+      {
+        setLoginAuthorization(false);
       }
     })
     .catch(function (error) {
@@ -127,7 +189,9 @@ function Room({roomId}) {
   const getplayerObject = (date) => {
     const object = {
       nick: date.nick, 
+      room: date.room,
       arrayWords: date.arrayWords.split(','),
+      stateWords: date.stateWords.split(','),
       state: date.state
     }
     return object;
@@ -150,12 +214,13 @@ function Room({roomId}) {
     }
 
     var datePost = {
-      nick: e.target.value
+      nick: e.target.value,
+      room: roomId
     };
 
-    const adress = `login?nick=${e.target.value}`;
-    //axios.post(path + adress, true, { params: datePost }
-    axios.get(path + adress
+    const adress = `login?nick=${e.target.value}&room=${roomId}`;
+    axios.post(path + adress, true, { params: datePost }
+    //axios.get(path + adress
     ).then(function (response) {
       if(response.data.length == 0) 
       {
@@ -176,23 +241,29 @@ function Room({roomId}) {
 
 
   const getPlayers = () => {
-    console.log('pobiera graczy');
-    const adress = `getPlayers?room=${roomId}`;
-    axios.get(path + adress)
-    .then(function (response) {
-      console.log(response.data.length);
-      if(response.data.length != 0)
-      {
-        setOtherPlayersHandler(response.data);
-      }
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .then(function () {
-      
-    });
+    if(loginAuthorization)
+    {
+      const adress = `getPlayers?room=${roomId}`;
+      axios.get(path + adress)
+      .then(function (response) {
+        console.log(response.data.length);
+        if(response.data.length != 0)
+        {
+          setOtherPlayersHandler(response.data);
+        }
+        else
+        {
+          setOtherPlayersHandler([]);
+        }
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        
+      });
+    }
   }
 
 
@@ -212,7 +283,9 @@ function Room({roomId}) {
     {
       setPlayer({
         nick: player.nick, 
+        room: player.room,
         arrayWords: [...player.arrayWords, event.target.value], 
+        stateWords: [], 
         state: player.state
       });
       setJustWord('');
@@ -232,7 +305,8 @@ function Room({roomId}) {
   const sendWords = () => {
 
     const sendWords = {
-      'words': player.arrayWords
+      'words': player.arrayWords,
+      'room' : roomId
     };
 
     console.log('wysyła słowa:', player.arrayWords);
@@ -249,25 +323,6 @@ function Room({roomId}) {
     })
   }
 
-  /**
-   * sprawdza czy zostałeś już zalogowany w tej sesji
-   */
-   useEffect(()=>{
-     
-     if(loginAuthorization)
-     {
-        getPlayers();
-        
-        //testwordsArray = JSON.parse(player.wordsArray);
-        //console.log('wordsArray', testwordsArray)
-     }
-     else
-     {
-        checkLogin();
-     }
-
-   }, [loginAuthorization])
-
    const readyButtonClick = () => {
     setOldArrayLetters();
     setReadyPlayer(true);
@@ -279,7 +334,7 @@ function Room({roomId}) {
    }
 
    return (
-    <div className="App">
+    <div className="roomContent">
       {loginAuthorization ? '' : <ModalLogin login={login} error={errorModal} />}
       { readyPlayer ?
           <GenerateButton gen={generateLettersArray} check={setOldArrayLetters} start={isStart} />
@@ -288,20 +343,24 @@ function Room({roomId}) {
       }
       <Letters letters={lettersArray} isStart={isStart} />
       {error!=null ? <span className="center errorAlert">{error}</span> : ''}
+      <button className="buttonRefresh" onClick={resetRoom} >ResetRoom</button>
       { load ? 
         <span className="loader">Loading...</span>
          : 
         <Timer value={timer} setIsStartHandle={setIsStart} />
       }
-      {player.nick == null ? 
-       ''
-        : 
+      {loginAuthorization ? 
        <Player 
         player={player} 
         counter="null"
         saveWords={saveWords} 
+        checkWords={checkWords} 
         justWord={justWord} 
+        isStart={isStart}
+        checkPlayers={getPlayers}
         handleInputChange={handleInputChange} />
+        : 
+        ''
       }
       {<OtherPlayers otherPlayersArray={otherPlayers} />}
     </div>

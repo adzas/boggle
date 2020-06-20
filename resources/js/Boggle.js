@@ -17,7 +17,12 @@ function Boggle(props) {
               <nav>
                 <ul>
                   <li className="room">
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li className="room">
                     <Link to="/1">Room 1</Link>
+                  </li>
+                  <li className="room">
                     <Link to="/2">Room 2</Link>
                   </li>
                 </ul>
@@ -51,5 +56,7 @@ if (document.getElementById('boggle')) {
 
 
 function Home() {
-  return <h2></h2>;
+  return  <div className="home">
+            <h2>Boggle Online</h2>
+          </div>
 }

@@ -22,9 +22,11 @@ Route::get('/generate', 'RoomController@generate');
 Route::get('/checkLogin', 'RoomController@checkLogin');
 Route::get('/checkLettersArray', 'RoomController@checkLettersArray');
 Route::get('/getPlayers', 'RoomController@getPlayers');
-Route::get('/login', 'RoomController@login');
-//Route::post('/login', 'RoomController@login');
+//Route::get('/login', 'RoomController@login');
+Route::post('/login', 'RoomController@login');
 Route::post('/saveWords', 'RoomController@saveWords');
+Route::get('/resetRoom', 'RoomController@resetRoom');
+Route::get('/checkDictionary', 'CheckController@checkDictionary');
 
 //Auth::routes();
 

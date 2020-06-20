@@ -6,6 +6,8 @@ function ModalLogin({login, error}) {
     const [nick, setNick] = useState('');
     const setPlayerNick = (e) => {
         setNick(e.target.value);
+        if(e.keyCode == 13)
+            login(e);
     }
     
     return(
@@ -21,7 +23,7 @@ function ModalLogin({login, error}) {
                         {!!error ? <span className="centerModal errorAlert">{error}</span> : ''}
                         <div className="LoginRow">
                             <label htmlFor="nick">Nick:</label>
-                            <input id="nick" placeholder="Nick" onKeyUp={(e)=>{ setPlayerNick(e) }}/>
+                            <input id="nick" placeholder="Nick" onKeyDown={(e)=>{ setPlayerNick(e) }}/>
                         </div>
                         <div className="LoginRow">
                             <button 

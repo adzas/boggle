@@ -14,11 +14,12 @@ class RoomController extends Controller
     /**
      * Zwrata użytkownika z sesji
      */
-    public function getPlayerWithSession()
+    /* public function getPlayerWithSession($room)
     {
         $token = session()->getId();
         $p = Player::select('id')
             ->where('token', $token)
+            ->where('room', $room)
             ->first();
         if(!!$p)
         {
@@ -29,7 +30,7 @@ class RoomController extends Controller
         }
         else
             return false;
-    }
+    } */
 
 
     /**
@@ -38,7 +39,7 @@ class RoomController extends Controller
     public function checkLogin(Request $request)
     {
         $room = $request->get('room');
-        $player = $this->getPlayerWithSession();
+        $player = Player::getPlayerWithSession($room);
 
         if(!!$player)
         {
@@ -62,13 +63,15 @@ class RoomController extends Controller
     {
         //return $session_id = session()->getId();
         $nick = $request->get('nick');
+        $room = $request->get('room');
         $isSet = Player::select('id')->where('nick', $nick)->first();
         if(empty($isSet))
         {
             $player = new Player;
             $player->nick = $nick;
-            $player->room = 1;
+            $player->room = $room;
             $player->arrayWords = '';
+            $player->stateWords = '';
             $player->state = 1;
             $player->token = session()->getId();
             $player->save();
@@ -87,12 +90,17 @@ class RoomController extends Controller
     public function getPlayers(Request $request)
     {
         $room = $request->get('room');
-        $p = $this->getPlayerWithSession();
-        $players = Player::select('id', 'nick', 'room', 'state', 'arrayWords')
-            ->where('room', $room)
-            ->where('id', '!=', $p->id)
-            ->get();
-        return $players;
+        $p = Player::getPlayerWithSession($room);
+        if(!!$p)
+        {
+            $players = Player::select('id', 'nick', 'room', 'state', 'arrayWords')
+                ->where('room', $room)
+                ->where('id', '!=', $p->id)
+                ->get();
+            return $players;
+        }
+        else
+            return false;
     }
 
 
@@ -103,17 +111,23 @@ class RoomController extends Controller
     {
         $string = '';
         $words = $request->get('words');
-        foreach ($words as $word) {
-            $string.= $word . ',';
-        }
-        $string = substr($string, 0, -1);
-
-        $player = $this->getPlayerWithSession();
-        if(!!$player)
+        if(!empty($words))
         {
-            $player->arrayWords = $string;
-            $player->save();
-            return $player;
+            $room = $request->get('room');
+            foreach ($words as $word) {
+                $string.= $word . ',';
+            }
+            $string = substr($string, 0, -1);
+    
+            $player = Player::getPlayerWithSession($room);
+            if(!!$player)
+            {
+                $player->arrayWords = $string;
+                $player->save();
+                return $player;
+            }
+            else
+                return false;
         }
         else
             return false;
@@ -291,5 +305,13 @@ class RoomController extends Controller
             $alphabet[]= $word;
         }
         return $alphabet;
+    }
+
+
+    public function resetRoom(Request $request)
+    {
+        $room = $request->get('room');
+        $res = Player::where('room', $room)->delete();
+        return $res;
     }
 }

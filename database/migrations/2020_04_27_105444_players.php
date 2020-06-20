@@ -18,6 +18,7 @@ class Players extends Migration
             $table->text('nick');
             $table->integer('room')->nullable();
             $table->text('arrayWords');
+            $table->text('stateWords');
             $table->integer('state');
             $table->text('token');
             $table->timestamps();

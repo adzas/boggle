@@ -1,5 +1,5 @@
 .player {
-    width: 200px;
+    width: 300px;
     height: auto;
     background-color: #ddd;
     border: 1px solid #222;
@@ -18,4 +18,10 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+.checkPlayerButton {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }

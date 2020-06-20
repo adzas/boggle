@@ -6517,7 +6517,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".nav {\r\n    position: fixed;\r\n}", ""]);
+exports.push([module.i, ".nav {\r\n    position: fixed;\r\n    top: 0;\r\n    padding: 0;\r\n    z-index: 100;\r\n}\r\n\r\n.nav > ul {\r\n    padding: 0;\r\n}\r\n\r\n.room{\r\n    display: block;\r\n    float: left;\r\n    margin-top: 2px;\r\n    margin-left: 10px;\r\n    padding: 5px 10px 5px 10px;\r\n    border: 1px solid gray;\r\n}\r\n\r\n.roomContent {\r\n    margin-top: 30px;\r\n}\r\n\r\n.home {\r\n    height: 300px;\r\n    width: 100%;\r\n    position: relative;\r\n    text-align: center;\r\n    z-index: 0;\r\n}\r\n\r\n.home > h2 {\r\n    top: 0;\r\n    bottom: 0;\r\n    display: block;\r\n    position: absolute;\r\n    margin: auto;\r\n    width: 100%;\r\n    height: 0;\r\n}", ""]);
 
 // exports
 
@@ -6536,7 +6536,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".containerFroButton {\r\n    width: 200px;\r\n    height: 50px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.generateNewLettersArrayButton {\r\n    width: 200px;\r\n    padding: 10px;\r\n    display: block;\r\n}\r\n\r\n.half {\r\n    width: 100px;\r\n    float: left;\r\n}\r\n\r\n.d-none {\r\n    display: none;\r\n}", ""]);
+exports.push([module.i, ".containerFroButton {\r\n    width: 300px;\r\n    height: 50px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.generateNewLettersArrayButton {\r\n    width: 300px;\r\n    padding: 10px;\r\n    display: block;\r\n}\r\n\r\n.half {\r\n    width: 150px;\r\n    float: left;\r\n}\r\n\r\n.d-none {\r\n    display: none;\r\n}", ""]);
 
 // exports
 
@@ -6555,7 +6555,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".letter {\r\n    width: 40px;\r\n    height: 40px;\r\n    font-size: 15px;\r\n    padding: 10px;\r\n    text-align: center;\r\n    float: left;\r\n    background-color: #eee;\r\n    margin: 5px;\r\n}", ""]);
+exports.push([module.i, ".letter {\r\n    width: 57px;\r\n    height: 57px;\r\n    font-size: 18px;\r\n    padding: 15px;\r\n    text-align: center;\r\n    float: left;\r\n    background-color: #eee;\r\n    margin: 9px;\r\n}", ""]);
 
 // exports
 
@@ -6574,7 +6574,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".containerForLetters {\r\n    width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.letters {\r\n    width: 200px;\r\n    height: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    background-color: #ccf;\r\n}\r\n\r\n.off-letters {\r\n    background-color: red !important\r\n}", ""]);
+exports.push([module.i, ".containerForLetters {\r\n    width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.letters {\r\n    width: 300px;\r\n    height: 300px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    background-color: #ccf;\r\n}\r\n\r\n.off-letters {\r\n    background-color: red !important\r\n}", ""]);
 
 // exports
 
@@ -6593,7 +6593,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.backgroundModal {\r\n    width: 100%;\r\n    height: 100vh;   \r\n    background-color: #222;\r\n    opacity: .7;\r\n    position: fixed;\r\n}\r\n\r\n.backgroundModalLogin {\r\n    width: 100%;\r\n    height: 100vh;\r\n    position: absolute;\r\n}\r\n\r\n.modalContent {\r\n    width: 300px;\r\n    height: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-top: 100px;\r\n    position: relative;\r\n    border: 1px solid #ddd;\r\n    background-color: #eee;\r\n    opacity: 1;\r\n}\r\n\r\n.modalHeader {\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: center;\r\n    box-sizing: border-box;\r\n    font-weight: 700;\r\n}\r\n\r\n.LoginRow {\r\n    align-items: center;\r\n}\r\n\r\n.LoginRow > label {\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.LoginRow > input {\r\n    margin-top: 10px;\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.loginButton {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    width: 100%;\r\n}\r\n\r\n/* Alert */\r\n.centerModal {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: 10px;\r\n    display: block;\r\n    text-align: center;\r\n    font-size: 12px;\r\n}", ""]);
+exports.push([module.i, "\r\n.backgroundModal {\r\n    width: 100%;\r\n    height: 100vh;   \r\n    background-color: #222;\r\n    opacity: .7;\r\n    position: fixed;\r\n    top: 0;\r\n}\r\n\r\n.backgroundModalLogin {\r\n    width: 100%;\r\n    height: 100vh;\r\n    position: absolute;\r\n}\r\n\r\n.modalContent {\r\n    width: 300px;\r\n    height: auto;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-top: 100px;\r\n    position: relative;\r\n    border: 1px solid #ddd;\r\n    background-color: #eee;\r\n    opacity: 1;\r\n}\r\n\r\n.modalHeader {\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: center;\r\n    box-sizing: border-box;\r\n    font-weight: 700;\r\n}\r\n\r\n.LoginRow {\r\n    align-items: center;\r\n}\r\n\r\n.LoginRow > label {\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.LoginRow > input {\r\n    margin-top: 10px;\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.loginButton {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    width: 100%;\r\n}\r\n\r\n/* Alert */\r\n.centerModal {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: 10px;\r\n    display: block;\r\n    text-align: center;\r\n    font-size: 12px;\r\n}", ""]);
 
 // exports
 
@@ -6631,7 +6631,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".player {\r\n    width: 200px;\r\n    height: auto;\r\n    background-color: #ddd;\r\n    border: 1px solid #222;\r\n    box-sizing: border-box;\r\n    margin: 10px;\r\n    float: left;\r\n}\r\n\r\n.namePlayer {\r\n    padding: 10px;\r\n    margin: 0px;\r\n    text-align: center;\r\n}\r\n\r\n.newWord {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n}", ""]);
+exports.push([module.i, ".player {\r\n    width: 300px;\r\n    height: auto;\r\n    background-color: #ddd;\r\n    border: 1px solid #222;\r\n    box-sizing: border-box;\r\n    margin: 10px;\r\n    float: left;\r\n}\r\n\r\n.namePlayer {\r\n    padding: 10px;\r\n    margin: 0px;\r\n    text-align: center;\r\n}\r\n\r\n.newWord {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n}\r\n\r\n.checkPlayerButton {\r\n    width: 100%;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}", ""]);
 
 // exports
 
@@ -6669,7 +6669,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap);", ""]);
 
 // module
-exports.push([module.i, "\r\nhtml, body {\r\n    font-family: 'Lato', sans-serif;\r\n}\r\n\r\n\r\n.containerFroButton {\r\n    width: 100%;\r\n}\r\n\r\n.center {\r\n    width: 300px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.errorAlert {\r\n    margin-top: 10px;\r\n    padding: 10px;    \r\n    border: 1.5px solid #d33;\r\n    background-color: #faa;\r\n    color: #511;\r\n}\r\n\r\n.loader {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: 10px;\r\n    display: block;\r\n    text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, "\r\nhtml, body {\r\n    font-family: 'Lato', sans-serif;\r\n}\r\n\r\n\r\n.containerFroButton {\r\n    width: 100%;\r\n}\r\n\r\n.center {\r\n    width: 300px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.errorAlert {\r\n    margin-top: 10px;\r\n    padding: 10px;    \r\n    border: 1.5px solid #d33;\r\n    background-color: #faa;\r\n    color: #511;\r\n}\r\n\r\n.loader {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: 10px;\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.buttonRefresh {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: 10px;\r\n    display: block;\r\n    margin-top: 5px;\r\n}", ""]);
 
 // exports
 
@@ -70684,8 +70684,14 @@ function Boggle(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "room"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+    to: "/"
+  }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "room"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
     to: "/1"
-  }, "Room 1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+  }, "Room 1")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "room"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
     to: "/2"
   }, "Room 2"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
     path: "/1"
@@ -70709,7 +70715,9 @@ if (document.getElementById('boggle')) {
 }
 
 function Home() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "home"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Boggle Online"));
 }
 
 /***/ }),
@@ -70938,9 +70946,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Letter(props) {
-  var value = props.value;
+  var value = props.value,
+      setLettersState = props.setLettersState,
+      clicked = props.clicked,
+      word = props.word,
+      setWord = props.setWord;
+
+  var mouseDownHandler = function mouseDownHandler(e) {
+    var value = e.target.getAttribute('data-value');
+    setLettersState({
+      clicked: true,
+      word: value
+    });
+  };
+
+  var mouseEnterHandler = function mouseEnterHandler(e) {
+    var value = e.target.getAttribute('data-value');
+    if (clicked) setLettersState({
+      clicked: true,
+      word: word + value
+    });
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "letter"
+    className: "letter",
+    "data-value": value,
+    onMouseDown: mouseDownHandler,
+    onMouseUp: setWord,
+    onMouseEnter: mouseEnterHandler
   }, value);
 }
 
@@ -71007,6 +71040,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Letter___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Letter/ */ "./resources/js/components/Letters/Letter/index.js");
 /* harmony import */ var _Letters_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Letters.css */ "./resources/js/components/Letters/Letters.css");
 /* harmony import */ var _Letters_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Letters_css__WEBPACK_IMPORTED_MODULE_2__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -71014,20 +71059,50 @@ __webpack_require__.r(__webpack_exports__);
 function Letters(props) {
   var letters = props.letters,
       isStart = props.isStart;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    clicked: false,
+    word: ""
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      lettersState = _useState2[0],
+      setLettersState = _useState2[1];
+
+  var clicked = lettersState.clicked,
+      word = lettersState.word;
   var style = "";
+  if (!isStart) style = "off-letters";
 
-  if (!isStart) {
-    style = "off-letters";
-  }
+  var setWord = function setWord() {
+    console.log('word: ', word);
+    setLettersState({
+      clicked: false,
+      word: word
+    });
+  };
 
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (!clicked && word.length >= 3) {
+      console.log('sendWord');
+      setLettersState({
+        clicked: false,
+        word: ''
+      });
+    }
+  }, [clicked]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "containerForLetters"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "letters ".concat(style)
+    className: "letters ".concat(style),
+    onMouseLeave: setWord
   }, letters.map(function (letter, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Letter___WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: i,
-      value: letter
+      value: letter,
+      setLettersState: setLettersState,
+      setWord: setWord,
+      word: word,
+      clicked: clicked
     });
   })));
 }
@@ -71105,6 +71180,7 @@ function ModalLogin(_ref) {
 
   var setPlayerNick = function setPlayerNick(e) {
     setNick(e.target.value);
+    if (e.keyCode == 13) login(e);
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71126,7 +71202,7 @@ function ModalLogin(_ref) {
   }, "Nick:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     id: "nick",
     placeholder: "Nick",
-    onKeyUp: function onKeyUp(e) {
+    onKeyDown: function onKeyDown(e) {
       setPlayerNick(e);
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71268,12 +71344,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Player(props) {
   var player = props.player,
       saveWords = props.saveWords,
+      checkWords = props.checkWords,
       counter = props.counter,
       justWord = props.justWord,
-      handleInputChange = props.handleInputChange;
+      handleInputChange = props.handleInputChange,
+      isStart = props.isStart,
+      checkPlayers = props.checkPlayers;
   var nick = player.nick,
       state = player.state,
-      arrayWords = player.arrayWords;
+      arrayWords = player.arrayWords,
+      stateWords = player.stateWords;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       _useState2 = _slicedToArray(_useState, 2),
@@ -71300,7 +71380,13 @@ function Player(props) {
     }, word);
   }) : '')) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "contentPlayer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, !isStart ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "checkPlayerButton",
+    onClick: checkPlayers
+  }, "Check Players"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "checkPlayerButton",
+    onClick: checkWords
+  }, "Check my words")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     className: "newWord",
     value: justWord,
     placeholder: "Nowe s\u0142owo",
@@ -71309,7 +71395,7 @@ function Player(props) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       key: i
-    }, word);
+    }, word, stateWords.length > 0 && stateWords[i] == 1 ? ' + ' : '');
   }) : '')));
 }
 
@@ -71487,7 +71573,9 @@ function Room(_ref) {
 
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     nick: null,
+    room: 0,
     arrayWords: [],
+    stateWords: [],
     state: 0
   }),
       _useState8 = _slicedToArray(_useState7, 2),
@@ -71529,12 +71617,20 @@ function Room(_ref) {
       endRound = _useState22[0],
       setEndRound = _useState22[1];
 
-  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['..', '..', '..', '..', '..', '..', '..', '..', '..', '..', '..', '..', '..', '..', '..', '..']),
+  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['A', 'B', '?', '?', '?', 'C', '?', '?', 'A', 'D', 'E', '?', '?', '?', '?', '?']),
       _useState24 = _slicedToArray(_useState23, 2),
       lettersArray = _useState24[0],
       setLettersArray = _useState24[1];
 
+  var checkIfWordCanBeMaked = function checkIfWordCanBeMaked(word) {
+    /* for (let i = 0; i < word.length; i++) {
+      var element = word.chartAt(i);
+      console.log('e: ' + element);
+    } */
+  };
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    checkIfWordCanBeMaked('ABCD');
     setTimeout(function () {
       if (timer != 0 && isStart) setTimer(timer - 1);else {
         setTimer(counter);
@@ -71549,13 +71645,44 @@ function Room(_ref) {
       setEndRound(false);
     }
   }, [endRound]);
+  /**
+   * sprawdza czy zostałeś już zalogowany w tej sesji
+   */
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    checkLogin();
+    getPlayers();
+  }, [roomId]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    getPlayers();
+  }, [loginAuthorization]);
+
+  window.onbeforeunload = function (e) {
+    console.log(e);
+    getPlayers();
+  };
+
+  var checkWords = function checkWords() {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + 'checkDictionary', {
+      params: {
+        "room": roomId,
+        "words": player.arrayWords
+      }
+    }).then(function (response) {
+      setPlayerHandler(response.data);
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  };
 
   var generateLettersArray = function generateLettersArray(checkOldArray) {
     setLoad(true);
     setIsStart(false);
     setPlayer({
       nick: player.nick,
+      room: player.room,
       arrayWords: [],
+      stateWords: [],
       state: player.state
     });
     getPlayers();
@@ -71584,12 +71711,24 @@ function Room(_ref) {
     }, 2000);
   };
 
+  var resetRoom = function resetRoom() {
+    var adress = "resetRoom?room=".concat(roomId);
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
+      console.log('resetRoom: ' + response.data);
+      checkLogin();
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  };
+
   var checkLogin = function checkLogin() {
     var adress = "checkLogin?room=".concat(roomId);
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
       if (response.data.length != 0) {
         setPlayerHandler(response.data);
         setLoginAuthorization(true);
+      } else {
+        setLoginAuthorization(false);
       }
     })["catch"](function (error) {
       // handle error
@@ -71600,7 +71739,9 @@ function Room(_ref) {
   var getplayerObject = function getplayerObject(date) {
     var object = {
       nick: date.nick,
+      room: date.room,
       arrayWords: date.arrayWords.split(','),
+      stateWords: date.stateWords.split(','),
       state: date.state
     };
     return object;
@@ -71620,11 +71761,14 @@ function Room(_ref) {
     }
 
     var datePost = {
-      nick: e.target.value
+      nick: e.target.value,
+      room: roomId
     };
-    var adress = "login?nick=".concat(e.target.value); //axios.post(path + adress, true, { params: datePost }
-
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
+    var adress = "login?nick=".concat(e.target.value, "&room=").concat(roomId);
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(path + adress, true, {
+      params: datePost
+    } //axios.get(path + adress
+    ).then(function (response) {
       if (response.data.length == 0) {
         setErrorModal('Taki gracz jest już zalogowany');
       } else {
@@ -71638,18 +71782,21 @@ function Room(_ref) {
   };
 
   var getPlayers = function getPlayers() {
-    console.log('pobiera graczy');
-    var adress = "getPlayers?room=".concat(roomId);
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
-      console.log(response.data.length);
+    if (loginAuthorization) {
+      var adress = "getPlayers?room=".concat(roomId);
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
+        console.log(response.data.length);
 
-      if (response.data.length != 0) {
-        setOtherPlayersHandler(response.data);
-      }
-    })["catch"](function (error) {
-      // handle error
-      console.log(error);
-    }).then(function () {});
+        if (response.data.length != 0) {
+          setOtherPlayersHandler(response.data);
+        } else {
+          setOtherPlayersHandler([]);
+        }
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      }).then(function () {});
+    }
   };
 
   var setOtherPlayersHandler = function setOtherPlayersHandler(date) {
@@ -71664,7 +71811,9 @@ function Room(_ref) {
     if (event.keyCode === 13 && !!event.target.value) {
       setPlayer({
         nick: player.nick,
+        room: player.room,
         arrayWords: [].concat(_toConsumableArray(player.arrayWords), [event.target.value]),
+        stateWords: [],
         state: player.state
       });
       setJustWord('');
@@ -71680,7 +71829,8 @@ function Room(_ref) {
 
   var sendWords = function sendWords() {
     var sendWords = {
-      'words': player.arrayWords
+      'words': player.arrayWords,
+      'room': roomId
     };
     console.log('wysyła słowa:', player.arrayWords);
     var adress = 'saveWords';
@@ -71694,19 +71844,6 @@ function Room(_ref) {
       console.log(error);
     });
   };
-  /**
-   * sprawdza czy zostałeś już zalogowany w tej sesji
-   */
-
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (loginAuthorization) {
-      getPlayers(); //testwordsArray = JSON.parse(player.wordsArray);
-      //console.log('wordsArray', testwordsArray)
-    } else {
-      checkLogin();
-    }
-  }, [loginAuthorization]);
 
   var readyButtonClick = function readyButtonClick() {
     setOldArrayLetters();
@@ -71719,7 +71856,7 @@ function Room(_ref) {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "App"
+    className: "roomContent"
   }, loginAuthorization ? '' : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ModalLogin_ModalLogin_js__WEBPACK_IMPORTED_MODULE_9__["default"], {
     login: login,
     error: errorModal
@@ -71734,18 +71871,24 @@ function Room(_ref) {
     isStart: isStart
   }), error != null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "center errorAlert"
-  }, error) : '', load ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, error) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "buttonRefresh",
+    onClick: resetRoom
+  }, "ResetRoom"), load ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "loader"
   }, "Loading...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Timer_Timer_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
     value: timer,
     setIsStartHandle: setIsStart
-  }), player.nick == null ? '' : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Player_Player_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), loginAuthorization ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Player_Player_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
     player: player,
     counter: "null",
     saveWords: saveWords,
+    checkWords: checkWords,
     justWord: justWord,
+    isStart: isStart,
+    checkPlayers: getPlayers,
     handleInputChange: handleInputChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_OtherPlayers_OtherPlayers_js__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_OtherPlayers_OtherPlayers_js__WEBPACK_IMPORTED_MODULE_8__["default"], {
     otherPlayersArray: otherPlayers
   }));
 }
