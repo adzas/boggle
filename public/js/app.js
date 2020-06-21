@@ -6555,7 +6555,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".letter {\r\n    width: 57px;\r\n    height: 57px;\r\n    font-size: 18px;\r\n    padding: 15px;\r\n    text-align: center;\r\n    float: left;\r\n    background-color: #eee;\r\n    margin: 9px;\r\n}", ""]);
+exports.push([module.i, ".letter {\r\n    width: 57px;\r\n    height: 57px;\r\n    font-size: 18px;\r\n    padding: 15px;\r\n    text-align: center;\r\n    float: left;\r\n    background-color: #eee;\r\n    margin: 9px;\r\n    position: relative;\r\n}\r\n\r\n.letterMask {    \r\n    background-color: red;\r\n    height: 30px;\r\n    width: 30px;\r\n    position: relative;\r\n    top: 0;\r\n    position: absolute;\r\n    bottom: 0;\r\n    margin: auto;\r\n    left: 0;\r\n    right: 0;\r\n    border-radius: 15px;\r\n    opacity: 0.1;\r\n    z-index: 100;\r\n}\r\n\r\n.letterView {\r\n    z-index: 10;\r\n}", ""]);
 
 // exports
 
@@ -6574,7 +6574,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".containerForLetters {\r\n    width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.letters {\r\n    width: 300px;\r\n    height: 300px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    background-color: #ccf;\r\n}\r\n\r\n.off-letters {\r\n    background-color: red !important\r\n}", ""]);
+exports.push([module.i, ".containerForLetters {\r\n    width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.letters {\r\n    width: 300px;\r\n    height: 300px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    background-color: #ccf;\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.off-letters {\r\n    background-color: red !important\r\n}", ""]);
 
 // exports
 
@@ -70849,10 +70849,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function GenerateButton(props) {
-  var gen = props.gen,
-      check = props.check,
-      start = props.start;
+function GenerateButton(_ref) {
+  var gen = _ref.gen,
+      start = _ref.start;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('BUTTON'),
       _useState2 = _slicedToArray(_useState, 2),
@@ -70885,7 +70884,7 @@ function GenerateButton(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: className2,
     onClick: function onClick() {
-      return check();
+      return gen(true);
     }
   }, content2), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: className,
@@ -70947,6 +70946,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Letter(props) {
   var value = props.value,
+      id = props.id,
       setLettersState = props.setLettersState,
       clicked = props.clicked,
       word = props.word,
@@ -70969,12 +70969,17 @@ function Letter(props) {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "letter",
+    className: "letter"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "letterView"
+  }, value), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "letterMask",
     "data-value": value,
+    "data-id": id,
     onMouseDown: mouseDownHandler,
     onMouseUp: setWord,
     onMouseEnter: mouseEnterHandler
-  }, value);
+  }));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Letter);
@@ -71074,8 +71079,7 @@ function Letters(props) {
   if (!isStart) style = "off-letters";
 
   var setWord = function setWord() {
-    console.log('word: ', word);
-    setLettersState({
+    if (word.length > 0) setLettersState({
       clicked: false,
       word: word
     });
@@ -71098,6 +71102,7 @@ function Letters(props) {
   }, letters.map(function (letter, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Letter___WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: i,
+      id: i,
       value: letter,
       setLettersState: setLettersState,
       setWord: setWord,
@@ -71298,21 +71303,29 @@ __webpack_require__.r(__webpack_exports__);
 
 function Other(_ref) {
   var player = _ref.player;
+  var point = '';
   var nick = player.nick,
       arrayWords = player.arrayWords,
       stateWords = player.stateWords;
   if (Array.isArray(arrayWords)) var maping = true;else var maping = false;
+  if (Array.isArray(stateWords)) var mapingState = true;else var mapingState = false;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ContentPlayer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "namePlayer"
-  }, nick), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "player"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
+  }, nick), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
+    point = '';
+
+    if (mapingState) {
+      if (stateWords[i] == 1) {
+        point = ' + ';
+      }
+    }
+
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       key: i
-    }, word, stateWords.length > 0 && stateWords[i] == 1 ? ' + ' : '');
-  }) : '')));
+    }, word + point);
+  }) : ''));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Other);
@@ -71392,7 +71405,7 @@ function Player(props) {
       checkWords = props.checkWords,
       itsYou = props.itsYou,
       justWord = props.justWord,
-      handleInputChange = props.handleInputChange,
+      _setJustWord = props.setJustWord,
       isStart = props.isStart,
       checkPlayers = props.checkPlayers;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -71407,7 +71420,9 @@ function Player(props) {
     checkWords: checkWords,
     justWord: justWord,
     saveWords: saveWords,
-    handleInputChange: handleInputChange
+    setJustWord: function setJustWord(event) {
+      _setJustWord(event.target.value);
+    }
   }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Other_Other_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
     player: player
   }));
@@ -71437,11 +71452,11 @@ function You(_ref) {
       checkWords = _ref.checkWords,
       justWord = _ref.justWord,
       saveWords = _ref.saveWords,
-      handleInputChange = _ref.handleInputChange;
+      setJustWord = _ref.setJustWord;
+  var point = '';
   var nick = player.nick,
       arrayWords = player.arrayWords,
       stateWords = player.stateWords;
-  var point = '';
   if (Array.isArray(arrayWords)) var maping = true;else var maping = false;
   if (Array.isArray(stateWords)) var mapingState = true;else var mapingState = false;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71459,7 +71474,7 @@ function You(_ref) {
     value: justWord,
     placeholder: "Nowe s\u0142owo",
     onKeyUp: saveWords,
-    onChange: handleInputChange
+    onChange: setJustWord
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
     point = '';
 
@@ -71701,7 +71716,7 @@ function Room(_ref) {
       setJustWord = _useState18[1]; // aktualnie wpisywane słowo
 
 
-  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['A', 'B', '?', '?', '?', 'C', '?', '?', 'A', 'D', 'E', '?', '?', '?', '?', '?']),
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['A', 'B', 'K', 'I', 'B', 'C', 'E', 'H', 'A', 'D', 'E', 'R', 'F', 'G', 'A', 'C']),
       _useState20 = _slicedToArray(_useState19, 2),
       lettersArray = _useState20[0],
       setLettersArray = _useState20[1]; // domyslna tablica liter
@@ -71722,10 +71737,11 @@ function Room(_ref) {
       setErrorModal = _useState24[1];
 
   var checkIfWordCanBeMaked = function checkIfWordCanBeMaked(word) {
-    /* for (let i = 0; i < word.length; i++) {
-      var element = word.chartAt(i);
-      console.log('e: ' + element);
-    } */
+    var characters = word.split('');
+
+    for (var i = 0; i < word.length; i++) {
+      var _char = characters[i]; //console.log('char: ' + char);
+    }
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -71739,6 +71755,7 @@ function Room(_ref) {
   }, [isStart, counter]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (endRound === true) {
+      console.log('endRound - useEffect');
       sendWords();
       getPlayers();
       setEndRound(false);
@@ -71749,17 +71766,12 @@ function Room(_ref) {
    */
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    checkLogin();
-    getPlayers();
+    checkLogin(); //getPlayers(); // nie trzeba bo przy sprawdzaniu zalogowanego gracza zmienia się stan loginAuthoryzation
   }, [roomId]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log('loginAuthorization - useEffect');
     getPlayers();
   }, [loginAuthorization]);
-
-  window.onbeforeunload = function (e) {
-    console.log(e);
-    getPlayers();
-  };
 
   var checkWords = function checkWords() {
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + 'checkDictionary', {
@@ -71770,7 +71782,7 @@ function Room(_ref) {
     }).then(function (response) {
       setPlayerHandler(response.data);
     })["catch"](function (error) {
-      console.log(error);
+      setError(error);
     });
   };
 
@@ -71813,26 +71825,25 @@ function Room(_ref) {
   var resetRoom = function resetRoom() {
     var adress = "resetRoom?room=".concat(roomId);
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
-      console.log('resetRoom: ' + response.data);
       checkLogin();
     })["catch"](function (error) {
-      console.log(error);
+      setError(error);
     });
   };
 
   var checkLogin = function checkLogin() {
     var adress = "checkLogin?room=".concat(roomId);
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
-      if (response.data.length != 0) {
+      if (response.data.length == 0) {
+        setLoginAuthorization(false);
+      } else {
         setPlayerHandler(response.data);
         setLoginAuthorization(true);
-      } else {
-        setLoginAuthorization(false);
       }
     })["catch"](function (error) {
       // handle error
-      console.log(error);
-    }).then(function () {});
+      setError(error);
+    });
   };
 
   var getPlayerObject = function getPlayerObject(date) {
@@ -71856,18 +71867,17 @@ function Room(_ref) {
 
     if (token) {//axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
     } else {
-      console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+      /* CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token */
+      setError('Zablokowano połączenie - brak tokenu bezpieczeństwa');
     }
 
-    var datePost = {
-      nick: e.target.value,
-      room: roomId
-    };
     var adress = "login?nick=".concat(e.target.value, "&room=").concat(roomId);
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(path + adress, true, {
-      params: datePost
-    } //axios.get(path + adress
-    ).then(function (response) {
+      params: {
+        nick: e.target.value,
+        room: roomId
+      }
+    }).then(function (response) {
       if (response.data.length == 0) {
         setErrorModal('Taki gracz jest już zalogowany');
       } else {
@@ -71876,7 +71886,7 @@ function Room(_ref) {
       }
     })["catch"](function (error) {
       // handle error
-      console.log(error);
+      setError(error);
     });
   };
 
@@ -71884,17 +71894,15 @@ function Room(_ref) {
     if (loginAuthorization) {
       var adress = "getPlayers?room=".concat(roomId);
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
-        console.log(response.data.length);
-
-        if (response.data.length != 0) {
-          setOtherPlayersHandler(response.data);
+        if (response.data.length == 0) {
+          setOtherPlayers([]);
         } else {
-          setOtherPlayersHandler([]);
+          setOtherPlayersHandler(response.data);
         }
       })["catch"](function (error) {
         // handle error
-        console.log(error);
-      }).then(function () {});
+        setError(error);
+      });
     }
   };
 
@@ -71916,42 +71924,28 @@ function Room(_ref) {
         state: player.state
       });
       setJustWord('');
-    } else {
-      console.log('wartosc: ', event.target.value);
-      setJustWord(event.target.value);
-    }
-  };
-
-  var handleInputChange = function handleInputChange(event) {
-    setJustWord(event.target.value);
+    } else setJustWord(event.target.value);
   };
 
   var sendWords = function sendWords() {
-    var sendWords = {
-      'words': player.arrayWords,
-      'room': roomId
-    };
-    console.log('wysyła słowa:', player.arrayWords);
-    var adress = 'saveWords';
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(path + adress, true, {
-      params: sendWords
-    }).then(function (response) {
-      setPlayerHandler(response.data);
-      console.log('ustawia gracza: ', response.data);
-    })["catch"](function (error) {
-      // handle error
-      console.log(error);
-    });
+    if (player.arrayWords.length > 0) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(path + 'saveWords', true, {
+        params: {
+          'words': player.arrayWords,
+          'room': roomId
+        }
+      }).then(function (response) {
+        setPlayerHandler(response.data);
+      })["catch"](function (error) {
+        setError(error);
+      });
+    }
   };
 
   var readyButtonClick = function readyButtonClick() {
-    setOldArrayLetters();
-    setReadyPlayer(true);
-  };
+    generateLettersArray(true); // get old Letters Array
 
-  var setOldArrayLetters = function setOldArrayLetters() {
-    var checkOldArray = true;
-    generateLettersArray(checkOldArray);
+    setReadyPlayer(true);
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71961,7 +71955,6 @@ function Room(_ref) {
     error: errorModal
   }), readyPlayer ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GenerateButton_GenerateButton_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
     gen: generateLettersArray,
-    check: setOldArrayLetters,
     start: isStart
   }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ReadyButton_ReadyButton_js__WEBPACK_IMPORTED_MODULE_5__["default"], {
     onclick: readyButtonClick
@@ -71986,7 +71979,7 @@ function Room(_ref) {
     justWord: justWord,
     isStart: isStart,
     checkPlayers: getPlayers,
-    handleInputChange: handleInputChange
+    setJustWord: setJustWord
   }) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_OtherPlayers_OtherPlayers_js__WEBPACK_IMPORTED_MODULE_8__["default"], {
     otherPlayersArray: otherPlayers
   }));

@@ -1,14 +1,13 @@
 import React from 'react';
 
-function You({player, isStart, checkPlayers, checkWords, justWord, saveWords, handleInputChange}) {
+function You({player, isStart, checkPlayers, checkWords, justWord, saveWords, setJustWord}) {
     
+    let point = '';
     const { 
         nick, 
         arrayWords, 
         stateWords 
     } = player;
-
-    let point = '';
     
     if(Array.isArray(arrayWords))
         var maping = true;
@@ -46,7 +45,7 @@ function You({player, isStart, checkPlayers, checkWords, justWord, saveWords, ha
                     value={justWord}
                     placeholder="Nowe słowo" 
                     onKeyUp={saveWords}
-                    onChange={handleInputChange}
+                    onChange={setJustWord}
                 />
             }
             <ol>

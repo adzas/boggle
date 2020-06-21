@@ -12,7 +12,7 @@ function Player(props) {
         checkWords, 
         itsYou, 
         justWord, 
-        handleInputChange, 
+        setJustWord, 
         isStart,
         checkPlayers
     } = props;
@@ -33,7 +33,7 @@ function Player(props) {
                     checkWords={checkWords}
                     justWord={justWord}
                     saveWords={saveWords}
-                    handleInputChange={handleInputChange}
+                    setJustWord={(event) => {setJustWord(event.target.value)}}
                 />
             :
                 <Other player={player} />

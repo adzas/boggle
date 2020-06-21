@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './GenerateButton.css';
 
-function GenerateButton(props) {
+function GenerateButton({ gen, start }) {
 
-    const { gen, check, start } = props;
     const [content, setContent] = useState('BUTTON');
     const [content2, setContent2] = useState('');
     const [className, setClassName] = useState('generateNewLettersArrayButton');
@@ -20,7 +19,7 @@ function GenerateButton(props) {
         <div className="containerFroButton" >
             <button 
                 className={className2} 
-                onClick={() => check()}
+                onClick={() => gen(true)}
             >
                 {content2}
             </button>

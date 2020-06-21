@@ -2,7 +2,7 @@ import React from 'react';
 import './Letter.css';
 
 function Letter(props) {
-    const { value, setLettersState, clicked, word, setWord } = props;
+    const { value, id, setLettersState, clicked, word, setWord } = props;
 
     const mouseDownHandler = (e) => {
         const value = e.target.getAttribute('data-value');
@@ -16,14 +16,18 @@ function Letter(props) {
     }
 
     return(
-        <div 
-            className="letter" 
-            data-value={value} 
-            onMouseDown={mouseDownHandler} 
-            onMouseUp={setWord} 
-            onMouseEnter={mouseEnterHandler}
-        >
-            { value }
+        <div className="letter" >
+            <div className="letterView">
+                { value }
+            </div>
+            <div 
+                className="letterMask" 
+                data-value={value} 
+                data-id={id} 
+                onMouseDown={mouseDownHandler} 
+                onMouseUp={setWord} 
+                onMouseEnter={mouseEnterHandler}
+            ></div>
         </div>
     );
 }
