@@ -71283,6 +71283,42 @@ function OtherPlayers(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Player/Other/Other.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/Player/Other/Other.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function Other(_ref) {
+  var player = _ref.player;
+  var nick = player.nick,
+      arrayWords = player.arrayWords,
+      stateWords = player.stateWords;
+  if (Array.isArray(arrayWords)) var maping = true;else var maping = false;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ContentPlayer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "namePlayer"
+  }, nick), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "player"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      key: i
+    }, word, stateWords.length > 0 && stateWords[i] == 1 ? ' + ' : '');
+  }) : '')));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Other);
+
+/***/ }),
+
 /***/ "./resources/js/components/Player/Player.css":
 /*!***************************************************!*\
   !*** ./resources/js/components/Player/Player.css ***!
@@ -71324,8 +71360,10 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Player_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Player.css */ "./resources/js/components/Player/Player.css");
-/* harmony import */ var _Player_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Player_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _You_You_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./You/You.js */ "./resources/js/components/Player/You/You.js");
+/* harmony import */ var _Other_Other_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Other/Other.js */ "./resources/js/components/Player/Other/Other.js");
+/* harmony import */ var _Player_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Player.css */ "./resources/js/components/Player/Player.css");
+/* harmony import */ var _Player_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Player_css__WEBPACK_IMPORTED_MODULE_3__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -71341,46 +71379,76 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function Player(props) {
-  var player = props.player,
-      saveWords = props.saveWords,
-      checkWords = props.checkWords,
-      counter = props.counter,
-      justWord = props.justWord,
-      handleInputChange = props.handleInputChange,
-      isStart = props.isStart,
-      checkPlayers = props.checkPlayers;
-  var nick = player.nick,
-      state = player.state,
-      arrayWords = player.arrayWords,
-      stateWords = player.stateWords;
 
+
+function Player(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
       _useState2 = _slicedToArray(_useState, 2),
       thisIsOtherPlayer = _useState2[0],
       setThisIsOtherPlayer = _useState2[1];
 
-  var checkIfOtherPlayer = function checkIfOtherPlayer() {
-    if (counter === 'null') setThisIsOtherPlayer(false);else setThisIsOtherPlayer(true);
-  };
-
-  if (Array.isArray(arrayWords)) var maping = true;else var maping = false;
+  var player = props.player,
+      saveWords = props.saveWords,
+      checkWords = props.checkWords,
+      itsYou = props.itsYou,
+      justWord = props.justWord,
+      handleInputChange = props.handleInputChange,
+      isStart = props.isStart,
+      checkPlayers = props.checkPlayers;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    checkIfOtherPlayer();
+    if (itsYou === 'true') setThisIsOtherPlayer(false);
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "player"
+  }, !thisIsOtherPlayer ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_You_You_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    player: player,
+    isStart: isStart,
+    checkPlayers: checkPlayers,
+    checkWords: checkWords,
+    justWord: justWord,
+    saveWords: saveWords,
+    handleInputChange: handleInputChange
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Other_Other_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    player: player
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Player);
+
+/***/ }),
+
+/***/ "./resources/js/components/Player/You/You.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Player/You/You.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function You(_ref) {
+  var player = _ref.player,
+      isStart = _ref.isStart,
+      checkPlayers = _ref.checkPlayers,
+      checkWords = _ref.checkWords,
+      justWord = _ref.justWord,
+      saveWords = _ref.saveWords,
+      handleInputChange = _ref.handleInputChange;
+  var nick = player.nick,
+      arrayWords = player.arrayWords,
+      stateWords = player.stateWords;
+  var point = '';
+  if (Array.isArray(arrayWords)) var maping = true;else var maping = false;
+  if (Array.isArray(stateWords)) var mapingState = true;else var mapingState = false;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ContentPlayer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "namePlayer"
-  }, nick), state == 2 ? 'Button Start' : '', thisIsOtherPlayer ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "contentPlayer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      key: i
-    }, word);
-  }) : '')) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "contentPlayer"
-  }, !isStart ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, nick), !isStart ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "checkPlayerButton",
     onClick: checkPlayers
   }, "Check Players"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -71393,13 +71461,21 @@ function Player(props) {
     onKeyUp: saveWords,
     onChange: handleInputChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
+    point = '';
+
+    if (mapingState) {
+      if (stateWords[i] == 1) {
+        point = ' + ';
+      }
+    }
+
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       key: i
-    }, word, stateWords.length > 0 && stateWords[i] == 1 ? ' + ' : '');
-  }) : '')));
+    }, word + point);
+  }) : ''));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Player);
+/* harmony default export */ __webpack_exports__["default"] = (You);
 
 /***/ }),
 
@@ -71554,73 +71630,96 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Room(_ref) {
   var roomId = _ref.roomId;
   var path = 'http://127.0.0.1/boggle/public/';
-  var counter = 60;
+  /**
+   * Czas na runde
+   */
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var timer = 60; // wartość domyślna odliczania
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(counter),
       _useState2 = _slicedToArray(_useState, 2),
-      loginAuthorization = _useState2[0],
-      setLoginAuthorization = _useState2[1];
+      counter = _useState2[0],
+      setCounter = _useState2[1]; // zmienna licznika
+
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      load = _useState4[0],
-      setLoad = _useState4[1];
+      isStart = _useState4[0],
+      setIsStart = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(counter),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState6 = _slicedToArray(_useState5, 2),
-      timer = _useState6[0],
-      setTimer = _useState6[1];
+      endRound = _useState6[0],
+      setEndRound = _useState6[1];
+  /**
+   * Logowanie
+   */
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      loginAuthorization = _useState8[0],
+      setLoginAuthorization = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      load = _useState10[0],
+      setLoad = _useState10[1];
+  /**
+   * Ty i pozostali gracze
+   */
+
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     nick: null,
     room: 0,
     arrayWords: [],
     stateWords: [],
     state: 0
   }),
-      _useState8 = _slicedToArray(_useState7, 2),
-      player = _useState8[0],
-      setPlayer = _useState8[1];
-
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
-      _useState10 = _slicedToArray(_useState9, 2),
-      otherPlayers = _useState10[0],
-      setOtherPlayers = _useState10[1];
-
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState12 = _slicedToArray(_useState11, 2),
-      isStart = _useState12[0],
-      setIsStart = _useState12[1];
+      player = _useState12[0],
+      setPlayer = _useState12[1];
 
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
       _useState14 = _slicedToArray(_useState13, 2),
-      error = _useState14[0],
-      setError = _useState14[1];
+      otherPlayers = _useState14[0],
+      setOtherPlayers = _useState14[1];
 
-  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState16 = _slicedToArray(_useState15, 2),
-      errorModal = _useState16[0],
-      setErrorModal = _useState16[1];
+      readyPlayer = _useState16[0],
+      setReadyPlayer = _useState16[1];
+  /**
+   * słowa i litery
+   */
 
-  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState18 = _slicedToArray(_useState17, 2),
-      readyPlayer = _useState18[0],
-      setReadyPlayer = _useState18[1];
+      justWord = _useState18[0],
+      setJustWord = _useState18[1]; // aktualnie wpisywane słowo
 
-  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['A', 'B', '?', '?', '?', 'C', '?', '?', 'A', 'D', 'E', '?', '?', '?', '?', '?']),
       _useState20 = _slicedToArray(_useState19, 2),
-      justWord = _useState20[0],
-      setJustWord = _useState20[1];
+      lettersArray = _useState20[0],
+      setLettersArray = _useState20[1]; // domyslna tablica liter
 
-  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  /**
+   * Obsługa błędów
+   */
+
+
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState22 = _slicedToArray(_useState21, 2),
-      endRound = _useState22[0],
-      setEndRound = _useState22[1];
+      error = _useState22[0],
+      setError = _useState22[1];
 
-  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['A', 'B', '?', '?', '?', 'C', '?', '?', 'A', 'D', 'E', '?', '?', '?', '?', '?']),
+  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState24 = _slicedToArray(_useState23, 2),
-      lettersArray = _useState24[0],
-      setLettersArray = _useState24[1];
+      errorModal = _useState24[0],
+      setErrorModal = _useState24[1];
 
   var checkIfWordCanBeMaked = function checkIfWordCanBeMaked(word) {
     /* for (let i = 0; i < word.length; i++) {
@@ -71632,12 +71731,12 @@ function Room(_ref) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     checkIfWordCanBeMaked('ABCD');
     setTimeout(function () {
-      if (timer != 0 && isStart) setTimer(timer - 1);else {
-        setTimer(counter);
+      if (counter != 0 && isStart) setCounter(counter - 1);else {
+        setCounter(timer);
         setEndRound(true);
       }
     }, 1000);
-  }, [isStart, timer]);
+  }, [isStart, counter]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (endRound === true) {
       sendWords();
@@ -71699,7 +71798,7 @@ function Room(_ref) {
           setLettersArray(response.data);
           setIsStart(true);
           setLoad(false);
-          if (!checkOldArray) setTimer(counter);
+          if (!checkOldArray) setCounter(timer);
         } else {
           setLoad(false);
           setError('Serwer nie daje sensownych odpowiedzi, spróbuj później.');
@@ -71736,7 +71835,7 @@ function Room(_ref) {
     }).then(function () {});
   };
 
-  var getplayerObject = function getplayerObject(date) {
+  var getPlayerObject = function getPlayerObject(date) {
     var object = {
       nick: date.nick,
       room: date.room,
@@ -71748,7 +71847,7 @@ function Room(_ref) {
   };
 
   var setPlayerHandler = function setPlayerHandler(date) {
-    setPlayer(getplayerObject(date));
+    setPlayer(getPlayerObject(date));
   };
 
   var login = function login(e) {
@@ -71802,7 +71901,7 @@ function Room(_ref) {
   var setOtherPlayersHandler = function setOtherPlayersHandler(date) {
     var players = [];
     date.map(function (p, i) {
-      players[i] = getplayerObject(p);
+      players[i] = getPlayerObject(p);
     });
     setOtherPlayers(players);
   };
@@ -71877,11 +71976,11 @@ function Room(_ref) {
   }, "ResetRoom"), load ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "loader"
   }, "Loading...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Timer_Timer_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    value: timer,
+    value: counter,
     setIsStartHandle: setIsStart
   }), loginAuthorization ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Player_Player_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
     player: player,
-    counter: "null",
+    itsYou: "true",
     saveWords: saveWords,
     checkWords: checkWords,
     justWord: justWord,

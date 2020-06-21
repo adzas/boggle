@@ -47,7 +47,7 @@ class RoomController extends Controller
         $p = Player::getPlayerWithSession($room);
         if(!!$p)
         {
-            $players = Player::select('id', 'nick', 'room', 'state', 'arrayWords')
+            $players = Player::select('id', 'nick', 'room', 'state', 'arrayWords', 'stateWords')
                 ->where('room', $room)
                 ->where('id', '!=', $p->id)
                 ->get();

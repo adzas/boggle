@@ -13,19 +13,32 @@ import ModalLogin from './ModalLogin/ModalLogin.js';
 function Room({roomId}) {
         
     const path = 'http://127.0.0.1/boggle/public/';
-    const counter = 60;
+
+    /**
+     * Czas na runde
+     */
+    const timer = 60; // wartość domyślna odliczania
+    const [counter, setCounter] = useState(counter); // zmienna licznika
+    const [isStart, setIsStart] = useState(false);
+    const [endRound, setEndRound] = useState(false);
+
+    /**
+     * Logowanie
+     */
     const [loginAuthorization, setLoginAuthorization] = useState(false);
     const [load, setLoad] = useState(false);
-    const [timer, setTimer] = useState(counter);
+
+    /**
+     * Ty i pozostali gracze
+     */
     const [player, setPlayer] = useState({nick: null, room: 0, arrayWords: [], stateWords: [], state: 0});
     const [otherPlayers, setOtherPlayers] = useState([]);
-    const [isStart, setIsStart] = useState(false);
-    const [error, setError] = useState(null);
-    const [errorModal, setErrorModal] = useState(null);
     const [readyPlayer, setReadyPlayer] = useState(false);
-    const [justWord, setJustWord] = useState('');
-    const [endRound, setEndRound] = useState(false);
-  
+    
+    /**
+     * słowa i litery
+     */
+    const [justWord, setJustWord] = useState(''); // aktualnie wpisywane słowo
     const [lettersArray, setLettersArray] = useState(
       [
         'A', 'B', '?', '?',
@@ -33,7 +46,13 @@ function Room({roomId}) {
         'A', 'D', 'E', '?',
         '?', '?', '?', '?',
       ]
-    );
+    ); // domyslna tablica liter
+    
+    /**
+     * Obsługa błędów
+     */
+    const [error, setError] = useState(null);
+    const [errorModal, setErrorModal] = useState(null);
 
 
     const checkIfWordCanBeMaked = (word) => {
@@ -49,16 +68,16 @@ function Room({roomId}) {
         checkIfWordCanBeMaked('ABCD');
 
         setTimeout(() => {
-          if(timer != 0 && isStart)
-            setTimer(timer-1);
+          if(counter != 0 && isStart)
+            setCounter(counter-1);
           else
           {
-            setTimer(counter)
+            setCounter(timer)
             setEndRound(true);
           }
         }, 1000);
     
-    }, [isStart, timer]);
+    }, [isStart, counter]);
 
 
     useEffect(()=>{
@@ -132,7 +151,7 @@ function Room({roomId}) {
             setLoad(false);
             
             if(!checkOldArray)
-            setTimer(counter);
+            setCounter(timer);
           }
           else
           {
@@ -186,7 +205,7 @@ function Room({roomId}) {
   }
 
 
-  const getplayerObject = (date) => {
+  const getPlayerObject = (date) => {
     const object = {
       nick: date.nick, 
       room: date.room,
@@ -199,7 +218,7 @@ function Room({roomId}) {
 
 
   const setPlayerHandler = (date) => {
-    setPlayer(getplayerObject(date));
+    setPlayer(getPlayerObject(date));
   }
 
   const login = (e) => {
@@ -271,7 +290,7 @@ function Room({roomId}) {
   const setOtherPlayersHandler = (date) => {
     var players = [];
     date.map((p, i) => {
-      players[i] = getplayerObject(p);
+      players[i] = getPlayerObject(p);
     });
     setOtherPlayers(players);
   }
@@ -347,20 +366,20 @@ function Room({roomId}) {
       { load ? 
         <span className="loader">Loading...</span>
          : 
-        <Timer value={timer} setIsStartHandle={setIsStart} />
+        <Timer value={counter} setIsStartHandle={setIsStart} />
       }
       {loginAuthorization ? 
        <Player 
-        player={player} 
-        counter="null"
-        saveWords={saveWords} 
-        checkWords={checkWords} 
-        justWord={justWord} 
-        isStart={isStart}
-        checkPlayers={getPlayers}
-        handleInputChange={handleInputChange} />
+          player={player} 
+          itsYou="true"
+          saveWords={saveWords} 
+          checkWords={checkWords} 
+          justWord={justWord} 
+          isStart={isStart}
+          checkPlayers={getPlayers}
+          handleInputChange={handleInputChange} />
         : 
-        ''
+          ''
       }
       {<OtherPlayers otherPlayersArray={otherPlayers} />}
     </div>
