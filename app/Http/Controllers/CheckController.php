@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Storage;
 
 class CheckController extends Controller
 {
+    /**
+     * Sprawdza czy słowo ustnieje w słowniku języka polskiego
+     */
     public function checkDictionary(Request $request)
     {
         $room = $request->get('room');
@@ -28,5 +31,27 @@ class CheckController extends Controller
         $player->stateWords = $stateWords;
         $player->save();
         return $player;
+    }
+    
+
+    /**
+     * Sprawdza czy użytkownik jest zalogowany w sesji w danym pokoju
+     */
+    public function checkLogin(Request $request)
+    {
+        $room = $request->get('room');
+        $player = Player::getPlayerWithSession($room);
+
+        if(!!$player)
+        {
+            if($player->room == $room)
+                return $player;
+            else
+                return null;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

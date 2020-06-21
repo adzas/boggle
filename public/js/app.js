@@ -71688,7 +71688,7 @@ function Room(_ref) {
     getPlayers();
     setTimeout(function () {
       setError(null);
-      var adress = 'generate';
+      var adress = 'generateLettersArray';
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress, {
         params: {
           id: roomId,

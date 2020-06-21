@@ -117,7 +117,7 @@ function Room({roomId}) {
       getPlayers();
       setTimeout(() => {
         setError(null)
-        const adress = 'generate';
+        const adress = 'generateLettersArray';
         axios.get(path + adress, {
           params: {
             id: roomId, 
