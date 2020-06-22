@@ -45,6 +45,7 @@ function Room({roomId}) {
      * słowa i litery
      */
     const [justWord, setJustWord] = useState(''); // aktualnie wpisywane słowo
+    const [lettersState, setLettersState] = useState({clicked: false, word: ""});
     const [lettersArray, setLettersArray] = useState(
       [
         'A', 'B', 'K', 'I',
@@ -310,6 +311,17 @@ function Room({roomId}) {
   }
 
 
+  const saveWordsMouseThrough = (word) => {
+    setPlayer({
+      nick: player.nick, 
+      room: player.room,
+      arrayWords: [...player.arrayWords, word], 
+      stateWords: [], 
+      state: player.state
+    });
+  }
+
+
   const sendWords = () => {
     if(player.arrayWords.length > 0) {
       axios.post(path + 'saveWords', true, { 
@@ -335,6 +347,10 @@ function Room({roomId}) {
    return (
     <div className="roomContent">
 
+      <div className="word">
+        {lettersState.word}
+      </div>
+        
       {/* MODAL LOGOWANIA (JEŚLI UŻYTKOWNIK NIE JEST ZALOGOWANY) */}
       {loginAuthorization ? '' : <ModalLogin login={login} error={errorModal} />}
 
@@ -346,7 +362,13 @@ function Room({roomId}) {
       }
 
       {/* WYŚWIELTA 16 LITER */}
-      <Letters letters={lettersArray} isStart={isStart} />
+      <Letters 
+        letters={lettersArray} 
+        isStart={isStart} 
+        setLettersState={setLettersState} 
+        lettersState={lettersState}
+        saveWordsMouseThrough={saveWordsMouseThrough}
+      />
 
       {/* WYŚWIETLA BŁĘDY POŁĄCZEŃ */}
       {error!=null ? <span className="center errorAlert">{error}</span> : ''}

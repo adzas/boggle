@@ -6612,7 +6612,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".player {\r\n    width: 200px;\r\n    height: 200px;\r\n    background-color: #ddd;\r\n    border: 1px solid #222;\r\n    box-sizing: border-box;\r\n    margin: 10px;\r\n    float: left;\r\n}\r\n\r\n.namePlayer {\r\n    padding: 10px;\r\n    margin: 0px;\r\n    text-align: center;\r\n}\r\n\r\n.newWord {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n}", ""]);
+exports.push([module.i, ".player {\r\n    width: 200px;\r\n    height: auto;\r\n    background-color: #ddd;\r\n    border: 1px solid #222;\r\n    box-sizing: border-box;\r\n    margin: 10px;\r\n    float: left;\r\n}\r\n\r\n.namePlayer {\r\n    padding: 10px;\r\n    margin: 0px;\r\n    text-align: center;\r\n}\r\n\r\n.newWord {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n}", ""]);
 
 // exports
 
@@ -6669,7 +6669,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap);", ""]);
 
 // module
-exports.push([module.i, "\r\nhtml, body {\r\n    font-family: 'Lato', sans-serif;\r\n}\r\n\r\n\r\n.containerFroButton {\r\n    width: 100%;\r\n}\r\n\r\n.center {\r\n    width: 300px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.errorAlert {\r\n    margin-top: 10px;\r\n    padding: 10px;    \r\n    border: 1.5px solid #d33;\r\n    background-color: #faa;\r\n    color: #511;\r\n}\r\n\r\n.loader {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: 10px;\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.buttonRefresh {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: 10px;\r\n    display: block;\r\n    margin-top: 5px;\r\n}", ""]);
+exports.push([module.i, "\r\nhtml, body {\r\n    font-family: 'Lato', sans-serif;\r\n}\r\n\r\n\r\n.containerFroButton {\r\n    width: 100%;\r\n}\r\n\r\n.center {\r\n    width: 300px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.errorAlert {\r\n    margin-top: 10px;\r\n    padding: 10px;    \r\n    border: 1.5px solid #d33;\r\n    background-color: #faa;\r\n    color: #511;\r\n}\r\n\r\n.loader {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: 10px;\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.buttonRefresh {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: 10px;\r\n    display: block;\r\n    margin-top: 5px;\r\n}\r\n\r\n.word {    \r\n    width: 200px;\r\n    height: 50px;\r\n    padding: 15px 10px 10px 10px;\r\n    background-color: aquamarine;\r\n    border-radius: 5px;\r\n    position: fixed;\r\n    top: -10px;\r\n    left: 0;\r\n    right: 0;\r\n    margin: auto;\r\n    z-index: 150;\r\n}", ""]);
 
 // exports
 
@@ -70941,6 +70941,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Letter_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Letter.css */ "./resources/js/components/Letters/Letter/Letter.css");
 /* harmony import */ var _Letter_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Letter_css__WEBPACK_IMPORTED_MODULE_1__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 
 
@@ -70950,22 +70962,26 @@ function Letter(props) {
       setLettersState = props.setLettersState,
       clicked = props.clicked,
       word = props.word,
-      setWord = props.setWord;
-
-  var mouseDownHandler = function mouseDownHandler(e) {
-    var value = e.target.getAttribute('data-value');
-    setLettersState({
-      clicked: true,
-      word: value
-    });
-  };
+      lettersId = props.lettersId,
+      styleSelected = props.styleSelected;
 
   var mouseEnterHandler = function mouseEnterHandler(e) {
     var value = e.target.getAttribute('data-value');
-    if (clicked) setLettersState({
-      clicked: true,
-      word: word + value
-    });
+    var id = e.target.getAttribute('data-id');
+    var repeatId = false;
+
+    for (var i = 0; i < lettersId.length; i++) {
+      if (lettersId[i] == id) repeatId = true;
+    }
+
+    if (clicked && !repeatId) {
+      styleSelected(e.target);
+      setLettersState({
+        clicked: true,
+        word: word + value,
+        lettersId: [].concat(_toConsumableArray(lettersId), [id])
+      });
+    }
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -70976,8 +70992,6 @@ function Letter(props) {
     className: "letterMask",
     "data-value": value,
     "data-id": id,
-    onMouseDown: mouseDownHandler,
-    onMouseUp: setWord,
     onMouseEnter: mouseEnterHandler
   }));
 }
@@ -71045,52 +71059,60 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Letter___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Letter/ */ "./resources/js/components/Letters/Letter/index.js");
 /* harmony import */ var _Letters_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Letters.css */ "./resources/js/components/Letters/Letters.css");
 /* harmony import */ var _Letters_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Letters_css__WEBPACK_IMPORTED_MODULE_2__);
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
 
 function Letters(props) {
   var letters = props.letters,
-      isStart = props.isStart;
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    clicked: false,
-    word: ""
-  }),
-      _useState2 = _slicedToArray(_useState, 2),
-      lettersState = _useState2[0],
-      setLettersState = _useState2[1];
-
+      isStart = props.isStart,
+      setLettersState = props.setLettersState,
+      lettersState = props.lettersState,
+      saveWordsMouseThrough = props.saveWordsMouseThrough;
   var clicked = lettersState.clicked,
-      word = lettersState.word;
+      word = lettersState.word,
+      lettersId = lettersState.lettersId;
   var style = "";
   if (!isStart) style = "off-letters";
+
+  var styleSelected = function styleSelected(element) {
+    element.style.opacity = 0.5;
+  };
+
+  var styleUnselected = function styleUnselected() {
+    if (!clicked) {
+      var classelement = document.getElementsByClassName("letterMask");
+
+      for (var i = 0; i < classelement.length; i++) {
+        classelement[i].style.opacity = 0.1;
+      }
+    }
+  };
+
+  var mouseDownHandler = function mouseDownHandler(e) {
+    setLettersState({
+      clicked: true,
+      word: '',
+      lettersId: []
+    });
+  };
 
   var setWord = function setWord() {
     if (word.length > 0) setLettersState({
       clicked: false,
-      word: word
+      word: word,
+      lettersId: lettersId
     });
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    if (!clicked && word.length >= 3) {
-      console.log('sendWord');
+    if (!clicked) {
+      if (word.length >= 3) saveWordsMouseThrough(word);
+      styleUnselected();
       setLettersState({
         clicked: false,
-        word: ''
+        word: '',
+        lettersId: []
       });
     }
   }, [clicked]);
@@ -71098,16 +71120,18 @@ function Letters(props) {
     className: "containerForLetters"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "letters ".concat(style),
-    onMouseLeave: setWord
+    onMouseUp: setWord,
+    onMouseDown: mouseDownHandler
   }, letters.map(function (letter, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Letter___WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: i,
       id: i,
+      styleSelected: styleSelected,
       value: letter,
       setLettersState: setLettersState,
-      setWord: setWord,
       word: word,
-      clicked: clicked
+      clicked: clicked,
+      lettersId: lettersId
     });
   })));
 }
@@ -71716,25 +71740,33 @@ function Room(_ref) {
       setJustWord = _useState18[1]; // aktualnie wpisywane słowo
 
 
-  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['A', 'B', 'K', 'I', 'B', 'C', 'E', 'H', 'A', 'D', 'E', 'R', 'F', 'G', 'A', 'C']),
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    clicked: false,
+    word: ""
+  }),
       _useState20 = _slicedToArray(_useState19, 2),
-      lettersArray = _useState20[0],
-      setLettersArray = _useState20[1]; // domyslna tablica liter
+      lettersState = _useState20[0],
+      setLettersState = _useState20[1];
+
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['A', 'B', 'K', 'I', 'B', 'C', 'E', 'H', 'A', 'D', 'E', 'R', 'F', 'G', 'A', 'C']),
+      _useState22 = _slicedToArray(_useState21, 2),
+      lettersArray = _useState22[0],
+      setLettersArray = _useState22[1]; // domyslna tablica liter
 
   /**
    * Obsługa błędów
    */
 
 
-  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
-      _useState22 = _slicedToArray(_useState21, 2),
-      error = _useState22[0],
-      setError = _useState22[1];
-
   var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState24 = _slicedToArray(_useState23, 2),
-      errorModal = _useState24[0],
-      setErrorModal = _useState24[1];
+      error = _useState24[0],
+      setError = _useState24[1];
+
+  var _useState25 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState26 = _slicedToArray(_useState25, 2),
+      errorModal = _useState26[0],
+      setErrorModal = _useState26[1];
 
   var checkIfWordCanBeMaked = function checkIfWordCanBeMaked(word) {
     var characters = word.split('');
@@ -71930,6 +71962,16 @@ function Room(_ref) {
     } else setJustWord(event.target.value);
   };
 
+  var saveWordsMouseThrough = function saveWordsMouseThrough(word) {
+    setPlayer({
+      nick: player.nick,
+      room: player.room,
+      arrayWords: [].concat(_toConsumableArray(player.arrayWords), [word]),
+      stateWords: [],
+      state: player.state
+    });
+  };
+
   var sendWords = function sendWords() {
     if (player.arrayWords.length > 0) {
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(path + 'saveWords', true, {
@@ -71953,7 +71995,9 @@ function Room(_ref) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "roomContent"
-  }, loginAuthorization ? '' : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ModalLogin_ModalLogin_js__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "word"
+  }, lettersState.word), loginAuthorization ? '' : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ModalLogin_ModalLogin_js__WEBPACK_IMPORTED_MODULE_9__["default"], {
     login: login,
     error: errorModal
   }), readyPlayer ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GenerateButton_GenerateButton_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -71963,7 +72007,10 @@ function Room(_ref) {
     onclick: readyButtonClick
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Letters_Letters_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
     letters: lettersArray,
-    isStart: isStart
+    isStart: isStart,
+    setLettersState: setLettersState,
+    lettersState: lettersState,
+    saveWordsMouseThrough: saveWordsMouseThrough
   }), error != null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "center errorAlert"
   }, error) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

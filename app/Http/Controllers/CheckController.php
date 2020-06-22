@@ -20,7 +20,7 @@ class CheckController extends Controller
         $stateWords = "";
         foreach ($words as $word)
         {
-            if(strpos($file, "\r\n" . $word . "\r\n") !== FALSE)
+            if(strpos($file, "\r\n" . strtolower($word) . "\r\n") !== FALSE)
                 $stateWords.= "1,";
             else
                 $stateWords.= "0,";
