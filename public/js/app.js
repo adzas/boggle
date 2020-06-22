@@ -6593,7 +6593,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.backgroundModal {\r\n    width: 100%;\r\n    height: 100vh;   \r\n    background-color: #222;\r\n    opacity: .7;\r\n    position: fixed;\r\n    top: 0;\r\n}\r\n\r\n.backgroundModalLogin {\r\n    width: 100%;\r\n    height: 100vh;\r\n    position: absolute;\r\n}\r\n\r\n.modalContent {\r\n    width: 300px;\r\n    height: auto;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-top: 100px;\r\n    position: relative;\r\n    border: 1px solid #ddd;\r\n    background-color: #eee;\r\n    opacity: 1;\r\n}\r\n\r\n.modalHeader {\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: center;\r\n    box-sizing: border-box;\r\n    font-weight: 700;\r\n}\r\n\r\n.LoginRow {\r\n    align-items: center;\r\n}\r\n\r\n.LoginRow > label {\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.LoginRow > input {\r\n    margin-top: 10px;\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.loginButton {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    width: 100%;\r\n}\r\n\r\n/* Alert */\r\n.centerModal {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: 10px;\r\n    display: block;\r\n    text-align: center;\r\n    font-size: 12px;\r\n}", ""]);
+exports.push([module.i, "\r\n.backgroundModal {\r\n    width: 100%;\r\n    height: 100vh;   \r\n    background-color: #222;\r\n    opacity: .7;\r\n    position: fixed;\r\n    top: 0;\r\n    z-index: 20;\r\n}\r\n\r\n.backgroundModalLogin {\r\n    width: 100%;\r\n    height: 100vh;\r\n    position: absolute;\r\n}\r\n\r\n.modalContent {\r\n    width: 300px;\r\n    height: auto;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-top: 100px;\r\n    position: relative;\r\n    border: 1px solid #ddd;\r\n    background-color: #eee;\r\n    opacity: 1;\r\n    z-index: 200;\r\n}\r\n\r\n.modalHeader {\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: center;\r\n    box-sizing: border-box;\r\n    font-weight: 700;\r\n}\r\n\r\n.LoginRow {\r\n    align-items: center;\r\n}\r\n\r\n.LoginRow > label {\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.LoginRow > input {\r\n    margin-top: 10px;\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.loginButton {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    width: 100%;\r\n}\r\n\r\n/* Alert */\r\n.centerModal {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: 10px;\r\n    display: block;\r\n    text-align: center;\r\n    font-size: 12px;\r\n}", ""]);
 
 // exports
 
@@ -71823,6 +71823,7 @@ function Room(_ref) {
   };
 
   var resetRoom = function resetRoom() {
+    setError(null);
     var adress = "resetRoom?room=".concat(roomId);
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
       checkLogin();
@@ -71832,6 +71833,7 @@ function Room(_ref) {
   };
 
   var checkLogin = function checkLogin() {
+    setError(null);
     var adress = "checkLogin?room=".concat(roomId);
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + adress).then(function (response) {
       if (response.data.length == 0) {
@@ -71871,6 +71873,7 @@ function Room(_ref) {
       setError('Zablokowano połączenie - brak tokenu bezpieczeństwa');
     }
 
+    setErrorModal(null);
     var adress = "login?nick=".concat(e.target.value, "&room=").concat(roomId);
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(path + adress, true, {
       params: {

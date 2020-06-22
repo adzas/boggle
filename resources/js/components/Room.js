@@ -173,6 +173,7 @@ function Room({roomId}) {
   
 
   const resetRoom = () => {
+    setError(null);
     const adress = `resetRoom?room=${roomId}`;
     axios.get(path + adress)
       .then(function(response) {
@@ -184,6 +185,7 @@ function Room({roomId}) {
   }
 
   const checkLogin = () => {
+    setError(null);
     const adress = `checkLogin?room=${roomId}`;
     axios.get(path + adress)
     .then(function (response) {
@@ -225,14 +227,15 @@ function Room({roomId}) {
     
     //axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
     let token = document.head.querySelector('meta[name="csrf-token"]');
-
+    
     if (token) {
-        //axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+      //axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
     } else {
-        /* CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token */
-        setError('Zablokowano połączenie - brak tokenu bezpieczeństwa');
+      /* CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token */
+      setError('Zablokowano połączenie - brak tokenu bezpieczeństwa');
     }
-
+    
+    setErrorModal(null);
     const adress = `login?nick=${e.target.value}&room=${roomId}`;
     axios.post(path + adress, true, { 
       params: {
