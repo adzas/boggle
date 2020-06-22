@@ -1,96 +1,43 @@
 import React, { useState, useEffect } from 'react';
+import You from './You/You.js';
+import Other from './Other/Other.js';
 import './Player.css';
 
 function Player(props) {
-
+    
+    const [ thisIsOtherPlayer, setThisIsOtherPlayer ] = useState(true);
     const { 
         player, 
         saveWords, 
         checkWords, 
-        counter, 
+        itsYou, 
         justWord, 
-        handleInputChange, 
+        setJustWord, 
         isStart,
         checkPlayers
     } = props;
-    const { nick, state, arrayWords, stateWords } = player;
-
-    const [ thisIsOtherPlayer, setThisIsOtherPlayer ] = useState(true);
-
-    const checkIfOtherPlayer = () => {
-        if(counter === 'null')
-            setThisIsOtherPlayer(false);
-        else
-            setThisIsOtherPlayer(true);
-    }
-
-    
-    if(Array.isArray(arrayWords))
-        var maping = true;
-    else
-        var maping = false;
 
 
     useEffect(() => {
-        checkIfOtherPlayer();
+        if(itsYou === 'true')
+            setThisIsOtherPlayer(false);
     }, []);
 
     return(
         <div className="player">
-            
-            <h3 
-                className="namePlayer"
-            >
-                {nick}
-            </h3>
-
-            {state == 2 ? 'Button Start' : ''}
-            
-            {thisIsOtherPlayer ? 
-                <div className="contentPlayer">
-                    <ol>
-                        {maping ? arrayWords.map((word, i) => {
-                            return <li key={i} >{word}</li>
-                        }) : ''}
-                    </ol>
-                </div>
+            {!thisIsOtherPlayer ? 
+                <You 
+                    player={player} 
+                    isStart={isStart}
+                    checkPlayers={checkPlayers}
+                    checkWords={checkWords}
+                    justWord={justWord}
+                    saveWords={saveWords}
+                    setJustWord={(event) => {setJustWord(event.target.value)}}
+                />
             :
-                <div className="contentPlayer">
-                    {!isStart ? 
-                        <div>
-                            <button 
-                                className="checkPlayerButton"
-                                onClick={checkPlayers}
-                            >
-                                Check Players
-                            </button>
-                            <button 
-                                className="checkPlayerButton"
-                                onClick={checkWords}
-                            >
-                                Check my words
-                            </button>
-                        </div>
-                    :
-                        <input 
-                            className="newWord" 
-                            value={justWord}
-                            placeholder="Nowe słowo" 
-                            onKeyUp={saveWords}
-                            onChange={handleInputChange}
-                        />
-                    }
-                    <ol>
-                        {maping ? arrayWords.map((word, i) => {
-                            return  <li key={i} >
-                                        {word}
-                                        {stateWords.length > 0 && stateWords[i]==1 ? ' + ' : ''}
-                                    </li>
-                        }) : ''}
-                    </ol>
-                </div>
+                <Other player={player} />
             }
-            
         </div>
     );
 }

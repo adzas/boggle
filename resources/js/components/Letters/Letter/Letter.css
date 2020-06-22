@@ -7,4 +7,25 @@
     float: left;
     background-color: #eee;
     margin: 9px;
+    position: relative;
+}
+
+.letterMask {    
+    background-color: red;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    top: 0;
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border-radius: 15px;
+    opacity: 0.1;
+    z-index: 100;
+}
+
+.letterView {
+    z-index: 10;
 }

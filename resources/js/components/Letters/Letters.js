@@ -12,8 +12,8 @@ function Letters(props) {
     if(!isStart) style = "off-letters";
 
     const setWord = () => {
-        console.log('word: ', word);
-        setLettersState({clicked: false, word: word});
+        if(word.length > 0)
+            setLettersState({clicked: false, word: word});
     }
     
     useEffect(() => {
@@ -32,6 +32,7 @@ function Letters(props) {
                         return (
                             <Letter 
                                 key={i} 
+                                id={i}
                                 value={letter} 
                                 setLettersState={setLettersState} 
                                 setWord={setWord}

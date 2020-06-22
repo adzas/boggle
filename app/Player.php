@@ -18,7 +18,7 @@ class Player extends Model
             ->first();
         if(!!$p)
         {
-            $player = Player::select('id', 'nick', 'room', 'state', 'arrayWords')
+            $player = Player::select('id', 'nick', 'room', 'state', 'arrayWords', 'stateWords')
                 ->where('id', $p->id)
                 ->first();
             return $player;

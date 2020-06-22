@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Session;
 use App\Room;
 use App\Player;
 use Illuminate\Http\Request;
@@ -10,51 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class RoomController extends Controller
 {
-
-    /**
-     * Zwrata użytkownika z sesji
-     */
-    /* public function getPlayerWithSession($room)
-    {
-        $token = session()->getId();
-        $p = Player::select('id')
-            ->where('token', $token)
-            ->where('room', $room)
-            ->first();
-        if(!!$p)
-        {
-            $player = Player::select('id', 'nick', 'room', 'state', 'arrayWords')
-                ->where('id', $p->id)
-                ->first();
-            return $player;
-        }
-        else
-            return false;
-    } */
-
-
-    /**
-     * Sprawdza czy użytkownik jest zalogowany w sesji w tym pokoju
-     */
-    public function checkLogin(Request $request)
-    {
-        $room = $request->get('room');
-        $player = Player::getPlayerWithSession($room);
-
-        if(!!$player)
-        {
-            if($player->room == $room)
-                return $player;
-            else
-                return null;
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-
 
     /**
      * Loguje gracza do pokoju
@@ -93,7 +47,7 @@ class RoomController extends Controller
         $p = Player::getPlayerWithSession($room);
         if(!!$p)
         {
-            $players = Player::select('id', 'nick', 'room', 'state', 'arrayWords')
+            $players = Player::select('id', 'nick', 'room', 'state', 'arrayWords', 'stateWords')
                 ->where('room', $room)
                 ->where('id', '!=', $p->id)
                 ->get();
@@ -135,22 +89,9 @@ class RoomController extends Controller
 
 
     /**
-     * Generuje tablicę polskich znaków
-     */
-    public function generateLettersArray($id)
-    {
-        $value = $this->randomLetters();
-        $room = Room::find($id);
-        $room->letters = json_encode($value);
-        $room->save();
-        return $value;
-    }
-
-
-    /**
      * Generuje tablicę polskich znaków lub pobiera już istniejącą tablicę przypisaną do pokoju
      */
-    public function generate(Request $request)
+    public function generateLettersArray(Request $request)
     {
         $id = $request->input('id');
         $getOldArray = $request->input('checkOldArray');
@@ -191,6 +132,11 @@ class RoomController extends Controller
             return false;
     }
 
+
+    /**
+     * zwraca 16 losowych lister z polskiego alfabetu 
+     * biorąc pod uwagę prawdopodobieństwo ich występienia w polskim języku
+     */
     function randomLetters() {
 
         $A = 'A'; 
@@ -237,9 +183,7 @@ class RoomController extends Controller
         z 	5.64% 	  y 	3.76% 	  l 	2.10% 	  ó 	0.85% 	  ź 	0.06%
         n 	5.52% 	  k 	3.51% 	  ł 	1.82% 	  ż 	0.83% 	  v 	0.04%
         r 	4.69% 	  d 	3.25% 	  b 	1.47% 	  ś 	0.66% 	  x 	0.02% 
-        */
-
-        /* 
+        
         0,01% = 0.5;
         0,1% = 4;
         0,5% = 21;
@@ -299,15 +243,22 @@ class RoomController extends Controller
     }
 
 
-    function addLetter($alphabet, $word, $ilerazy)
+    /**
+     * funkcja wspierająca funkcję randomLetters. 
+     * Dodaje kolajną literę do zmiennej $alfabet określoną ilość razy
+     */
+    function addLetter($alphabet, $letter, $ilerazy)
     {
         for ($i=1; $i <= $ilerazy; $i++) { 
-            $alphabet[]= $word;
+            $alphabet[]= $letter;
         }
         return $alphabet;
     }
 
 
+    /**
+     * Usuwa graczy z danego pokoju
+     */
     public function resetRoom(Request $request)
     {
         $room = $request->get('room');

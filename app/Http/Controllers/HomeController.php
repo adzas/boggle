@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Room;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -17,16 +16,6 @@ class HomeController extends Controller
         //$this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        $rooms = Room::all();
-        return view('welcome')->with('rooms', $rooms);
-    }
 
     public function room($id)
     {

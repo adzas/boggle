@@ -13,56 +13,82 @@ import ModalLogin from './ModalLogin/ModalLogin.js';
 function Room({roomId}) {
         
     const path = 'http://127.0.0.1/boggle/public/';
-    const counter = 60;
+
+    /**
+     * Czas na runde
+     */
+    const timer = 60; // wartość domyślna odliczania
+    const [counter, setCounter] = useState(counter); // zmienna licznika
+    const [isStart, setIsStart] = useState(false);
+    const [endRound, setEndRound] = useState(false);
+
+    /**
+     * Logowanie
+     */
     const [loginAuthorization, setLoginAuthorization] = useState(false);
     const [load, setLoad] = useState(false);
-    const [timer, setTimer] = useState(counter);
-    const [player, setPlayer] = useState({nick: null, room: 0, arrayWords: [], stateWords: [], state: 0});
+
+    /**
+     * Ty i pozostali gracze
+     */
+    const [player, setPlayer] = useState({
+      nick: null, 
+      room: 0, 
+      arrayWords: [], 
+      stateWords: [], 
+      state: 0
+    });
     const [otherPlayers, setOtherPlayers] = useState([]);
-    const [isStart, setIsStart] = useState(false);
-    const [error, setError] = useState(null);
-    const [errorModal, setErrorModal] = useState(null);
     const [readyPlayer, setReadyPlayer] = useState(false);
-    const [justWord, setJustWord] = useState('');
-    const [endRound, setEndRound] = useState(false);
-  
+    
+    /**
+     * słowa i litery
+     */
+    const [justWord, setJustWord] = useState(''); // aktualnie wpisywane słowo
     const [lettersArray, setLettersArray] = useState(
       [
-        'A', 'B', '?', '?',
-        '?', 'C', '?', '?',
-        'A', 'D', 'E', '?',
-        '?', '?', '?', '?',
+        'A', 'B', 'K', 'I',
+        'B', 'C', 'E', 'H',
+        'A', 'D', 'E', 'R',
+        'F', 'G', 'A', 'C',
       ]
-    );
+    ); // domyslna tablica liter
+    
+    /**
+     * Obsługa błędów
+     */
+    const [error, setError] = useState(null);
+    const [errorModal, setErrorModal] = useState(null);
 
 
     const checkIfWordCanBeMaked = (word) => {
 
-      /* for (let i = 0; i < word.length; i++) {
-        var element = word.chartAt(i);
-        console.log('e: ' + element);
-      } */
+      const characters = word.split('');
+      for (let i = 0; i < word.length; i++) {
+        var char = characters[i];
+        //console.log('char: ' + char);
+      }
     }
 
     useEffect(() => {
-
         checkIfWordCanBeMaked('ABCD');
 
         setTimeout(() => {
-          if(timer != 0 && isStart)
-            setTimer(timer-1);
+          if(counter != 0 && isStart)
+            setCounter(counter-1);
           else
           {
-            setTimer(counter)
+            setCounter(timer)
             setEndRound(true);
           }
         }, 1000);
     
-    }, [isStart, timer]);
+    }, [isStart, counter]);
 
 
     useEffect(()=>{
       if(endRound===true){
+        console.log('endRound - useEffect');
         sendWords();
         getPlayers();
         setEndRound(false);
@@ -75,18 +101,14 @@ function Room({roomId}) {
      */
     useEffect(()=>{
       checkLogin();
-      getPlayers();
+      //getPlayers(); // nie trzeba bo przy sprawdzaniu zalogowanego gracza zmienia się stan loginAuthoryzation
     }, [roomId])
 
 
     useEffect(()=>{
-        getPlayers();
-    }, [loginAuthorization])
-
-    window.onbeforeunload = (e) => {
-      console.log(e);
+      console.log('loginAuthorization - useEffect');
       getPlayers();
-    }
+    }, [loginAuthorization])
 
 
     const checkWords = () => {
@@ -99,7 +121,7 @@ function Room({roomId}) {
       }).then(function(response) {
         setPlayerHandler(response.data);
       }).catch(function(error) {
-        console.log(error);
+        setError(error);
       })
     }
 
@@ -117,7 +139,7 @@ function Room({roomId}) {
       getPlayers();
       setTimeout(() => {
         setError(null)
-        const adress = 'generate';
+        const adress = 'generateLettersArray';
         axios.get(path + adress, {
           params: {
             id: roomId, 
@@ -132,7 +154,7 @@ function Room({roomId}) {
             setLoad(false);
             
             if(!checkOldArray)
-            setTimer(counter);
+            setCounter(timer);
           }
           else
           {
@@ -151,42 +173,41 @@ function Room({roomId}) {
   
 
   const resetRoom = () => {
+    setError(null);
     const adress = `resetRoom?room=${roomId}`;
     axios.get(path + adress)
       .then(function(response) {
-        console.log('resetRoom: ' + response.data);
         checkLogin();
       })
       .catch(function(error) {
-        console.log(error);
+        setError(error);
       })
   }
 
   const checkLogin = () => {
+    setError(null);
     const adress = `checkLogin?room=${roomId}`;
     axios.get(path + adress)
     .then(function (response) {
-      if(response.data.length != 0)
+      if(response.data.length == 0)
+      {
+        setLoginAuthorization(false);
+      }
+      else
       {
         setPlayerHandler(response.data);
         setLoginAuthorization(true);
       }
-      else
-      {
-        setLoginAuthorization(false);
-      }
     })
     .catch(function (error) {
       // handle error
-      console.log(error);
-    })
-    .then(function () {
-      
+      setError(error);
     });
   }
 
 
-  const getplayerObject = (date) => {
+  const getPlayerObject = (date) => {
+    
     const object = {
       nick: date.nick, 
       room: date.room,
@@ -199,29 +220,30 @@ function Room({roomId}) {
 
 
   const setPlayerHandler = (date) => {
-    setPlayer(getplayerObject(date));
+    setPlayer(getPlayerObject(date));
   }
 
   const login = (e) => {
     
     //axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
     let token = document.head.querySelector('meta[name="csrf-token"]');
-
+    
     if (token) {
-        //axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+      //axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
     } else {
-        console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+      /* CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token */
+      setError('Zablokowano połączenie - brak tokenu bezpieczeństwa');
     }
-
-    var datePost = {
-      nick: e.target.value,
-      room: roomId
-    };
-
+    
+    setErrorModal(null);
     const adress = `login?nick=${e.target.value}&room=${roomId}`;
-    axios.post(path + adress, true, { params: datePost }
-    //axios.get(path + adress
-    ).then(function (response) {
+    axios.post(path + adress, true, { 
+      params: {
+        nick: e.target.value,
+        room: roomId
+      }
+    })
+    .then(function (response) {
       if(response.data.length == 0) 
       {
         setErrorModal('Taki gracz jest już zalogowany')
@@ -234,53 +256,46 @@ function Room({roomId}) {
     })
     .catch(function (error) {
       // handle error
-      console.log(error);
+      setError(error);
     });
 
   }
 
 
   const getPlayers = () => {
-    if(loginAuthorization)
-    {
+    if(loginAuthorization) {
       const adress = `getPlayers?room=${roomId}`;
       axios.get(path + adress)
       .then(function (response) {
-        console.log(response.data.length);
-        if(response.data.length != 0)
+        if(response.data.length == 0)
         {
-          setOtherPlayersHandler(response.data);
+          setOtherPlayers([]);
         }
         else
         {
-          setOtherPlayersHandler([]);
+          setOtherPlayersHandler(response.data);
         }
       })
       .catch(function (error) {
         // handle error
-        console.log(error);
-      })
-      .then(function () {
-        
+        setError(error);
       });
     }
   }
 
 
-
   const setOtherPlayersHandler = (date) => {
-    var players = [];
+    const players = [];
     date.map((p, i) => {
-      players[i] = getplayerObject(p);
+      players[i] = getPlayerObject(p);
     });
     setOtherPlayers(players);
   }
 
-  
+
   const saveWords = (event) => {
     
-    if(event.keyCode === 13 && !!event.target.value)
-    {
+    if(event.keyCode === 13 && !!event.target.value) {
       setPlayer({
         nick: player.nick, 
         room: player.room,
@@ -291,78 +306,80 @@ function Room({roomId}) {
       setJustWord('');
     }
     else
-    {
-      console.log('wartosc: ',event.target.value);
       setJustWord(event.target.value);
-    }
-  }
-  
-  const handleInputChange = (event) => {
-    setJustWord(event.target.value);
   }
 
 
   const sendWords = () => {
-
-    const sendWords = {
-      'words': player.arrayWords,
-      'room' : roomId
-    };
-
-    console.log('wysyła słowa:', player.arrayWords);
-      
-    const adress = 'saveWords';
-    axios.post(path + adress, true, { params: sendWords })
-    .then(function (response) {
-      setPlayerHandler(response.data);
-      console.log('ustawia gracza: ', response.data);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
+    if(player.arrayWords.length > 0) {
+      axios.post(path + 'saveWords', true, { 
+        params: {
+          'words': player.arrayWords,
+          'room' : roomId
+        }
+      })
+      .then(function (response) {
+        setPlayerHandler(response.data);
+      })
+      .catch(function (error) {
+        setError(error);
+      })
+    }
   }
 
    const readyButtonClick = () => {
-    setOldArrayLetters();
+    generateLettersArray(true); // get old Letters Array
     setReadyPlayer(true);
-   }
-
-   const setOldArrayLetters = () => {
-      const checkOldArray = true;
-      generateLettersArray(checkOldArray);
    }
 
    return (
     <div className="roomContent">
+
+      {/* MODAL LOGOWANIA (JEŚLI UŻYTKOWNIK NIE JEST ZALOGOWANY) */}
       {loginAuthorization ? '' : <ModalLogin login={login} error={errorModal} />}
+
+      {/* JEŚLI GRACZ JEST WCISNĄŁ PRZYCISK GOTOWOŚCI WYŚWIRTLANY JEST GenerateButton */}
       { readyPlayer ?
-          <GenerateButton gen={generateLettersArray} check={setOldArrayLetters} start={isStart} />
+          <GenerateButton gen={generateLettersArray} start={isStart} />
            :
           <ReadyButton onclick={readyButtonClick} />
       }
+
+      {/* WYŚWIELTA 16 LITER */}
       <Letters letters={lettersArray} isStart={isStart} />
+
+      {/* WYŚWIETLA BŁĘDY POŁĄCZEŃ */}
       {error!=null ? <span className="center errorAlert">{error}</span> : ''}
+
+      {/* USUWA WSZYSTKICH GRACZY Z POKOJU - RESET */}
       <button className="buttonRefresh" onClick={resetRoom} >ResetRoom</button>
+
+      {/* JEŚLI ZAŁADOWANO LITERY WYŚWIETLA TIMER I ROZPOCZYNA ODLICZANIE */}
       { load ? 
         <span className="loader">Loading...</span>
          : 
-        <Timer value={timer} setIsStartHandle={setIsStart} />
+        <Timer value={counter} setIsStartHandle={setIsStart} />
       }
+
+      {/* JEŚLI ZALOGOWANY WYŚWETLA PANEL GRACZA */}
       {loginAuthorization ? 
        <Player 
-        player={player} 
-        counter="null"
-        saveWords={saveWords} 
-        checkWords={checkWords} 
-        justWord={justWord} 
-        isStart={isStart}
-        checkPlayers={getPlayers}
-        handleInputChange={handleInputChange} />
+          player={player} 
+          itsYou="true"
+          saveWords={saveWords} 
+          checkWords={checkWords} 
+          justWord={justWord} 
+          isStart={isStart}
+          checkPlayers={getPlayers}
+          setJustWord={setJustWord}
+        />
         : 
-        ''
+          ''
       }
+
+      {/* WYŚWIETLA INNYCH UŻYTKOWNIKÓW Z POKOJU (JEŚLI SĄ) */}
       {<OtherPlayers otherPlayersArray={otherPlayers} />}
+
     </div>
   );
 }
