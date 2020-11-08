@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', 'HomeController@reactHome');
-Route::get('/reactRoom/{id}', 'HomeController@reactRoom');
+Route::get('/{id}', 'HomeController@room');
 
 Route::get('/checkLogin', 'CheckController@checkLogin');
 Route::get('/checkDictionary', 'CheckController@checkDictionary');

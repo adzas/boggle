@@ -20,6 +20,7 @@ class HomeController extends Controller
     public function room($id)
     {
         $room = Room::find($id);
+        // $app_url = $this->url->to('/');
         return view('room')->with('room', $room);
     }
 
