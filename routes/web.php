@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', 'HomeController@reactHome');
-Route::get('/{id}', 'HomeController@room');
 
 Route::get('/checkLogin', 'CheckController@checkLogin');
-Route::get('/checkDictionary', 'CheckController@checkDictionary');
+// Route::get('/check-word/{word}', [WordController::class, 'check']);
+Route::post('/check-words', 'CheckController@checkDictionary');
 
 Route::get('/getPlayers', 'RoomController@getPlayers');
-Route::get('/generateLettersArray', 'RoomController@generateLettersArray');
+Route::get('/generate-letters', 'RoomController@generateLettersArray');
+
+Route::get('/room/{id}', 'HomeController@room');
 Route::get('/resetRoom', 'RoomController@resetRoom');
 
+Route::get('/logout', 'RoomController@logout');
 Route::post('/login', 'RoomController@login');
 Route::post('/saveWords', 'RoomController@saveWords');
+
+Route::get('/get-password-words/{howMuch}', [WordController::class, 'getPasswordWords']);

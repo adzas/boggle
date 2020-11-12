@@ -1,0 +1,9 @@
+@import '../variable.scss';
+
+.my-menu-list li {
+    float: left;
+    padding: 7px;
+    border-radius: 4px;
+    background-color: $green;
+    list-style-type: none;
+}

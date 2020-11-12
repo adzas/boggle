@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div id="home">
+    <div id="room">
 
     </div>
 

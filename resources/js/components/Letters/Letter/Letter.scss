@@ -1,0 +1,26 @@
+@import '../../variable.scss';
+
+.letter {
+    box-sizing: border-box;
+    width: 20%;
+    height: 20%;
+    float: left;
+    padding: 0px;
+    background-color: $light-green;
+    border: 2px solid $green;
+    border-radius: 5px;
+    margin: 2.5%;
+}
+
+.letter-red {
+    background-color: $red;
+    border: 2px solid $light-red;
+}
+
+.letter p {    
+    line-height: 3.4;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+}

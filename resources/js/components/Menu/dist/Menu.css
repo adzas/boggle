@@ -1,0 +1,7 @@
+.my-menu-list li {
+  float: left;
+  padding: 7px;
+  border-radius: 4px;
+  background-color: #c5e3aa;
+  list-style-type: none;
+}

@@ -8,9 +8,6 @@ function Letters(props) {
     const [lettersState, setLettersState] = useState({clicked: false, word: ""});
     const {clicked, word} = lettersState;
 
-    let style = "";
-    if(!isStart) style = "off-letters";
-
     const setWord = () => {
         if(word.length > 0)
             setLettersState({clicked: false, word: word});
@@ -26,7 +23,7 @@ function Letters(props) {
 
     return(
         <div className="containerForLetters">
-            <div className={`letters ${style}`} onMouseLeave={setWord} >
+            <div className="letters" onMouseLeave={setWord} >
                 {
                     letters.map((letter, i) => {
                         return (
@@ -38,6 +35,7 @@ function Letters(props) {
                                 setWord={setWord}
                                 word={word} 
                                 clicked={clicked}
+                                isStart={isStart}
                             />
                         );
                     })

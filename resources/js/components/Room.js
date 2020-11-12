@@ -8,16 +8,16 @@ import Timer from './Timer/Timer.js';
 import Player from './Player/Player.js';
 import OtherPlayers from './OtherPlayers/OtherPlayers.js';
 import ModalLogin from './ModalLogin/ModalLogin.js';
-
+import Menu from './Menu';
 
 function Room({roomId}) {
         
-    const path = 'http://127.0.0.1/boggle/public/';
+    const path = 'http://local.boggle.pl/';
 
     /**
      * Czas na runde
      */
-    const timer = 60; // wartość domyślna odliczania
+    const timer = 15; // wartość domyślna odliczania
     const [counter, setCounter] = useState(counter); // zmienna licznika
     const [isStart, setIsStart] = useState(false);
     const [endRound, setEndRound] = useState(false);
@@ -112,8 +112,7 @@ function Room({roomId}) {
 
 
     const checkWords = () => {
-      
-      axios.get(path + 'checkDictionary', {
+      axios.post(path + 'check-words', {
         params: {
           "room": roomId,
           "words": player.arrayWords
@@ -139,10 +138,10 @@ function Room({roomId}) {
       getPlayers();
       setTimeout(() => {
         setError(null)
-        const adress = 'generateLettersArray';
+        const adress = 'generate-letters';
         axios.get(path + adress, {
           params: {
-            id: roomId, 
+            id: roomId,
             checkOldArray: checkOldArray
           }
         })
@@ -211,16 +210,27 @@ function Room({roomId}) {
     const object = {
       nick: date.nick, 
       room: date.room,
-      arrayWords: date.arrayWords.split(','),
-      stateWords: date.stateWords.split(','),
+      arrayWords: [],
+      stateWords: [],
       state: date.state
     }
+
+    if (typeof date.arrayWords != undefined && date.arrayWords.length > 0) {
+      object.arrayWords = date.arrayWords.split(',');
+    }
+
+    if (typeof date.stateWords != undefined && date.stateWords.length > 0) {
+      object.stateWords = date.stateWords.split(',');
+    }
+
     return object;
   }
 
 
   const setPlayerHandler = (date) => {
-    setPlayer(getPlayerObject(date));
+    if (false !== date) {
+      setPlayer(getPlayerObject(date));
+    }
   }
 
   const login = (e) => {
@@ -236,7 +246,7 @@ function Room({roomId}) {
     }
     
     setErrorModal(null);
-    const adress = `login?nick=${e.target.value}&room=${roomId}`;
+    const adress = 'login';
     axios.post(path + adress, true, { 
       params: {
         nick: e.target.value,
@@ -335,6 +345,7 @@ function Room({roomId}) {
    return (
     <div className="roomContent">
 
+      <Menu />
       {/* MODAL LOGOWANIA (JEŚLI UŻYTKOWNIK NIE JEST ZALOGOWANY) */}
       {loginAuthorization ? '' : <ModalLogin login={login} error={errorModal} />}
 

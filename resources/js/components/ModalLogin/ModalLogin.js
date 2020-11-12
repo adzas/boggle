@@ -23,7 +23,7 @@ function ModalLogin({login, error}) {
                         {!!error ? <span className="centerModal errorAlert">{error}</span> : ''}
                         <div className="LoginRow">
                             <label htmlFor="nick">Nick:</label>
-                            <input id="nick" placeholder="Nick" onKeyDown={(e)=>{ setPlayerNick(e) }}/>
+                            <input id="nick" placeholder="Nick" onKeyUp={(e)=>{ setPlayerNick(e) }}/>
                         </div>
                         <div className="LoginRow">
                             <button 

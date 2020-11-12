@@ -11,8 +11,8 @@ function GenerateButton({ gen, start }) {
     useEffect(() => {
         setContent('NEW');
         setContent2('REFRESH');
-        setClassName('generateNewLettersArrayButton half')
-        setClassName2('generateNewLettersArrayButton half')
+        setClassName('generateNewLettersArrayButton half');
+        setClassName2('generateNewLettersArrayButton half');
     }, [start])
 
     return (

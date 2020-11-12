@@ -1,8 +1,8 @@
 import React from 'react';
-import './Letter.css';
+import './dist/Letter.css';
 
 function Letter(props) {
-    const { value, id, setLettersState, clicked, word, setWord } = props;
+    const { value, id, setLettersState, clicked, word, setWord, isStart } = props;
 
     const mouseDownHandler = (e) => {
         const value = e.target.getAttribute('data-value');
@@ -16,10 +16,10 @@ function Letter(props) {
     }
 
     return(
-        <div className="letter" >
-            <div className="letterView">
+        <div className={`letter ${isStart ? '' : 'letter-red'} `} >
+            <p className="letterView">
                 { value }
-            </div>
+            </p>
             <div 
                 className="letterMask" 
                 data-value={value} 
