@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Room.css';
+import './dist/Room.css';
 import Letters from './Letters/Letters.js';
 import GenerateButton from './GenerateButton/GenerateButton.js';
 import ReadyButton from './ReadyButton/ReadyButton.js';
@@ -9,6 +9,7 @@ import Player from './Player/Player.js';
 import OtherPlayers from './OtherPlayers/OtherPlayers.js';
 import ModalLogin from './ModalLogin/ModalLogin.js';
 import Menu from './Menu';
+import CheckWordInput from './CheckWordInput';
 
 function Room({roomId}) {
         
@@ -21,6 +22,8 @@ function Room({roomId}) {
     const [counter, setCounter] = useState(counter); // zmienna licznika
     const [isStart, setIsStart] = useState(false);
     const [endRound, setEndRound] = useState(false);
+    const [enteredWordToCheck, setEnteredWordToCheck] = useState('');
+    const [statusCheckedWord, setStatusCheckedWord] = useState('');
 
     /**
      * Logowanie
@@ -104,6 +107,12 @@ function Room({roomId}) {
       //getPlayers(); // nie trzeba bo przy sprawdzaniu zalogowanego gracza zmienia się stan loginAuthoryzation
     }, [roomId])
 
+    useEffect(() => {
+      if (enteredWordToCheck.length >= 3) {
+        checkOneWord();
+      }
+    }, [enteredWordToCheck])
+
 
     useEffect(()=>{
       console.log('loginAuthorization - useEffect');
@@ -121,6 +130,15 @@ function Room({roomId}) {
         setPlayerHandler(response.data);
       }).catch(function(error) {
         setError(error);
+      })
+    }
+
+    const checkOneWord = () => {
+      axios.get(path + `check-word/${enteredWordToCheck}`)
+      .then(function(response) {
+        setStatusCheckedWord(response.data);
+      }).catch(function(error) {
+        console.log(response.data);
       })
     }
 
@@ -319,6 +337,13 @@ function Room({roomId}) {
       setJustWord(event.target.value);
   }
 
+  const storeCheckWord = (event) => {
+    if (event == '###') {
+      setEnteredWordToCheck('');
+    } else {
+      setEnteredWordToCheck(event.target.value);
+    }
+  }
 
   const sendWords = () => {
     if(player.arrayWords.length > 0) {
@@ -362,8 +387,12 @@ function Room({roomId}) {
       {/* WYŚWIETLA BŁĘDY POŁĄCZEŃ */}
       {error!=null ? <span className="center errorAlert">{error}</span> : ''}
 
-      {/* USUWA WSZYSTKICH GRACZY Z POKOJU - RESET */}
-      <button className="buttonRefresh" onClick={resetRoom} >ResetRoom</button>
+      <CheckWordInput
+        enteredWordToCheck={enteredWordToCheck}
+        storeCheckWord={storeCheckWord}
+        checkOneWord={checkOneWord}
+        statusCheckedWord={statusCheckedWord}
+      />
 
       {/* JEŚLI ZAŁADOWANO LITERY WYŚWIETLA TIMER I ROZPOCZYNA ODLICZANIE */}
       { load ? 
@@ -372,24 +401,29 @@ function Room({roomId}) {
         <Timer value={counter} setIsStartHandle={setIsStart} />
       }
 
-      {/* JEŚLI ZALOGOWANY WYŚWETLA PANEL GRACZA */}
-      {loginAuthorization ? 
-       <Player 
-          player={player} 
-          itsYou="true"
-          saveWords={saveWords} 
-          checkWords={checkWords} 
-          justWord={justWord} 
-          isStart={isStart}
-          checkPlayers={getPlayers}
-          setJustWord={setJustWord}
-        />
-        : 
-          ''
-      }
+      <div className="playerContent">
+        {/* JEŚLI ZALOGOWANY WYŚWETLA PANEL GRACZA */}
+        {loginAuthorization ? 
+        <Player 
+            player={player} 
+            itsYou="true"
+            saveWords={saveWords} 
+            checkWords={checkWords} 
+            justWord={justWord} 
+            isStart={isStart}
+            checkPlayers={getPlayers}
+            setJustWord={setJustWord}
+          />
+          : 
+            ''
+        }
 
-      {/* WYŚWIETLA INNYCH UŻYTKOWNIKÓW Z POKOJU (JEŚLI SĄ) */}
-      {<OtherPlayers otherPlayersArray={otherPlayers} />}
+        {/* WYŚWIETLA INNYCH UŻYTKOWNIKÓW Z POKOJU (JEŚLI SĄ) */}
+        {<OtherPlayers otherPlayersArray={otherPlayers} />}
+      </div>
+
+      {/* USUWA WSZYSTKICH GRACZY Z POKOJU - RESET */}
+      <button className="btn btn-default buttonRefresh" onClick={resetRoom} >ResetRoom</button>
 
     </div>
   );

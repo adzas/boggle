@@ -32,6 +32,11 @@ class CheckController extends Controller
 
         return false;
     }
+
+    public function checkWord($word)
+    {
+        return WordController::check($word);
+    }
     
 
     /**

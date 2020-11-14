@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Room from './components/Room';
 import Menu from './components/Menu';
-import './Boggle.css';
+import './dist/Boggle.css';
 
 function Boggle(props) {
     return (
       <div className="homeScreen">
         <Menu />
-        <h1>
-          WELCOME IN BOGGLE
+        <h1 className="welcomeText">
+          WITAJ NA PORTALU GIER KREATYWNYCH
         </h1>
       </div>
     );

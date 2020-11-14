@@ -1,4 +1,31 @@
+.border-radius {
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.float-right {
+  float: right;
+}
+
+.a {
+  color: #333;
+  text-decoration: none;
+}
+.a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.my-menu {
+  width: 100%;
+}
+
+.my-menu-list {
+  height: 70px;
+}
+
 .my-menu-list li {
+  margin: 10px;
   float: left;
   padding: 7px;
   border-radius: 4px;

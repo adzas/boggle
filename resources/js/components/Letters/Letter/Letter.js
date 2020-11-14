@@ -16,7 +16,7 @@ function Letter(props) {
     }
 
     return(
-        <div className={`letter ${isStart ? '' : 'letter-red'} `} >
+        <div className={`letter ${isStart ? 'letter-green' : 'letter-red'} `} >
             <p className="letterView">
                 { value }
             </p>

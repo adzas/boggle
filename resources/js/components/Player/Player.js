@@ -24,7 +24,7 @@ function Player(props) {
     }, []);
 
     return(
-        <div className="player">
+        <div className="player border-radius">
             {!thisIsOtherPlayer ? 
                 <You 
                     player={player} 

@@ -1,5 +1,6 @@
 import React from 'react';
-import './readyButton.css';
+import './dist/ReadyButton.css';
+import '../../dist/Buttons.css';
 
 function ReadyButton(props) {
 
@@ -12,7 +13,7 @@ function ReadyButton(props) {
     return (
         <div className="containerFroButton" >
             <button 
-                className="readyPlayerButton" 
+                className="readyPlayerButton btn btn-green" 
                 onClick={onclick}
                 onMouseEnter={changeColorButton}
             >

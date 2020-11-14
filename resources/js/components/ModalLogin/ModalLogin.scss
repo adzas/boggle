@@ -1,3 +1,4 @@
+@import '../../variable.scss';
 
 .backgroundModal {
     width: 100%;
@@ -22,10 +23,11 @@
     margin-right: auto;
     margin-top: 100px;
     position: relative;
-    border: 1px solid #ddd;
-    background-color: #eee;
+    background-color: $bg-color;
+    color: #333;
     opacity: 1;
     z-index: 200;
+    padding: 10px;
 }
 
 .modalHeader {
@@ -41,13 +43,15 @@
 }
 
 .LoginRow > label {
-    width: 100%;
+    width: 35%;
+    float: left;
+    line-height: 1.9;
     box-sizing: border-box;
 }
 
 .LoginRow > input {
-    margin-top: 10px;
-    width: 100%;
+    width: 65%;
+    border: 1px solid #333;
     box-sizing: border-box;
 }
 
@@ -55,11 +59,14 @@
     margin-top: 10px;
     padding: 10px;
     width: 100%;
+    &:hover{
+        background-color: $light-green-hover;
+    }
 }
 
 /* Alert */
 .centerModal {
-    width: 200px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;

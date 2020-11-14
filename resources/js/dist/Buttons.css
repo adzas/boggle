@@ -1,0 +1,21 @@
+.btn {
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.btn-green {
+  border: 2px solid #c5e3aa;
+  background-color: #edfae1;
+}
+
+.btn-red {
+  border: 2px solid #e69999;
+  background-color: #ffeae8;
+}
+
+.btn-default {
+  border: 2px solid #aaa;
+  background-color: #ddd;
+}

@@ -27,13 +27,13 @@ function You({player, isStart, checkPlayers, checkWords, justWord, saveWords, se
             {!isStart ? 
                 <div>
                     <button 
-                        className="checkPlayerButton"
+                        className="btn btn-default checkPlayerButton"
                         onClick={checkPlayers}
                     >
                         Check Players
                     </button>
                     <button 
-                        className="checkPlayerButton"
+                        className="btn btn-default checkPlayerButton"
                         onClick={checkWords}
                     >
                         Check my words

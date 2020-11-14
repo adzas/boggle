@@ -1,0 +1,23 @@
+@import './variable.scss';
+
+.btn {
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-green {
+    border: 2px solid $green;
+    background-color: $light-green;
+}
+
+.btn-red {
+    border: 2px solid $red;
+    background-color: $light-red;
+}
+
+.btn-default {
+    border: 2px solid #aaa;
+    background-color: #ddd;
+}

@@ -1,10 +1,14 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import '../Boggle.scss';
 
 html, body {
     font-family: 'Lato', sans-serif;
 }
 
+.roomContent {
+    background-color: $bg-color+ff;
+    border-top: 5px solid $green;
+    border-bottom: 5px solid $green;
+}
 
 .containerFroButton {
     width: 100%;
@@ -21,9 +25,9 @@ html, body {
 .errorAlert {
     margin-top: 10px;
     padding: 10px;    
-    border: 1.5px solid #d33;
-    background-color: #faa;
-    color: #511;
+    border: 1.5px solid $error-border;
+    background-color: $error-background;
+    color: $error-color;
 }
 
 .loader {
@@ -42,4 +46,9 @@ html, body {
     padding: 10px;
     display: block;
     margin-top: 5px;
+}
+
+.playerContent {
+    width: 100%;
+    text-align: center;
 }

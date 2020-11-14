@@ -6430,48 +6430,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/Boggle.css":
-/*!*****************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/Boggle.css ***!
-  \*****************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".nav {\r\n    position: fixed;\r\n    top: 0;\r\n    padding: 0;\r\n    z-index: 100;\r\n}\r\n\r\n.nav > ul {\r\n    padding: 0;\r\n}\r\n\r\n.room{\r\n    display: block;\r\n    float: left;\r\n    margin-top: 2px;\r\n    margin-left: 10px;\r\n    padding: 5px 10px 5px 10px;\r\n    border: 1px solid gray;\r\n}\r\n\r\n.roomContent {\r\n    margin-top: 30px;\r\n}\r\n\r\n.home {\r\n    height: 300px;\r\n    width: 100%;\r\n    position: relative;\r\n    text-align: center;\r\n    z-index: 0;\r\n}\r\n\r\n.home > h2 {\r\n    top: 0;\r\n    bottom: 0;\r\n    display: block;\r\n    position: absolute;\r\n    margin: auto;\r\n    width: 100%;\r\n    height: 0;\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/GenerateButton/GenerateButton.css":
-/*!***************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/GenerateButton/GenerateButton.css ***!
-  \***************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".containerFroButton {\r\n    width: 300px;\r\n    height: 50px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.generateNewLettersArrayButton {\r\n    width: 300px;\r\n    padding: 10px;\r\n    display: block;\r\n}\r\n\r\n.half {\r\n    width: 150px;\r\n    float: left;\r\n}\r\n\r\n.d-none {\r\n    display: none;\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Letters/Letter/Letter.css":
-/*!*******************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/Letters/Letter/Letter.css ***!
-  \*******************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/CheckWordInput/dist/CheckWordInput.css":
+/*!********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/CheckWordInput/dist/CheckWordInput.css ***!
+  \********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6480,7 +6442,45 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "/* .letter {\r\n    width: 57px;\r\n    height: 57px;\r\n    font-size: 18px;\r\n    padding: 15px;\r\n    text-align: center;\r\n    float: left;\r\n    background-color: #eee;\r\n    margin: 9px;\r\n    position: relative;\r\n} */\r\n\r\n.letterMask {    \r\n    /* background-color: red;\r\n    height: 30px;\r\n    width: 30px;\r\n    position: relative;\r\n    top: 0;\r\n    position: absolute;\r\n    bottom: 0;\r\n    margin: auto;\r\n    left: 0;\r\n    right: 0;\r\n    border-radius: 15px;\r\n    opacity: 0.1;\r\n    z-index: 100; */\r\n}\r\n\r\n.letterView {\r\n    /* z-index: 10; */\r\n}\r\n\r\n.letter {\r\n    box-sizing: border-box;\r\n    width: 20%;\r\n    height: 20%;\r\n    float: left;\r\n    padding: 0px;\r\n    background-color: #edfae1;\r\n    border: 2px solid #c5e3aa;\r\n    border-radius: 5px;\r\n    margin: 2.5%;\r\n}\r\n\r\n.letter-red {\r\n    background-color: #ffeae8;\r\n    border: 2px solid #ffc6c2;\r\n}\r\n\r\n.letter p {    \r\n    line-height: 3.4;\r\n    display: inline-block;\r\n    vertical-align: middle;\r\n    width: 100%;\r\n    text-align: center;\r\n}", ""]);
+exports.push([module.i, ".checkInput {\n  text-align: center;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/GenerateButton/dist/GenerateButton.css":
+/*!********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/GenerateButton/dist/GenerateButton.css ***!
+  \********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".containerForButton {\n  width: 360px;\n  margin-left: auto;\n  margin-right: auto;\n}\n\n.half {\n  width: 150px;\n  float: left;\n  margin: 15px;\n}\n\n.d-none {\n  display: none;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Letters/Letter/dist/Letter.css":
+/*!************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/Letters/Letter/dist/Letter.css ***!
+  \************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".letter {\n  box-sizing: border-box;\n  width: 20%;\n  height: 20%;\n  float: left;\n  padding: 0px;\n  border-radius: 5px;\n  margin: 2.5%;\n}\n\n.letter-green {\n  background-color: #edfae1;\n  border: 2px solid #c5e3aa;\n}\n\n.letter-red {\n  background-color: #ffeae8;\n  border: 2px solid #e69999;\n}\n\n.letter p {\n  line-height: 3.4;\n  display: inline-block;\n  vertical-align: middle;\n  width: 100%;\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -6518,26 +6518,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".my-menu > ul > li {\n  float: left;\n  list-style-type: none;\n  padding: 7px;\n  border-radius: 4px;\n  background-color: #c5e3aa;\n}", ""]);
+exports.push([module.i, ".border-radius {\n  border-radius: 5px;\n  box-sizing: border-box;\n}\n\n.float-right {\n  float: right;\n}\n\n.a {\n  color: #333;\n  text-decoration: none;\n}\n.a:hover {\n  color: #333;\n  text-decoration: none;\n}\n\n.my-menu {\n  width: 100%;\n}\n\n.my-menu-list {\n  height: 70px;\n}\n\n.my-menu-list li {\n  margin: 10px;\n  float: left;\n  padding: 7px;\n  border-radius: 4px;\n  background-color: #c5e3aa;\n  list-style-type: none;\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/ModalLogin/ModalLogin.css":
-/*!*******************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/ModalLogin/ModalLogin.css ***!
-  \*******************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/ModalLogin/dist/ModalLogin.css":
+/*!************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/ModalLogin/dist/ModalLogin.css ***!
+  \************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "\r\n.backgroundModal {\r\n    width: 100%;\r\n    height: 100vh;   \r\n    background-color: #222;\r\n    opacity: .7;\r\n    position: fixed;\r\n    top: 0;\r\n    z-index: 20;\r\n}\r\n\r\n.backgroundModalLogin {\r\n    width: 100%;\r\n    height: 100vh;\r\n    position: absolute;\r\n}\r\n\r\n.modalContent {\r\n    width: 300px;\r\n    height: auto;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-top: 100px;\r\n    position: relative;\r\n    border: 1px solid #ddd;\r\n    background-color: #eee;\r\n    opacity: 1;\r\n    z-index: 200;\r\n}\r\n\r\n.modalHeader {\r\n    padding: 10px;\r\n    width: 100%;\r\n    text-align: center;\r\n    box-sizing: border-box;\r\n    font-weight: 700;\r\n}\r\n\r\n.LoginRow {\r\n    align-items: center;\r\n}\r\n\r\n.LoginRow > label {\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.LoginRow > input {\r\n    margin-top: 10px;\r\n    width: 100%;\r\n    box-sizing: border-box;\r\n}\r\n\r\n.loginButton {\r\n    margin-top: 10px;\r\n    padding: 10px;\r\n    width: 100%;\r\n}\r\n\r\n/* Alert */\r\n.centerModal {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    margin-bottom: 10px;\r\n    display: block;\r\n    text-align: center;\r\n    font-size: 12px;\r\n}", ""]);
+exports.push([module.i, ".backgroundModal {\n  width: 100%;\n  height: 100vh;\n  background-color: #222;\n  opacity: 0.7;\n  position: fixed;\n  top: 0;\n  z-index: 20;\n}\n\n.backgroundModalLogin {\n  width: 100%;\n  height: 100vh;\n  position: absolute;\n}\n\n.modalContent {\n  width: 300px;\n  height: auto;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 100px;\n  position: relative;\n  background-color: #efffef;\n  color: #333;\n  opacity: 1;\n  z-index: 200;\n  padding: 10px;\n}\n\n.modalHeader {\n  padding: 10px;\n  width: 100%;\n  text-align: center;\n  box-sizing: border-box;\n  font-weight: 700;\n}\n\n.LoginRow {\n  align-items: center;\n}\n\n.LoginRow > label {\n  width: 35%;\n  float: left;\n  line-height: 1.9;\n  box-sizing: border-box;\n}\n\n.LoginRow > input {\n  width: 65%;\n  border: 1px solid #333;\n  box-sizing: border-box;\n}\n\n.loginButton {\n  margin-top: 10px;\n  padding: 10px;\n  width: 100%;\n}\n.loginButton:hover {\n  background-color: #ebeee8;\n}\n\n/* Alert */\n.centerModal {\n  width: 100%;\n  margin-left: auto;\n  margin-right: auto;\n  margin-bottom: 10px;\n  display: block;\n  text-align: center;\n  font-size: 12px;\n}", ""]);
 
 // exports
 
@@ -6582,38 +6582,19 @@ exports.push([module.i, ".player {\r\n    width: 300px;\r\n    height: auto;\r\n
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/ReadyButton/readyButton.css":
-/*!*********************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/ReadyButton/readyButton.css ***!
-  \*********************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/ReadyButton/dist/ReadyButton.css":
+/*!**************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/ReadyButton/dist/ReadyButton.css ***!
+  \**************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".readyPlayerButton {\r\n    width: 200px;\r\n    padding: 10px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Room.css":
-/*!**************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/Room.css ***!
-  \**************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap);", ""]);
-
-// module
-exports.push([module.i, "\r\nhtml, body {\r\n    font-family: 'Lato', sans-serif;\r\n}\r\n\r\n\r\n.containerFroButton {\r\n    width: 100%;\r\n}\r\n\r\n.center {\r\n    width: 300px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.errorAlert {\r\n    margin-top: 10px;\r\n    padding: 10px;    \r\n    border: 1.5px solid #d33;\r\n    background-color: #faa;\r\n    color: #511;\r\n}\r\n\r\n.loader {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: 10px;\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.buttonRefresh {\r\n    width: 200px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    padding: 10px;\r\n    display: block;\r\n    margin-top: 5px;\r\n}", ""]);
+exports.push([module.i, ".readyPlayerButton {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n}", ""]);
 
 // exports
 
@@ -6633,6 +6614,63 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, ".Timer {\r\n    width: 300px;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    display: block;\r\n    text-align: center;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/dist/Room.css":
+/*!*******************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/dist/Room.css ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap);", ""]);
+
+// module
+exports.push([module.i, ".btn {\n  padding: 10px;\n  display: block;\n  border-radius: 5px;\n  box-sizing: border-box;\n}\n\n.btn-green {\n  border: 2px solid #c5e3aa;\n  background-color: #edfae1;\n}\n\n.btn-red {\n  border: 2px solid #e69999;\n  background-color: #ffeae8;\n}\n\n.btn-default {\n  border: 2px solid #aaa;\n  background-color: #ddd;\n}\n\nhtml, body {\n  font-family: \"Lato\", sans-serif;\n}\n\n.welcomeText {\n  text-align: center;\n  font-weight: bold;\n  color: #333;\n}\n\n.homeScreen {\n  background-color: #efffefff;\n  border-top: 5px solid #edfae1;\n  border-bottom: 5px solid #edfae1;\n}\n\n.containerFroButton {\n  width: 100%;\n}\n\n.center {\n  width: 300px;\n  margin-left: auto;\n  margin-right: auto;\n  display: block;\n  text-align: center;\n}\n\n.errorAlert {\n  margin-top: 10px;\n  padding: 10px;\n  border: 1.5px solid #e69999;\n  background-color: #ffeae8;\n  color: #511;\n}\n\n.loader {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 10px;\n  display: block;\n  text-align: center;\n}\n\n.buttonRefresh {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 10px;\n  display: block;\n  margin-top: 5px;\n}\n\n.border-radius {\n  border-radius: 5px;\n  box-sizing: border-box;\n}\n\n.float-right {\n  float: right;\n}\n\n.a {\n  color: #333;\n  text-decoration: none;\n}\n.a:hover {\n  color: #333;\n  text-decoration: none;\n}\n\nhtml, body {\n  font-family: \"Lato\", sans-serif;\n}\n\n.roomContent {\n  background-color: #efffefff;\n  border-top: 5px solid #c5e3aa;\n  border-bottom: 5px solid #c5e3aa;\n}\n\n.containerFroButton {\n  width: 100%;\n}\n\n.center {\n  width: 300px;\n  margin-left: auto;\n  margin-right: auto;\n  display: block;\n  text-align: center;\n}\n\n.errorAlert {\n  margin-top: 10px;\n  padding: 10px;\n  border: 1.5px solid #d33;\n  background-color: #faa;\n  color: #511;\n}\n\n.loader {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 10px;\n  display: block;\n  text-align: center;\n}\n\n.buttonRefresh {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 10px;\n  display: block;\n  margin-top: 5px;\n}\n\n.playerContent {\n  width: 100%;\n  text-align: center;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/dist/Boggle.css":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/dist/Boggle.css ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap);", ""]);
+
+// module
+exports.push([module.i, ".btn {\n  padding: 10px;\n  display: block;\n  border-radius: 5px;\n  box-sizing: border-box;\n}\n\n.btn-green {\n  border: 2px solid #c5e3aa;\n  background-color: #edfae1;\n}\n\n.btn-red {\n  border: 2px solid #e69999;\n  background-color: #ffeae8;\n}\n\n.btn-default {\n  border: 2px solid #aaa;\n  background-color: #ddd;\n}\n\nhtml, body {\n  font-family: \"Lato\", sans-serif;\n}\n\n.welcomeText {\n  text-align: center;\n  font-weight: bold;\n  color: #333;\n}\n\n.homeScreen {\n  background-color: #efffefff;\n  border-top: 5px solid #edfae1;\n  border-bottom: 5px solid #edfae1;\n}\n\n.containerFroButton {\n  width: 100%;\n}\n\n.center {\n  width: 300px;\n  margin-left: auto;\n  margin-right: auto;\n  display: block;\n  text-align: center;\n}\n\n.errorAlert {\n  margin-top: 10px;\n  padding: 10px;\n  border: 1.5px solid #e69999;\n  background-color: #ffeae8;\n  color: #511;\n}\n\n.loader {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 10px;\n  display: block;\n  text-align: center;\n}\n\n.buttonRefresh {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 10px;\n  display: block;\n  margin-top: 5px;\n}\n\n.border-radius {\n  border-radius: 5px;\n  box-sizing: border-box;\n}\n\n.border-default {\n  border: 1px solid #333;\n}\n\n.border-red {\n  border: 1px solid #e69999;\n}\n\n.border-green {\n  border: 1px solid #c5e3aa;\n}\n\n.float-right {\n  float: right;\n}\n\n.a {\n  color: #333;\n  text-decoration: none;\n}\n.a:hover {\n  color: #333;\n  text-decoration: none;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/dist/Buttons.css":
+/*!***********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/dist/Buttons.css ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".btn {\n  padding: 10px;\n  display: block;\n  border-radius: 5px;\n  box-sizing: border-box;\n}\n\n.btn-green {\n  border: 2px solid #c5e3aa;\n  background-color: #edfae1;\n}\n\n.btn-red {\n  border: 2px solid #edfae1;\n  background-color: #ffeae8;\n}\n\n.btn-default {\n  border: 2px solid #aaa;\n  background-color: #ddd;\n}", ""]);
 
 // exports
 
@@ -66688,36 +66726,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/Boggle.css":
-/*!*********************************!*\
-  !*** ./resources/js/Boggle.css ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--6-1!../../node_modules/postcss-loader/src??ref--6-2!./Boggle.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/Boggle.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./resources/js/Boggle.js":
 /*!********************************!*\
   !*** ./resources/js/Boggle.js ***!
@@ -66733,8 +66741,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Room__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Room */ "./resources/js/components/Room.js");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu/index.js");
-/* harmony import */ var _Boggle_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Boggle.css */ "./resources/js/Boggle.css");
-/* harmony import */ var _Boggle_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Boggle_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _dist_Boggle_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dist/Boggle.css */ "./resources/js/dist/Boggle.css");
+/* harmony import */ var _dist_Boggle_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_dist_Boggle_css__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -66744,7 +66752,9 @@ __webpack_require__.r(__webpack_exports__);
 function Boggle(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "homeScreen"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "WELCOME IN BOGGLE"));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "welcomeText"
+  }, "WELCOME IN BOGGLE"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Boggle);
@@ -66831,15 +66841,69 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/GenerateButton/GenerateButton.css":
-/*!*******************************************************************!*\
-  !*** ./resources/js/components/GenerateButton/GenerateButton.css ***!
-  \*******************************************************************/
+/***/ "./resources/js/components/CheckWordInput/CheckWordInput.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/CheckWordInput/CheckWordInput.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _dist_CheckWordInput_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dist/CheckWordInput.css */ "./resources/js/components/CheckWordInput/dist/CheckWordInput.css");
+/* harmony import */ var _dist_CheckWordInput_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_dist_CheckWordInput_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function CheckWordInput(_ref) {
+  var enteredWordToCheck = _ref.enteredWordToCheck,
+      storeCheckWord = _ref.storeCheckWord,
+      statusCheckedWord = _ref.statusCheckedWord;
+  var status = '';
+  var inputBorder = 'border-default';
+
+  switch (statusCheckedWord) {
+    case 1:
+      inputBorder = 'border-green';
+      status = 'OK';
+      break;
+
+    case 0:
+      inputBorder = 'border-red';
+      status = ':(';
+      break;
+
+    default:
+      inputBorder = 'border-default';
+      status = '';
+      break;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "checkInput"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "border-radius ".concat(inputBorder),
+    value: enteredWordToCheck,
+    placeholder: "Sprawd\u017A w SJP",
+    onChange: storeCheckWord
+  }), status);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CheckWordInput);
+
+/***/ }),
+
+/***/ "./resources/js/components/CheckWordInput/dist/CheckWordInput.css":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/CheckWordInput/dist/CheckWordInput.css ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./GenerateButton.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/GenerateButton/GenerateButton.css");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./CheckWordInput.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/CheckWordInput/dist/CheckWordInput.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -66853,11 +66917,26 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/CheckWordInput/index.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/CheckWordInput/index.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CheckWordInput_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckWordInput.js */ "./resources/js/components/CheckWordInput/CheckWordInput.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (_CheckWordInput_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
@@ -66872,8 +66951,8 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _GenerateButton_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GenerateButton.css */ "./resources/js/components/GenerateButton/GenerateButton.css");
-/* harmony import */ var _GenerateButton_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_GenerateButton_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _dist_GenerateButton_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dist/GenerateButton.css */ "./resources/js/components/GenerateButton/dist/GenerateButton.css");
+/* harmony import */ var _dist_GenerateButton_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_dist_GenerateButton_css__WEBPACK_IMPORTED_MODULE_1__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -66903,7 +66982,7 @@ function GenerateButton(_ref) {
       content2 = _useState4[0],
       setContent2 = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('generateNewLettersArrayButton'),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('btn btn-green'),
       _useState6 = _slicedToArray(_useState5, 2),
       className = _useState6[0],
       setClassName = _useState6[1];
@@ -66916,11 +66995,11 @@ function GenerateButton(_ref) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     setContent('NEW');
     setContent2('REFRESH');
-    setClassName('generateNewLettersArrayButton half');
-    setClassName2('generateNewLettersArrayButton half');
+    setClassName('btn btn-green half');
+    setClassName2('btn btn-green half');
   }, [start]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "containerFroButton"
+    className: "containerForButton"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: className2,
     onClick: function onClick() {
@@ -66938,15 +67017,15 @@ function GenerateButton(_ref) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Letters/Letter/Letter.css":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/Letters/Letter/Letter.css ***!
-  \***********************************************************/
+/***/ "./resources/js/components/GenerateButton/dist/GenerateButton.css":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/GenerateButton/dist/GenerateButton.css ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./Letter.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Letters/Letter/Letter.css");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./GenerateButton.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/GenerateButton/dist/GenerateButton.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -66979,8 +67058,8 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Letter_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Letter.css */ "./resources/js/components/Letters/Letter/Letter.css");
-/* harmony import */ var _Letter_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Letter_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _dist_Letter_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dist/Letter.css */ "./resources/js/components/Letters/Letter/dist/Letter.css");
+/* harmony import */ var _dist_Letter_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_dist_Letter_css__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
@@ -67010,7 +67089,7 @@ function Letter(props) {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "letter ".concat(isStart ? '' : 'letter-red', " ")
+    className: "letter ".concat(isStart ? 'letter-green' : 'letter-red', " ")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "letterView"
   }, value), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -67024,6 +67103,36 @@ function Letter(props) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Letter);
+
+/***/ }),
+
+/***/ "./resources/js/components/Letters/Letter/dist/Letter.css":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Letters/Letter/dist/Letter.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/postcss-loader/src??ref--6-2!./Letter.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Letters/Letter/dist/Letter.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -67169,6 +67278,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _dist_Menu_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dist/Menu.css */ "./resources/js/components/Menu/dist/Menu.css");
 /* harmony import */ var _dist_Menu_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_dist_Menu_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _dist_Buttons_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../dist/Buttons.css */ "./resources/js/dist/Buttons.css");
+/* harmony import */ var _dist_Buttons_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_dist_Buttons_css__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -67194,6 +67305,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Menu = /*#__PURE__*/function (_React$Component) {
   _inherits(Menu, _React$Component);
 
@@ -67210,11 +67322,19 @@ var Menu = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "my-menu"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "my-menu-list"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "btn btn-green"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
-      }, "G\u0142\xF3wna")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "G\u0142\xF3wna")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "btn btn-green"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/room/1"
-      }, "Room - 1")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "Room - 1")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "btn btn-default float-right"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/logout"
       }, "Wyloguj")))));
     }
@@ -67272,36 +67392,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/ModalLogin/ModalLogin.css":
-/*!***********************************************************!*\
-  !*** ./resources/js/components/ModalLogin/ModalLogin.css ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./ModalLogin.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/ModalLogin/ModalLogin.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./resources/js/components/ModalLogin/ModalLogin.js":
 /*!**********************************************************!*\
   !*** ./resources/js/components/ModalLogin/ModalLogin.js ***!
@@ -67313,8 +67403,8 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ModalLogin_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalLogin.css */ "./resources/js/components/ModalLogin/ModalLogin.css");
-/* harmony import */ var _ModalLogin_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_ModalLogin_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _dist_ModalLogin_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dist/ModalLogin.css */ "./resources/js/components/ModalLogin/dist/ModalLogin.css");
+/* harmony import */ var _dist_ModalLogin_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_dist_ModalLogin_css__WEBPACK_IMPORTED_MODULE_1__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -67351,11 +67441,11 @@ function ModalLogin(_ref) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "backgroundModalLogin"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "modalContent"
+    className: "modalContent border-radius"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "modalHeader"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Wejd\u017A do pokoju"), !!error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "centerModal errorAlert"
+    className: "centerModal errorAlert border-radius"
   }, error) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "LoginRow"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -67369,13 +67459,43 @@ function ModalLogin(_ref) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "LoginRow"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "loginButton",
+    className: "loginButton btn btn-green",
     onClick: login,
     value: nick
   }, "Zatwierd\u017A"))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (ModalLogin);
+
+/***/ }),
+
+/***/ "./resources/js/components/ModalLogin/dist/ModalLogin.css":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/ModalLogin/dist/ModalLogin.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./ModalLogin.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/ModalLogin/dist/ModalLogin.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -67568,7 +67688,7 @@ function Player(props) {
     if (itsYou === 'true') setThisIsOtherPlayer(false);
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "player"
+    className: "player border-radius"
   }, !thisIsOtherPlayer ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_You_You_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     player: player,
     isStart: isStart,
@@ -67620,10 +67740,10 @@ function You(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "namePlayer"
   }, nick), !isStart ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "checkPlayerButton",
+    className: "btn btn-default checkPlayerButton",
     onClick: checkPlayers
   }, "Check Players"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "checkPlayerButton",
+    className: "btn btn-default checkPlayerButton",
     onClick: checkWords
   }, "Check my words")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     className: "newWord",
@@ -67631,7 +67751,11 @@ function You(_ref) {
     placeholder: "Nowe s\u0142owo",
     onKeyUp: saveWords,
     onChange: setJustWord
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.sort(function (_ref2, _ref3) {
+    var previousID = _ref2.id;
+    var currentID = _ref3.id;
+    return previousID - currentID;
+  }).map(function (word, i) {
     point = '';
 
     if (mapingState) {
@@ -67661,8 +67785,11 @@ function You(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _readyButton_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./readyButton.css */ "./resources/js/components/ReadyButton/readyButton.css");
-/* harmony import */ var _readyButton_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_readyButton_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _dist_ReadyButton_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dist/ReadyButton.css */ "./resources/js/components/ReadyButton/dist/ReadyButton.css");
+/* harmony import */ var _dist_ReadyButton_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_dist_ReadyButton_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _dist_Buttons_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../dist/Buttons.css */ "./resources/js/dist/Buttons.css");
+/* harmony import */ var _dist_Buttons_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_dist_Buttons_css__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -67675,7 +67802,7 @@ function ReadyButton(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "containerFroButton"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "readyPlayerButton",
+    className: "readyPlayerButton btn btn-green",
     onClick: onclick,
     onMouseEnter: changeColorButton
   }, "Ready"));
@@ -67685,15 +67812,15 @@ function ReadyButton(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/ReadyButton/readyButton.css":
-/*!*************************************************************!*\
-  !*** ./resources/js/components/ReadyButton/readyButton.css ***!
-  \*************************************************************/
+/***/ "./resources/js/components/ReadyButton/dist/ReadyButton.css":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/ReadyButton/dist/ReadyButton.css ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./readyButton.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/ReadyButton/readyButton.css");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./ReadyButton.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/ReadyButton/dist/ReadyButton.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -67707,37 +67834,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./resources/js/components/Room.css":
-/*!******************************************!*\
-  !*** ./resources/js/components/Room.css ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./Room.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Room.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -67758,8 +67855,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Room_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Room.css */ "./resources/js/components/Room.css");
-/* harmony import */ var _Room_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Room_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _dist_Room_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dist/Room.css */ "./resources/js/components/dist/Room.css");
+/* harmony import */ var _dist_Room_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_dist_Room_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Letters_Letters_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Letters/Letters.js */ "./resources/js/components/Letters/Letters.js");
 /* harmony import */ var _GenerateButton_GenerateButton_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./GenerateButton/GenerateButton.js */ "./resources/js/components/GenerateButton/GenerateButton.js");
 /* harmony import */ var _ReadyButton_ReadyButton_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ReadyButton/ReadyButton.js */ "./resources/js/components/ReadyButton/ReadyButton.js");
@@ -67768,6 +67865,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _OtherPlayers_OtherPlayers_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./OtherPlayers/OtherPlayers.js */ "./resources/js/components/OtherPlayers/OtherPlayers.js");
 /* harmony import */ var _ModalLogin_ModalLogin_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ModalLogin/ModalLogin.js */ "./resources/js/components/ModalLogin/ModalLogin.js");
 /* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Menu */ "./resources/js/components/Menu/index.js");
+/* harmony import */ var _CheckWordInput__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./CheckWordInput */ "./resources/js/components/CheckWordInput/index.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -67789,6 +67887,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -67826,75 +67925,85 @@ function Room(_ref) {
       _useState6 = _slicedToArray(_useState5, 2),
       endRound = _useState6[0],
       setEndRound = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      enteredWordToCheck = _useState8[0],
+      setEnteredWordToCheck = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      statusCheckedWord = _useState10[0],
+      setStatusCheckedWord = _useState10[1];
   /**
    * Logowanie
    */
 
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState8 = _slicedToArray(_useState7, 2),
-      loginAuthorization = _useState8[0],
-      setLoginAuthorization = _useState8[1];
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      loginAuthorization = _useState12[0],
+      setLoginAuthorization = _useState12[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState10 = _slicedToArray(_useState9, 2),
-      load = _useState10[0],
-      setLoad = _useState10[1];
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState14 = _slicedToArray(_useState13, 2),
+      load = _useState14[0],
+      setLoad = _useState14[1];
   /**
    * Ty i pozostali gracze
    */
 
 
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     nick: null,
     room: 0,
     arrayWords: [],
     stateWords: [],
     state: 0
   }),
-      _useState12 = _slicedToArray(_useState11, 2),
-      player = _useState12[0],
-      setPlayer = _useState12[1];
-
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
-      _useState14 = _slicedToArray(_useState13, 2),
-      otherPlayers = _useState14[0],
-      setOtherPlayers = _useState14[1];
-
-  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState16 = _slicedToArray(_useState15, 2),
-      readyPlayer = _useState16[0],
-      setReadyPlayer = _useState16[1];
+      player = _useState16[0],
+      setPlayer = _useState16[1];
+
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState18 = _slicedToArray(_useState17, 2),
+      otherPlayers = _useState18[0],
+      setOtherPlayers = _useState18[1];
+
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState20 = _slicedToArray(_useState19, 2),
+      readyPlayer = _useState20[0],
+      setReadyPlayer = _useState20[1];
   /**
    * słowa i litery
    */
 
 
-  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
-      _useState18 = _slicedToArray(_useState17, 2),
-      justWord = _useState18[0],
-      setJustWord = _useState18[1]; // aktualnie wpisywane słowo
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState22 = _slicedToArray(_useState21, 2),
+      justWord = _useState22[0],
+      setJustWord = _useState22[1]; // aktualnie wpisywane słowo
 
 
-  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['A', 'B', 'K', 'I', 'B', 'C', 'E', 'H', 'A', 'D', 'E', 'R', 'F', 'G', 'A', 'C']),
-      _useState20 = _slicedToArray(_useState19, 2),
-      lettersArray = _useState20[0],
-      setLettersArray = _useState20[1]; // domyslna tablica liter
+  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(['A', 'B', 'K', 'I', 'B', 'C', 'E', 'H', 'A', 'D', 'E', 'R', 'F', 'G', 'A', 'C']),
+      _useState24 = _slicedToArray(_useState23, 2),
+      lettersArray = _useState24[0],
+      setLettersArray = _useState24[1]; // domyslna tablica liter
 
   /**
    * Obsługa błędów
    */
 
 
-  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
-      _useState22 = _slicedToArray(_useState21, 2),
-      error = _useState22[0],
-      setError = _useState22[1];
+  var _useState25 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState26 = _slicedToArray(_useState25, 2),
+      error = _useState26[0],
+      setError = _useState26[1];
 
-  var _useState23 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
-      _useState24 = _slicedToArray(_useState23, 2),
-      errorModal = _useState24[0],
-      setErrorModal = _useState24[1];
+  var _useState27 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState28 = _slicedToArray(_useState27, 2),
+      errorModal = _useState28[0],
+      setErrorModal = _useState28[1];
 
   var checkIfWordCanBeMaked = function checkIfWordCanBeMaked(word) {
     var characters = word.split('');
@@ -67929,6 +68038,11 @@ function Room(_ref) {
     checkLogin(); //getPlayers(); // nie trzeba bo przy sprawdzaniu zalogowanego gracza zmienia się stan loginAuthoryzation
   }, [roomId]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (enteredWordToCheck.length >= 3) {
+      checkOneWord();
+    }
+  }, [enteredWordToCheck]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     console.log('loginAuthorization - useEffect');
     getPlayers();
   }, [loginAuthorization]);
@@ -67943,6 +68057,14 @@ function Room(_ref) {
       setPlayerHandler(response.data);
     })["catch"](function (error) {
       setError(error);
+    });
+  };
+
+  var checkOneWord = function checkOneWord() {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(path + "check-word/".concat(enteredWordToCheck)).then(function (response) {
+      setStatusCheckedWord(response.data);
+    })["catch"](function (error) {
+      console.log(response.data);
     });
   };
 
@@ -68101,6 +68223,10 @@ function Room(_ref) {
     } else setJustWord(event.target.value);
   };
 
+  var storeCheckWord = function storeCheckWord(event) {
+    setEnteredWordToCheck(event.target.value);
+  };
+
   var sendWords = function sendWords() {
     if (player.arrayWords.length > 0) {
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(path + 'saveWords', true, {
@@ -68137,15 +68263,19 @@ function Room(_ref) {
     isStart: isStart
   }), error != null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "center errorAlert"
-  }, error) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "buttonRefresh",
-    onClick: resetRoom
-  }, "ResetRoom"), load ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, error) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CheckWordInput__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    enteredWordToCheck: enteredWordToCheck,
+    storeCheckWord: storeCheckWord,
+    checkOneWord: checkOneWord,
+    statusCheckedWord: statusCheckedWord
+  }), load ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "loader"
   }, "Loading...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Timer_Timer_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
     value: counter,
     setIsStartHandle: setIsStart
-  }), loginAuthorization ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Player_Player_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "playerContent"
+  }, loginAuthorization ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Player_Player_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
     player: player,
     itsYou: "true",
     saveWords: saveWords,
@@ -68156,7 +68286,10 @@ function Room(_ref) {
     setJustWord: setJustWord
   }) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_OtherPlayers_OtherPlayers_js__WEBPACK_IMPORTED_MODULE_8__["default"], {
     otherPlayersArray: otherPlayers
-  }));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "btn btn-default buttonRefresh",
+    onClick: resetRoom
+  }, "ResetRoom"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Room);
@@ -68224,6 +68357,96 @@ function Timer(_ref) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Timer);
+
+/***/ }),
+
+/***/ "./resources/js/components/dist/Room.css":
+/*!***********************************************!*\
+  !*** ./resources/js/components/dist/Room.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./Room.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/dist/Room.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/dist/Boggle.css":
+/*!**************************************!*\
+  !*** ./resources/js/dist/Boggle.css ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./Boggle.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/dist/Boggle.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/dist/Buttons.css":
+/*!***************************************!*\
+  !*** ./resources/js/dist/Buttons.css ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./Buttons.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/dist/Buttons.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 

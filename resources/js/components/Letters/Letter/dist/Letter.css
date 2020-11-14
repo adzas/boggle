@@ -4,15 +4,18 @@
   height: 20%;
   float: left;
   padding: 0px;
-  background-color: #edfae1;
-  border: 2px solid #c5e3aa;
   border-radius: 5px;
   margin: 2.5%;
 }
 
-.letter-red {
+.letter-green {
   background-color: #edfae1;
-  border: 2px solid #ffeae8;
+  border: 2px solid #c5e3aa;
+}
+
+.letter-red {
+  background-color: #ffeae8;
+  border: 2px solid #e69999;
 }
 
 .letter p {

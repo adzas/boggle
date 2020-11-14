@@ -1,0 +1,88 @@
+
+@import './variable.scss';
+@import './Buttons.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+html, body {
+    font-family: 'Lato', sans-serif;
+}
+
+.welcomeText {
+    text-align: center;
+    font-weight: bold;
+    color: $color-text;
+}
+
+.homeScreen {
+    background-color: $bg-color+ff;
+    border-top: 5px solid $light-green;
+    border-bottom: 5px solid $light-green;
+}
+
+.containerFroButton {
+    width: 100%;
+}
+
+.center {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
+
+.errorAlert {
+    margin-top: 10px;
+    padding: 10px;    
+    border: 1.5px solid $red;
+    background-color: $light-red;
+    color: $dark-red;
+}
+
+.loader {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+.buttonRefresh {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    display: block;
+    margin-top: 5px;
+}
+
+.border-radius {
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.border-default {
+    border: 1px solid $color-text;
+}
+
+.border-red {
+    border: 1px solid $red;
+}
+
+.border-green {
+    border: 1px solid $green;
+}
+
+.float-right {
+    float: right;
+}
+
+.a {
+    color: $color-text;
+    text-decoration: none;
+    &:hover {
+        color: $color-text;
+        text-decoration: none;
+    }
+}

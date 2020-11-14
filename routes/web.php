@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@reactHome');
 
 Route::get('/checkLogin', 'CheckController@checkLogin');
-// Route::get('/check-word/{word}', [WordController::class, 'check']);
+Route::get('/check-word/{word}', 'CheckController@checkWord');
 Route::post('/check-words', 'CheckController@checkDictionary');
 
 Route::get('/getPlayers', 'RoomController@getPlayers');

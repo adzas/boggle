@@ -1,4 +1,4 @@
-@import '../../variable.scss';
+@import '../../../variable.scss';
 
 .letter {
     box-sizing: border-box;
@@ -6,15 +6,18 @@
     height: 20%;
     float: left;
     padding: 0px;
-    background-color: $light-green;
-    border: 2px solid $green;
     border-radius: 5px;
     margin: 2.5%;
 }
 
+.letter-green {
+    background-color: $light-green;
+    border: 2px solid $green;
+}
+
 .letter-red {
-    background-color: $red;
-    border: 2px solid $light-red;
+    background-color: $light-red;
+    border: 2px solid $red;
 }
 
 .letter p {    

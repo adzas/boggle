@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import './GenerateButton.css';
+import './dist/GenerateButton.css';
 
 function GenerateButton({ gen, start }) {
 
     const [content, setContent] = useState('BUTTON');
     const [content2, setContent2] = useState('');
-    const [className, setClassName] = useState('generateNewLettersArrayButton');
+    const [className, setClassName] = useState('btn btn-green');
     const [className2, setClassName2] = useState('d-none');
 
     useEffect(() => {
         setContent('NEW');
         setContent2('REFRESH');
-        setClassName('generateNewLettersArrayButton half');
-        setClassName2('generateNewLettersArrayButton half');
+        setClassName('btn btn-green half');
+        setClassName2('btn btn-green half');
     }, [start])
 
     return (
-        <div className="containerFroButton" >
+        <div className="containerForButton" >
             <button 
                 className={className2} 
                 onClick={() => gen(true)}

@@ -1,0 +1,15 @@
+.containerForButton {
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.half {
+  width: 150px;
+  float: left;
+  margin: 15px;
+}
+
+.d-none {
+  display: none;
+}
