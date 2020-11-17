@@ -6670,7 +6670,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".btn {\n  padding: 10px;\n  display: block;\n  border-radius: 5px;\n  box-sizing: border-box;\n}\n\n.btn-green {\n  border: 2px solid #c5e3aa;\n  background-color: #edfae1;\n}\n\n.btn-red {\n  border: 2px solid #edfae1;\n  background-color: #ffeae8;\n}\n\n.btn-default {\n  border: 2px solid #aaa;\n  background-color: #ddd;\n}", ""]);
+exports.push([module.i, ".btn {\n  padding: 10px;\n  display: block;\n  border-radius: 5px;\n  box-sizing: border-box;\n}\n\n.btn-green {\n  border: 2px solid #c5e3aa;\n  background-color: #edfae1;\n}\n\n.btn-red {\n  border: 2px solid #e69999;\n  background-color: #ffeae8;\n}\n\n.btn-default {\n  border: 2px solid #aaa;\n  background-color: #ddd;\n}", ""]);
 
 // exports
 
@@ -66754,7 +66754,7 @@ function Boggle(props) {
     className: "homeScreen"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "welcomeText"
-  }, "WELCOME IN BOGGLE"));
+  }, "WITAJ NA PORTALU GIER KREATYWNYCH"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Boggle);
@@ -66887,7 +66887,8 @@ function CheckWordInput(_ref) {
     className: "border-radius ".concat(inputBorder),
     value: enteredWordToCheck,
     placeholder: "Sprawd\u017A w SJP",
-    onChange: storeCheckWord
+    onChange: storeCheckWord,
+    onClick: storeCheckWord("###")
   }), status);
 }
 
@@ -67332,7 +67333,7 @@ var Menu = /*#__PURE__*/function (_React$Component) {
         className: "btn btn-green"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/room/1"
-      }, "Room - 1")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Boggle")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "btn btn-default float-right"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/logout"
@@ -67751,11 +67752,7 @@ function You(_ref) {
     placeholder: "Nowe s\u0142owo",
     onKeyUp: saveWords,
     onChange: setJustWord
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.sort(function (_ref2, _ref3) {
-    var previousID = _ref2.id;
-    var currentID = _ref3.id;
-    return previousID - currentID;
-  }).map(function (word, i) {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
     point = '';
 
     if (mapingState) {
@@ -68224,7 +68221,11 @@ function Room(_ref) {
   };
 
   var storeCheckWord = function storeCheckWord(event) {
-    setEnteredWordToCheck(event.target.value);
+    if (event == '###') {
+      setEnteredWordToCheck('');
+    } else {
+      setEnteredWordToCheck(event.target.value);
+    }
   };
 
   var sendWords = function sendWords() {

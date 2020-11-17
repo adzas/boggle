@@ -17,7 +17,6 @@ Route::get('/', 'HomeController@reactHome');
 
 Route::get('/checkLogin', 'CheckController@checkLogin');
 Route::get('/check-word/{word}', 'CheckController@checkWord');
-Route::post('/check-words', 'CheckController@checkDictionary');
 
 Route::get('/getPlayers', 'RoomController@getPlayers');
 Route::get('/generate-letters', 'RoomController@generateLettersArray');
@@ -27,6 +26,7 @@ Route::get('/resetRoom', 'RoomController@resetRoom');
 
 Route::get('/logout', 'RoomController@logout');
 Route::post('/login', 'RoomController@login');
+Route::post('/check-words', 'CheckController@checkDictionary');
 Route::post('/saveWords', 'RoomController@saveWords');
 
 Route::get('/get-password-words/{howMuch}', [WordController::class, 'getPasswordWords']);

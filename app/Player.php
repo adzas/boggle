@@ -26,4 +26,9 @@ class Player extends Model
         else
             return false;
     }
+
+    public function words()
+    {
+        return $this->hasMany('App\Models\Word');
+    }
 }

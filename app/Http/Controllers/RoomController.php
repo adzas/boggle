@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LetterHelper;
+use App\Models\Word;
 use App\Room;
 use App\Player;
 use Illuminate\Http\Request;
@@ -72,28 +73,23 @@ class RoomController extends Controller
      */
     public function saveWords(Request $request)
     {
-        $string = '';
         $words = $request->input('words');
-        if(!empty($words))
-        {
-            $room = $request->input('room');
-            foreach ($words as $word) {
-                $string.= $word . ',';
-            }
-            $string = substr($string, 0, -1);
-    
-            $player = Player::getPlayerWithSession($room);
-            if(!!$player)
+        $room = $request->input('room');
+        $player = Player::getPlayerWithSession($room);
+        if ($player instanceof Player) {
+            $wordsToStored = [];
+            if(!empty($words))
             {
-                $player->arrayWords = $string;
-                $player->save();
-                return $player;
+                foreach ($words as $word) {
+                    $wordsToStored[] = new Word(['word' => $word]);
+                }
             }
-            else
-                return false;
+            $player->words()->saveMany($wordsToStored);
+
+            return $player;
         }
-        else
-            return false;
+
+        return false;
     }
 
 

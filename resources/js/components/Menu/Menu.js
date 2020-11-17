@@ -11,7 +11,7 @@ class Menu extends React.Component {
                         <a href="/">Główna</a>
                     </li>
                     <li className="btn btn-green">
-                        <a href="/room/1">Room - 1</a>
+                        <a href="/room/1">Boggle</a>
                     </li>
                     <li className="btn btn-default float-right">
                         <a href="/logout">Wyloguj</a>
