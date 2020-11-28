@@ -1,6 +1,6 @@
 <?php
 
-use App\Room;
+use App\database\seeders\RoomSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(polish_password_words_seeders::class);
+        (new RoomSeeder)->run();
     }
 }
