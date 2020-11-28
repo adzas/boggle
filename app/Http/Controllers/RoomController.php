@@ -17,12 +17,10 @@ class RoomController extends Controller
      */
     public function login(Request $request)
     {
-        //return $session_id = session()->getId();
-        $nick = $request->input('nick');
         $room = $request->input('room');
-        $isSet = Player::select('id')->where('nick', $nick)->first();
-        if(empty($isSet))
-        {
+        $nick = $request->input('nick');
+
+        if(isset($nick) && Player::checkNick($nick)) {
             $player = new Player;
             $player->nick = $nick;
             $player->room = $room;

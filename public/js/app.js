@@ -68154,15 +68154,6 @@ function Room(_ref) {
   };
 
   var login = function login(e) {
-    //axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-    var token = document.head.querySelector('meta[name="csrf-token"]');
-
-    if (token) {//axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-    } else {
-      /* CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token */
-      setError('Zablokowano połączenie - brak tokenu bezpieczeństwa');
-    }
-
     setErrorModal(null);
     var adress = 'login';
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(path + adress, true, {
@@ -68172,7 +68163,7 @@ function Room(_ref) {
       }
     }).then(function (response) {
       if (response.data.length == 0) {
-        setErrorModal('Taki gracz jest już zalogowany');
+        setErrorModal('Taki gracz jest już zalogowany lub wpisany nick jest niedozwolony.');
       } else {
         setPlayerHandler(response.data);
         setLoginAuthorization(true);

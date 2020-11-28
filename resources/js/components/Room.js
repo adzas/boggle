@@ -252,17 +252,6 @@ function Room({roomId}) {
   }
 
   const login = (e) => {
-    
-    //axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-    let token = document.head.querySelector('meta[name="csrf-token"]');
-    
-    if (token) {
-      //axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-    } else {
-      /* CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token */
-      setError('Zablokowano połączenie - brak tokenu bezpieczeństwa');
-    }
-    
     setErrorModal(null);
     const adress = 'login';
     axios.post(path + adress, true, { 
@@ -274,7 +263,7 @@ function Room({roomId}) {
     .then(function (response) {
       if(response.data.length == 0) 
       {
-        setErrorModal('Taki gracz jest już zalogowany')
+        setErrorModal('Taki gracz jest już zalogowany lub wpisany nick jest niedozwolony.')
       }
       else
       {
