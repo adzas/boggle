@@ -28,9 +28,10 @@ class Player extends Model
             ->first();
         if(!!$p)
         {
-            $player = self::select('id', 'nick', 'room', 'state', 'arrayWords', 'stateWords')
+            $player = self::select('id', 'nick', 'room', 'state')
                 ->where('id', $p->id)
                 ->first();
+            $player->words;
             return $player;
         }
         else
@@ -39,17 +40,14 @@ class Player extends Model
 
     public static function checkNick(string $nick)
     {
-        // TODO to coś nie halo bo przepuszcza ten sam nick dwa razy
         if (!empty($nick)) {
             self::removeOldPlayers();
             $exist = self::select()
-                ->where([
-                    ['nick', $nick],
-                    ['token', session()->getId()],
-                ])
+                ->where('nick', $nick)
+                ->orWhere('token', session()->getId())
                 ->exists();
 
-            if (1 !== $exist && self::allowedNick($nick)) {
+            if (!$exist && self::allowedNick($nick)) {
                 return true;
             }
         }
@@ -59,7 +57,7 @@ class Player extends Model
 
     public static function removeOldPlayers()
     {
-        $oldPlayers = Player::select()->where('updated_at', '<', date('Y-m-d', strtotime(' -20 minutes')))->get();
+        $oldPlayers = Player::select()->where('updated_at', '<', date('Y-m-d H:i:s', strtotime('-20 minutes')))->get();
         foreach ($oldPlayers as $oldPlayer) {
             $oldPlayer->delete();
         }
@@ -79,5 +77,12 @@ class Player extends Model
     public function words()
     {
         return $this->hasMany('App\Models\Word');
+    }
+
+    public function resetWords()
+    {
+        foreach ($this->words as $word) {
+            $word->delete();
+        }
     }
 }

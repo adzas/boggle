@@ -5,19 +5,19 @@ function Other({player}) {
     let point = '';
     const { 
         nick, 
-        arrayWords, 
-        stateWords 
+        words
     } = player;
     
-    if(Array.isArray(arrayWords))
+    if(Array.isArray(words))
         var maping = true;
     else
         var maping = false;
     
-    if(Array.isArray(stateWords))
-        var mapingState = true;
-    else
-        var mapingState = false;
+    // TODO przerobić words na objekt z parametrem -> state
+    // if(Array.isArray(stateWords))
+    //     var mapingState = true;
+    // else
+    //     var mapingState = false;
 
     return (
         <div className="ContentPlayer">
@@ -25,15 +25,15 @@ function Other({player}) {
                 {nick}
             </h3>
             <ol>
-                {maping ? arrayWords.map((word, i) => {
+                {maping ? words.map((word, i) => {
                     point = '';
-                    if(mapingState) {
+                    /* if(mapingState) {
                         if(stateWords[i]==1) {
                             point = ' + ';
                         }
-                    }
+                    } */
                     return  <li key={i} >
-                                {word + point}
+                                {word.word + point}
                             </li>
                 }) : ''}
             </ol>

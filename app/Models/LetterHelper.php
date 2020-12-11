@@ -105,14 +105,14 @@ class LetterHelper extends Model
         $alphabet = self::addLetter($alphabet, $F, 13);
         
         sort($alphabet);
-        $arrayWords = array(); //remember to declare $pass as an array
+        $arrayLetters = array(); //remember to declare $pass as an array
         $alphaLength = count($alphabet);
         for ($i = 0; $i < $howMuch; $i++) {
             $n = rand(0, $alphaLength);
-            $arrayWords[] = $alphabet[$n];
+            $arrayLetters[] = $alphabet[$n];
         }
 
-        return $arrayWords; //turn the array into a string
+        return $arrayLetters; //turn the array into a string
     }
 
 

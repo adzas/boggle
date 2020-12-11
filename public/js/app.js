@@ -6632,7 +6632,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".btn {\n  padding: 10px;\n  display: block;\n  border-radius: 5px;\n  box-sizing: border-box;\n}\n\n.btn-green {\n  border: 2px solid #c5e3aa;\n  background-color: #edfae1;\n}\n\n.btn-red {\n  border: 2px solid #e69999;\n  background-color: #ffeae8;\n}\n\n.btn-default {\n  border: 2px solid #aaa;\n  background-color: #ddd;\n}\n\nhtml, body {\n  font-family: \"Lato\", sans-serif;\n}\n\n.welcomeText {\n  text-align: center;\n  font-weight: bold;\n  color: #333;\n}\n\n.homeScreen {\n  background-color: #efffefff;\n  border-top: 5px solid #edfae1;\n  border-bottom: 5px solid #edfae1;\n}\n\n.containerFroButton {\n  width: 100%;\n}\n\n.center {\n  width: 300px;\n  margin-left: auto;\n  margin-right: auto;\n  display: block;\n  text-align: center;\n}\n\n.errorAlert {\n  margin-top: 10px;\n  padding: 10px;\n  border: 1.5px solid #e69999;\n  background-color: #ffeae8;\n  color: #511;\n}\n\n.loader {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 10px;\n  display: block;\n  text-align: center;\n}\n\n.buttonRefresh {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 10px;\n  display: block;\n  margin-top: 5px;\n}\n\n.border-radius {\n  border-radius: 5px;\n  box-sizing: border-box;\n}\n\n.float-right {\n  float: right;\n}\n\n.a {\n  color: #333;\n  text-decoration: none;\n}\n.a:hover {\n  color: #333;\n  text-decoration: none;\n}\n\nhtml, body {\n  font-family: \"Lato\", sans-serif;\n}\n\n.roomContent {\n  background-color: #efffefff;\n  border-top: 5px solid #c5e3aa;\n  border-bottom: 5px solid #c5e3aa;\n}\n\n.containerFroButton {\n  width: 100%;\n}\n\n.center {\n  width: 300px;\n  margin-left: auto;\n  margin-right: auto;\n  display: block;\n  text-align: center;\n}\n\n.errorAlert {\n  margin-top: 10px;\n  padding: 10px;\n  border: 1.5px solid #d33;\n  background-color: #faa;\n  color: #511;\n}\n\n.loader {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 10px;\n  display: block;\n  text-align: center;\n}\n\n.buttonRefresh {\n  width: 200px;\n  margin-left: auto;\n  margin-right: auto;\n  padding: 10px;\n  display: block;\n  margin-top: 5px;\n}\n\n.playerContent {\n  width: 100%;\n  text-align: center;\n}", ""]);
+exports.push([module.i, ".btn {\r\n  padding: 10px;\r\n  display: block;\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.btn-green {\r\n  border: 2px solid #c5e3aa;\r\n  background-color: #edfae1;\r\n}\r\n\r\n.btn-red {\r\n  border: 2px solid #e69999;\r\n  background-color: #ffeae8;\r\n}\r\n\r\n.btn-default {\r\n  border: 2px solid #aaa;\r\n  background-color: #ddd;\r\n}\r\n\r\nhtml, body {\r\n  font-family: \"Lato\", sans-serif;\r\n}\r\n\r\n.welcomeText {\r\n  text-align: center;\r\n  font-weight: bold;\r\n  color: #333;\r\n}\r\n\r\n.homeScreen {\r\n  background-color: #efffefff;\r\n  border-top: 5px solid #edfae1;\r\n  border-bottom: 5px solid #edfae1;\r\n}\r\n\r\n.containerFroButton {\r\n  width: 100%;\r\n}\r\n\r\n.center {\r\n  width: 300px;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  display: block;\r\n  text-align: center;\r\n}\r\n\r\n.errorAlert {\r\n  margin-top: 10px;\r\n  padding: 10px;\r\n  border: 1.5px solid #e69999;\r\n  background-color: #ffeae8;\r\n  color: #511;\r\n}\r\n\r\n.loader {\r\n  width: 200px;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  padding: 10px;\r\n  display: block;\r\n  text-align: center;\r\n}\r\n\r\n.buttonRefresh {\r\n  width: 200px;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  padding: 10px;\r\n  display: block;\r\n  margin-top: 5px;\r\n}\r\n\r\n.border-radius {\r\n  border-radius: 5px;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.float-right {\r\n  float: right;\r\n}\r\n\r\n.a {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n.a:hover {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\nhtml, body {\r\n  font-family: \"Lato\", sans-serif;\r\n}\r\n\r\n.roomContent {\r\n  background-color: #efffefff;\r\n  border-top: 5px solid #c5e3aa;\r\n  border-bottom: 5px solid #c5e3aa;\r\n}\r\n\r\n.containerFroButton {\r\n  width: 100%;\r\n}\r\n\r\n.center {\r\n  width: 300px;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  display: block;\r\n  text-align: center;\r\n}\r\n\r\n.errorAlert {\r\n  margin-top: 10px;\r\n  padding: 10px;\r\n  border: 1.5px solid #d33;\r\n  background-color: #faa;\r\n  color: #511;\r\n}\r\n\r\n.loader {\r\n  width: 200px;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  padding: 10px;\r\n  display: block;\r\n  text-align: center;\r\n}\r\n\r\n.buttonRefresh {\r\n  width: 200px;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  padding: 10px;\r\n  display: block;\r\n  margin-top: 5px;\r\n}\r\n\r\n.playerContent {\r\n  width: 100%;\r\n  text-align: center;\r\n}", ""]);
 
 // exports
 
@@ -66740,9 +66740,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Room__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Room */ "./resources/js/components/Room.js");
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu/index.js");
-/* harmony import */ var _dist_Boggle_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dist/Boggle.css */ "./resources/js/dist/Boggle.css");
-/* harmony import */ var _dist_Boggle_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_dist_Boggle_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _szefler_Szefler__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./szefler/Szefler */ "./resources/js/szefler/Szefler.js");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu/index.js");
+/* harmony import */ var _dist_Boggle_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dist/Boggle.css */ "./resources/js/dist/Boggle.css");
+/* harmony import */ var _dist_Boggle_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_dist_Boggle_css__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -66752,7 +66754,7 @@ __webpack_require__.r(__webpack_exports__);
 function Boggle(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "homeScreen"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Menu__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "welcomeText"
   }, "WITAJ NA PORTALU GIER KREATYWNYCH"));
 }
@@ -66768,6 +66770,13 @@ if (document.getElementById('room')) {
     id: "1",
     roomId: "1"
   }), document.getElementById('room'));
+}
+
+if (document.getElementById('room')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_szefler_Szefler__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    id: "1",
+    roomId: "1"
+  }), document.getElementById('szefler'));
 }
 
 /***/ }),
@@ -66887,8 +66896,7 @@ function CheckWordInput(_ref) {
     className: "border-radius ".concat(inputBorder),
     value: enteredWordToCheck,
     placeholder: "Sprawd\u017A w SJP",
-    onChange: storeCheckWord,
-    onClick: storeCheckWord("###")
+    onChange: storeCheckWord
   }), status);
 }
 
@@ -67334,6 +67342,10 @@ var Menu = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/room/1"
       }, "Boggle")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "btn btn-green"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "/szefler/1"
+      }, "Szefler")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "btn btn-default float-right"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/logout"
@@ -67582,26 +67594,28 @@ function Other(_ref) {
   var player = _ref.player;
   var point = '';
   var nick = player.nick,
-      arrayWords = player.arrayWords,
-      stateWords = player.stateWords;
-  if (Array.isArray(arrayWords)) var maping = true;else var maping = false;
-  if (Array.isArray(stateWords)) var mapingState = true;else var mapingState = false;
+      words = player.words;
+  if (Array.isArray(words)) var maping = true;else var maping = false; // TODO przerobić words na objekt z parametrem -> state
+  // if(Array.isArray(stateWords))
+  //     var mapingState = true;
+  // else
+  //     var mapingState = false;
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ContentPlayer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "namePlayer"
-  }, nick), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
+  }, nick), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? words.map(function (word, i) {
     point = '';
-
-    if (mapingState) {
-      if (stateWords[i] == 1) {
-        point = ' + ';
-      }
-    }
+    /* if(mapingState) {
+        if(stateWords[i]==1) {
+            point = ' + ';
+        }
+    } */
 
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       key: i
-    }, word + point);
+    }, word.word + point);
   }) : ''));
 }
 
@@ -67732,10 +67746,13 @@ function You(_ref) {
       setJustWord = _ref.setJustWord;
   var point = '';
   var nick = player.nick,
-      arrayWords = player.arrayWords,
-      stateWords = player.stateWords;
-  if (Array.isArray(arrayWords)) var maping = true;else var maping = false;
-  if (Array.isArray(stateWords)) var mapingState = true;else var mapingState = false;
+      words = player.words;
+  if (Array.isArray(words)) var maping = true;else var maping = false; // TODO przerobić words na objekt z parametrem -> state
+  // if(Array.isArray(stateWords))
+  //     var mapingState = true;
+  // else
+  //     var mapingState = false;
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ContentPlayer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
@@ -67752,18 +67769,17 @@ function You(_ref) {
     placeholder: "Nowe s\u0142owo",
     onKeyUp: saveWords,
     onChange: setJustWord
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? arrayWords.map(function (word, i) {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, maping ? words.map(function (word, i) {
     point = '';
-
-    if (mapingState) {
-      if (stateWords[i] == 1) {
-        point = ' + ';
-      }
-    }
+    /* if(mapingState) {
+        if(stateWords[i]==1) {
+            point = ' + ';
+        }
+    } */
 
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       key: i
-    }, word + point);
+    }, word.word + point);
   }) : ''));
 }
 
@@ -67863,6 +67879,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ModalLogin_ModalLogin_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ModalLogin/ModalLogin.js */ "./resources/js/components/ModalLogin/ModalLogin.js");
 /* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Menu */ "./resources/js/components/Menu/index.js");
 /* harmony import */ var _CheckWordInput__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./CheckWordInput */ "./resources/js/components/CheckWordInput/index.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_12__);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -67884,6 +67902,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -67954,8 +67973,7 @@ function Room(_ref) {
   var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     nick: null,
     room: 0,
-    arrayWords: [],
-    stateWords: [],
+    words: [],
     state: 0
   }),
       _useState16 = _slicedToArray(_useState15, 2),
@@ -68032,7 +68050,7 @@ function Room(_ref) {
    */
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    checkLogin(); //getPlayers(); // nie trzeba bo przy sprawdzaniu zalogowanego gracza zmienia się stan loginAuthoryzation
+    checkLogin();
   }, [roomId]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (enteredWordToCheck.length >= 3) {
@@ -68048,7 +68066,7 @@ function Room(_ref) {
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(path + 'check-words', {
       params: {
         "room": roomId,
-        "words": player.arrayWords
+        "words": player.words
       }
     }).then(function (response) {
       setPlayerHandler(response.data);
@@ -68071,8 +68089,7 @@ function Room(_ref) {
     setPlayer({
       nick: player.nick,
       room: player.room,
-      arrayWords: [],
-      stateWords: [],
+      words: [],
       state: player.state
     });
     getPlayers();
@@ -68085,7 +68102,7 @@ function Room(_ref) {
           checkOldArray: checkOldArray
         }
       }).then(function (response) {
-        if (response.data != null) {
+        if (response.data != null && Object(lodash__WEBPACK_IMPORTED_MODULE_12__["isArray"])(response.data)) {
           setLettersArray(response.data);
           setIsStart(true);
           setLoad(false);
@@ -68131,17 +68148,12 @@ function Room(_ref) {
     var object = {
       nick: date.nick,
       room: date.room,
-      arrayWords: [],
-      stateWords: [],
+      words: [],
       state: date.state
     };
 
-    if (_typeof(date.arrayWords) != undefined && date.arrayWords.length > 0) {
-      object.arrayWords = date.arrayWords.split(',');
-    }
-
-    if (_typeof(date.stateWords) != undefined && date.stateWords.length > 0) {
-      object.stateWords = date.stateWords.split(',');
+    if (_typeof(date.words) != undefined && date.words.length > 0) {
+      object.words = date.words;
     }
 
     return object;
@@ -68203,8 +68215,9 @@ function Room(_ref) {
       setPlayer({
         nick: player.nick,
         room: player.room,
-        arrayWords: [].concat(_toConsumableArray(player.arrayWords), [event.target.value]),
-        stateWords: [],
+        words: [].concat(_toConsumableArray(player.words), [{
+          word: event.target.value
+        }]),
         state: player.state
       });
       setJustWord('');
@@ -68220,10 +68233,10 @@ function Room(_ref) {
   };
 
   var sendWords = function sendWords() {
-    if (player.arrayWords.length > 0) {
+    if (player.words.length > 0) {
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(path + 'saveWords', true, {
         params: {
-          'words': player.arrayWords,
+          'words': player.words,
           'room': roomId
         }
       }).then(function (response) {
@@ -68439,6 +68452,68 @@ var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addS
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/szefler/Szefler.js":
+/*!*****************************************!*\
+  !*** ./resources/js/szefler/Szefler.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var Szefler = /*#__PURE__*/function (_React$Component) {
+  _inherits(Szefler, _React$Component);
+
+  var _super = _createSuper(Szefler);
+
+  function Szefler() {
+    _classCallCheck(this, Szefler);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(Szefler, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "szefler"
+      }, "Gra Szefler");
+    }
+  }]);
+
+  return Szefler;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Szefler);
 
 /***/ }),
 

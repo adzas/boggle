@@ -16,7 +16,6 @@ class HomeController extends Controller
         //$this->middleware('auth');
     }
 
-
     public function room($id)
     {
         $room = Room::find($id);
@@ -24,6 +23,12 @@ class HomeController extends Controller
         return view('room')->with(['room' => $room, 'app_url' => $app_url]);
     }
 
+    public function szefler($id)
+    {
+        $room = Room::find($id);
+        $app_url = Url('/');
+        return view('szefler')->with(['room' => $room, 'app_url' => $app_url]);
+    }
 
     public function reactHome()
     {

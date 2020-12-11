@@ -10,6 +10,7 @@ import OtherPlayers from './OtherPlayers/OtherPlayers.js';
 import ModalLogin from './ModalLogin/ModalLogin.js';
 import Menu from './Menu';
 import CheckWordInput from './CheckWordInput';
+import { isArray } from 'lodash';
 
 function Room({roomId}) {
         
@@ -35,10 +36,9 @@ function Room({roomId}) {
      * Ty i pozostali gracze
      */
     const [player, setPlayer] = useState({
-      nick: null, 
-      room: 0, 
-      arrayWords: [], 
-      stateWords: [], 
+      nick: null,
+      room: 0,
+      words: [],
       state: 0
     });
     const [otherPlayers, setOtherPlayers] = useState([]);
@@ -104,7 +104,6 @@ function Room({roomId}) {
      */
     useEffect(()=>{
       checkLogin();
-      //getPlayers(); // nie trzeba bo przy sprawdzaniu zalogowanego gracza zmienia się stan loginAuthoryzation
     }, [roomId])
 
     useEffect(() => {
@@ -124,7 +123,7 @@ function Room({roomId}) {
       axios.post(path + 'check-words', {
         params: {
           "room": roomId,
-          "words": player.arrayWords
+          "words": player.words
         }
       }).then(function(response) {
         setPlayerHandler(response.data);
@@ -149,8 +148,7 @@ function Room({roomId}) {
       setPlayer({
         nick: player.nick, 
         room: player.room,
-        arrayWords: [], 
-        stateWords: [], 
+        words: [], 
         state: player.state
       });
       getPlayers();
@@ -164,7 +162,7 @@ function Room({roomId}) {
           }
         })
         .then(function (response) {
-          if(response.data != null)
+          if(response.data != null && isArray(response.data))
           {
             setLettersArray(response.data);
             setIsStart(true);
@@ -228,17 +226,12 @@ function Room({roomId}) {
     const object = {
       nick: date.nick, 
       room: date.room,
-      arrayWords: [],
-      stateWords: [],
+      words: [],
       state: date.state
     }
 
-    if (typeof date.arrayWords != undefined && date.arrayWords.length > 0) {
-      object.arrayWords = date.arrayWords.split(',');
-    }
-
-    if (typeof date.stateWords != undefined && date.stateWords.length > 0) {
-      object.stateWords = date.stateWords.split(',');
+    if (typeof date.words != undefined && date.words.length > 0) {
+      object.words = date.words;
     }
 
     return object;
@@ -316,8 +309,9 @@ function Room({roomId}) {
       setPlayer({
         nick: player.nick, 
         room: player.room,
-        arrayWords: [...player.arrayWords, event.target.value], 
-        stateWords: [], 
+        words: [...player.words, {
+          word: event.target.value
+        }],
         state: player.state
       });
       setJustWord('');
@@ -335,10 +329,10 @@ function Room({roomId}) {
   }
 
   const sendWords = () => {
-    if(player.arrayWords.length > 0) {
+    if(player.words.length > 0) {
       axios.post(path + 'saveWords', true, { 
         params: {
-          'words': player.arrayWords,
+          'words': player.words,
           'room' : roomId
         }
       })

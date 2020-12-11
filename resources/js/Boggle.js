@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Room from './components/Room';
+import Szefler from './szefler/Szefler';
 import Menu from './components/Menu';
 import './dist/Boggle.css';
 
@@ -22,4 +23,7 @@ if (document.getElementById('home')) {
 }
 if (document.getElementById('room')) {
     ReactDOM.render(<Room id="1" roomId="1" />, document.getElementById('room'));
+}
+if (document.getElementById('room')) {
+    ReactDOM.render(<Szefler id="1" roomId="1" />, document.getElementById('szefler'));
 }

@@ -24,6 +24,8 @@ Route::get('/generate-letters', 'RoomController@generateLettersArray');
 Route::get('/room/{id}', 'HomeController@room');
 Route::get('/resetRoom', 'RoomController@resetRoom');
 
+Route::get('/szefler/{id}', 'HomeController@szefler');
+
 Route::get('/logout', 'RoomController@logout');
 Route::post('/login', 'RoomController@login');
 Route::post('/check-words', 'CheckController@checkDictionary');

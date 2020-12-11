@@ -17,9 +17,10 @@ class WordController extends Controller
 
     public static function checkArray(array $arrayWords)
     {
-        $return = '';
+        // TODO przenieść do modelu Word
+        $return = [];
         foreach ($arrayWords as $word) {
-            $return.= self::check($word).',';
+            $return[] = self::check($word);
         }
 
         return $return;

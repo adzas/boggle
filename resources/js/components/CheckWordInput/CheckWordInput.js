@@ -29,7 +29,6 @@ function CheckWordInput({enteredWordToCheck, storeCheckWord, statusCheckedWord})
                 value={enteredWordToCheck}
                 placeholder="Sprawdź w SJP"
                 onChange={storeCheckWord}
-                onClick={storeCheckWord("###")}
             />{status}
         </div>
     );

@@ -19,11 +19,11 @@ class CheckController extends Controller
         $player = Player::getPlayerWithSession($room);
 
         if ($player instanceof Player) {
-            $stateWords = "";
             if (null != $words) {
-                $stateWords = WordController::checkArray($words);
-                $stateWords = substr($stateWords, 0, -1);
-                $player->stateWords = $stateWords;
+                // TODO przenieść do statusów tabeli words
+                // $stateWords = WordController::checkArray($words);
+                // $stateWords = substr($stateWords, 0, -1);
+                // $player->stateWords = $stateWords;
             }
             $player->save();
 
@@ -47,7 +47,7 @@ class CheckController extends Controller
         $room = $request->get('room');
         $player = Player::getPlayerWithSession($room);
 
-        if(!!$player)
+        if($player instanceof Player)
         {
             if($player->room == $room)
                 return $player;

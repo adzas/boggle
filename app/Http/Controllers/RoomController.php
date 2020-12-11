@@ -7,7 +7,6 @@ use App\Models\Word;
 use App\Room;
 use App\Player;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class RoomController extends Controller
 {
@@ -24,8 +23,8 @@ class RoomController extends Controller
             $player = new Player;
             $player->nick = $nick;
             $player->room = $room;
-            $player->arrayWords = '';
-            $player->stateWords = '';
+            // TODO wrzucić pobieranie słów (czy to działa?)
+            $player->words();
             $player->state = 1;
             $player->token = session()->getId();
             $player->save();
@@ -53,9 +52,10 @@ class RoomController extends Controller
     {
         $room = $request->get('room');
         $p = Player::getPlayerWithSession($room);
-        if(!!$p)
+        if($p instanceof Player)
         {
-            $players = Player::select('id', 'nick', 'room', 'state', 'arrayWords', 'stateWords')
+            // TODO zmienić arrayWords na powiązany z modelem Player model Word
+            $players = Player::with('words')
                 ->where('room', $room)
                 ->where('id', '!=', $p->id)
                 ->get();
@@ -75,11 +75,13 @@ class RoomController extends Controller
         $room = $request->input('room');
         $player = Player::getPlayerWithSession($room);
         if ($player instanceof Player) {
+            $player->resetWords();
             $wordsToStored = [];
             if(!empty($words))
             {
                 foreach ($words as $word) {
-                    $wordsToStored[] = new Word(['word' => $word]);
+                    $word = json_decode($word);
+                    $wordsToStored[] = new Word(['word' => $word->word]);
                 }
             }
             $player->words()->saveMany($wordsToStored);
@@ -102,12 +104,12 @@ class RoomController extends Controller
         if(!empty($id))
         {
             $room = Room::find($id);
-            if(!!$room)
+            if($room instanceof Room)
             {
-                DB::table('players')
-                    ->where('room', $id)
-                    ->update(['arrayWords' => '']);
-        
+                $player = Player::where('room', $id)->first();
+                // TODO zresetuj powiązane z playerem słowa w tabeli words
+                $player->resetWords();
+
                 if($getOldArray === 'false')
                 {
                     $value = LetterHelper::randomLetters();
