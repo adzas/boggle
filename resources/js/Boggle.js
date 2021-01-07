@@ -24,6 +24,6 @@ if (document.getElementById('home')) {
 if (document.getElementById('room')) {
     ReactDOM.render(<Room id="1" roomId="1" />, document.getElementById('room'));
 }
-if (document.getElementById('room')) {
-    ReactDOM.render(<Szefler id="1" roomId="1" />, document.getElementById('szefler'));
+if (document.getElementById('szefler')) {
+    ReactDOM.render(<Szefler />, document.getElementById('szefler'));
 }

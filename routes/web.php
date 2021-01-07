@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\WordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +30,4 @@ Route::post('/login', 'RoomController@login');
 Route::post('/check-words', 'CheckController@checkDictionary');
 Route::post('/saveWords', 'RoomController@saveWords');
 
-Route::get('/get-password-words/{howMuch}', [WordController::class, 'getPasswordWords']);
+Route::get('/get-password-words/{howMuch}', 'WordController@getPasswordWords');

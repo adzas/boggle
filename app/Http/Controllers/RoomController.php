@@ -23,7 +23,6 @@ class RoomController extends Controller
             $player = new Player;
             $player->nick = $nick;
             $player->room = $room;
-            // TODO wrzucić pobieranie słów (czy to działa?)
             $player->words();
             $player->state = 1;
             $player->token = session()->getId();
@@ -54,15 +53,15 @@ class RoomController extends Controller
         $p = Player::getPlayerWithSession($room);
         if($p instanceof Player)
         {
-            // TODO zmienić arrayWords na powiązany z modelem Player model Word
             $players = Player::with('words')
                 ->where('room', $room)
                 ->where('id', '!=', $p->id)
                 ->get();
+
             return $players;
         }
-        else
-            return false;
+
+        return false;
     }
 
 
@@ -107,7 +106,6 @@ class RoomController extends Controller
             if($room instanceof Room)
             {
                 $player = Player::where('room', $id)->first();
-                // TODO zresetuj powiązane z playerem słowa w tabeli words
                 $player->resetWords();
 
                 if($getOldArray === 'false')

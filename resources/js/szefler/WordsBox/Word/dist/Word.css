@@ -1,0 +1,11 @@
+.word {
+  width: 120px;
+  height: 60px;
+  background: #eee;
+  text-align: center;
+  padding: 19px 0px 19px 0px;
+  font-size: 14px;
+  font-weight: 900;
+  box-sizing: border-box;
+  float: left;
+}
