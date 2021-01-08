@@ -16,6 +16,9 @@ class Menu extends React.Component {
                     <li className="btn btn-green">
                         <a href="/szefler/1">Szefler</a>
                     </li>
+                    <li className="btn btn-green">
+                        <a href="/tajniacy">Tajniacy</a>
+                    </li>
                     <li className="btn btn-default float-right">
                         <a href="/logout">Wyloguj</a>
                     </li>

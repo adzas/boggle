@@ -12,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        (new RoomSeeder)->run();
+        (new RoomSeeder())->run();
     }
 }

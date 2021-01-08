@@ -116,7 +116,7 @@ INSERT INTO `polish_password_words` (`ID`, `word`) VALUES
 (NULL, 'szybki'),
 (NULL, 'stop'),
 (NULL, 'sarna'),
-(NULL, 'sałąta'),
+(NULL, 'sałata'),
 (NULL, 'sąd'),
 (NULL, 'szałas'),
 (NULL, 'sól'),

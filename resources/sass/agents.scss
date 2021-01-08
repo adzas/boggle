@@ -1,0 +1,29 @@
+.agentsWordBox {
+    background-color: #ddd;
+    width: 100%;
+    max-width: 1024px;
+    margin: 5vh auto 0px auto;
+}
+.agentsWord {
+    width: 20%;
+    font-size: 20px;
+    font-family: Nunito;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding:5vh;
+    text-align: center;
+    border: 1px solid #aaa;
+    float: left;
+}
+.black {
+    background-color: #555;
+}
+.red {
+    background-color: #fba;
+}
+.blue {
+    background-color: rgb(177, 255, 170);
+}
+.default {
+    background-color: #eee;
+}

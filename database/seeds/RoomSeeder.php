@@ -18,5 +18,8 @@ class RoomSeeder extends Seeder
             'letters' => NULL,
             'created_at' => date('Y-m-d H:i:s'),
         ]);
+        DB::table('agents_rooms')->insert([
+            'created_at' => date('Y-m-d H:i:s'),
+        ]);
     }
 }
