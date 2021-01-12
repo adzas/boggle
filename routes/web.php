@@ -27,6 +27,10 @@ Route::get('/szefler/{id}', 'HomeController@szefler');
 
 Route::get('/tajniacy', 'AgentsController@index');
 Route::get('/tajniacy/{id}', 'AgentsController@room');
+Route::get('/tajniacy/{id}/boss', 'AgentsController@roomBoss');
+Route::get('/tajniacy/{id}/reset-words', 'AgentsController@roomWordsReset');
+Route::get('/tajniacy/{id}/reset-settings', 'AgentsController@roomSettingsReset');
+Route::get('/tajniacy/{id}/check-word/{word_id}', 'AgentsController@roomCheckWord');
 
 Route::get('/logout', 'RoomController@logout');
 Route::post('/login', 'RoomController@login');

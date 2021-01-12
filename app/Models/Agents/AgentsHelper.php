@@ -34,6 +34,16 @@ class AgentsHelper extends Model
         return $this->agentsWords;
     }
 
+    public function resetSettings(int $id)
+    {
+        foreach ($this->getWords($id) as $word) {
+            $word->reset();
+        }
+        $this->setRandomRedWords(SELF::HOM_MUCH_RED_WORDS);
+        $this->setRandomBlueWords(SELF::HOM_MUCH_BLUE_WORDS);
+        $this->setRandomBlackWords(SELF::HOM_MUCH_BLACK_WORDS);
+    }
+
     public function getIssetWords()
     {
         return $this->agentsWords = $this->currentRoom->agents_words->all();

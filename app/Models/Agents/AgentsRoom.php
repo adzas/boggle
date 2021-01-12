@@ -15,4 +15,11 @@ class AgentsRoom extends Model
     {
         return $this->hasMany(AgentsWord::class, 'agents_room_id', 'id');
     }
+
+    public function resetWords()
+    {
+        foreach ($this->agents_words as $word) {
+            $word->delete();
+        }
+    }
 }

@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class AgentsWord extends Model
 {
-    private $word;
-    private $red = false;
-    private $blue = false;
-    private $black = false;
+    protected $fillable = [
+        'red',
+        'blue',
+        'black',
+    ];
 
     public function agents_room()
     {
@@ -32,10 +33,15 @@ class AgentsWord extends Model
         return $this->setAttr('black');
     }
 
+    public function reset()
+    {
+        $this->update(['red' => 0, 'blue' => 0, 'black' => 0]);
+    }
+
     private function setAttr(string $attr): bool
     {
-        if (true !== $this->black && true !== $this->red && true !== $this->blue) {
-            $this->{$attr} = true;
+        if (true !== $this->getAttribute('black') && true !== $this->getAttribute('red') && true !== $this->getAttribute('blue')) {
+            $this->update([$attr => 1]);
 
             return true;
         }
@@ -45,11 +51,11 @@ class AgentsWord extends Model
 
     public function getBackground(): string
     {
-        if ($this->black) {
+        if ($this->getAttribute('black')) {
             return 'black';
-        } elseif ($this->red) {
+        } elseif ($this->getAttribute('red')) {
             return 'red';
-        } elseif ($this->blue) {
+        } elseif ($this->getAttribute('blue')) {
             return 'blue';
         }
 
@@ -59,5 +65,10 @@ class AgentsWord extends Model
     public function getName(): string
     {
         return $this->getAttribute('word');
+    }
+
+    public function getID(): int
+    {
+        return $this->getAttribute('id');
     }
 }

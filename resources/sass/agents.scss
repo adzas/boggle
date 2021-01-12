@@ -15,6 +15,9 @@
     border: 1px solid #aaa;
     float: left;
 }
+.cursor-pointer {
+    cursor: pointer;
+}
 .black {
     background-color: #555;
 }
@@ -25,5 +28,26 @@
     background-color: rgb(177, 255, 170);
 }
 .default {
+    background-color: #eee;
+}
+.head_bar {
+    width: 100%;
+    padding: 10px;
+    height: 50px;
+}
+.f-left {
+    float: left;
+}
+.btn {
+    text-decoration: none;
+    color: #222;
+    border: 1px solid #222;
+    border-radius: 5px;
+    margin: 5px;
+}
+.btn-default {
+    background-color: #fff;
+}
+.btn-default:hover {
     background-color: #eee;
 }
