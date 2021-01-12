@@ -12,10 +12,14 @@ class WordsHelper extends Model
         $return = [];
         $table = 'polish_password_words';
         $all = DB::table($table)->count();
-        for ($i=0; $i < $howMuch; $i++) { 
+        while (count($return) < $howMuch) {
             $random = rand(1, $all);
-            $return[] = DB::table($table)->where('ID', $random)->value('word');
+            $currentWord = DB::table($table)->where('ID', $random)->value('word');
+            if (false === array_search($currentWord, $return)) {
+                $return[] = $currentWord;
+            }
         }
+
         return $return;
     }
 }

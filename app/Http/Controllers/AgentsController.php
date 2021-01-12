@@ -18,8 +18,8 @@ class AgentsController extends Controller
     public function room(int $id)
     {
         $helper = new AgentsHelper();
-        $agentsWords = $helper->getWords();
+        $agentsWords = $helper->getWords($id);
 
-        return view('agents.room', compact('agentsWords'));   
+        return view('agents.room', compact('agentsWords'));
     }
 }

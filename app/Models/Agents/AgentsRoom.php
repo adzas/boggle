@@ -2,6 +2,7 @@
 
 namespace App\Models\Agents;
 
+use App\Models\AgentsWord;
 use Illuminate\Database\Eloquent\Model;
 
 class AgentsRoom extends Model
@@ -10,8 +11,8 @@ class AgentsRoom extends Model
         'id',
     ];
 
-    public function player()
+    public function agents_words()
     {
-        return $this->belongsTo('App\Player');
+        return $this->hasMany(AgentsWord::class, 'agents_room_id', 'id');
     }
 }

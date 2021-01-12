@@ -13,6 +13,7 @@ class AgentsHelper extends Model
     const HOM_MUCH_RED_WORDS = 8;
     const HOM_MUCH_BLACK_WORDS = 1;
 
+    private $currentRoom;
     private $agentsWords = [];
 
     public function getRooms()
@@ -20,14 +21,27 @@ class AgentsHelper extends Model
         return AgentsRoom::get();
     }
 
-    public function getWords(): array
+    public function getWords($id): array
     {
-        $this->generateWords(SELF::HOM_MUCH_WORDS);
-        $this->setRandomRedWords(SELF::HOM_MUCH_RED_WORDS);
-        $this->setRandomBlueWords(SELF::HOM_MUCH_BLUE_WORDS);
-        $this->setRandomBlackWords(SELF::HOM_MUCH_BLACK_WORDS);
+        $this->setCurrentRoom($id);
+        if (empty($this->getIssetWords())) {
+            $this->generateWords(SELF::HOM_MUCH_WORDS);
+            $this->setRandomRedWords(SELF::HOM_MUCH_RED_WORDS);
+            $this->setRandomBlueWords(SELF::HOM_MUCH_BLUE_WORDS);
+            $this->setRandomBlackWords(SELF::HOM_MUCH_BLACK_WORDS);
+        }
 
         return $this->agentsWords;
+    }
+
+    public function getIssetWords()
+    {
+        return $this->agentsWords = $this->currentRoom->agents_words->all();
+    }
+
+    public function setCurrentRoom(int $id)
+    {
+        $this->currentRoom = AgentsRoom::where('id', $id)->first();
     }
 
     public function setRandomRedWords(int $howMuch): bool
@@ -67,7 +81,11 @@ class AgentsHelper extends Model
     {
         $words = WordsHelper::getRandomWords($howMuch);
         foreach ($words as $word) {
-            $this->agentsWords[] = new AgentsWord($word);
+            $agentsWord = new AgentsWord();
+            $agentsWord->agents_room_id = $this->currentRoom->id;
+            $agentsWord->word = $word;
+            $agentsWord->save();
+            $this->agentsWords[] = $agentsWord;
         }
     }
 }

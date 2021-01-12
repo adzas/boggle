@@ -16,9 +16,9 @@ class CreateAgentsWords extends Migration
         Schema::create('agents_words', function (Blueprint $table) {
             $table->id();
             $table->string('word');
-            $table->boolean('red');
-            $table->boolean('blue');
-            $table->boolean('black');
+            $table->boolean('red')->default(0);
+            $table->boolean('blue')->default(0);
+            $table->boolean('black')->default(0);
             $table->integer('agents_room_id');
             $table->timestamps();
         });

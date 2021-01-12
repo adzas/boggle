@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Agents\AgentsRoom;
 use Illuminate\Database\Eloquent\Model;
 
 class AgentsWord extends Model
@@ -11,9 +12,9 @@ class AgentsWord extends Model
     private $blue = false;
     private $black = false;
 
-    public function __construct(string $word)
+    public function agents_room()
     {
-        $this->word = $word;
+        return $this->belongsTo(AgentsRoom::class, 'id', 'agents_rooms_id');
     }
 
     public function setRed(): bool
@@ -57,6 +58,6 @@ class AgentsWord extends Model
 
     public function getName(): string
     {
-        return $this->word;
+        return $this->getAttribute('word');
     }
 }
