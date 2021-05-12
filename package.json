@@ -25,7 +25,7 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
-        "merge": "^1.2.1",
+        "merge": "^2.1.1",
         "react-router-dom": "^5.2.0"
     }
 }
