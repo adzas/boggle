@@ -108,7 +108,7 @@ class RoomController extends Controller
                 $player = Player::where('room', $id)->first();
                 $player->resetWords();
 
-                if($getOldArray === 'false')
+                if($getOldArray === 'false' || empty($room->letters))
                 {
                     $value = LetterHelper::randomLetters();
                     $room->letters = json_encode($value);
@@ -117,7 +117,6 @@ class RoomController extends Controller
                 }
                 else
                 {
-                    $room = Room::find($id);
                     return $room->letters;
                 }
             }

@@ -230,8 +230,10 @@ function Room({roomId}) {
       state: date.state
     }
 
-    if (typeof date.words != undefined && date.words.length > 0) {
-      object.words = date.words;
+    if (date.words !== undefined) {
+      if (date.words.length > 0) {
+        object.words = date.words;
+      }
     }
 
     return object;

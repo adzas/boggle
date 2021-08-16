@@ -1,7 +1,7 @@
 RewriteEngine on
-RewriteCond %{HTTP_HOST} ^127.0.0.1/boggle$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^127.0.0.1/boggle$
+RewriteCond %{HTTP_HOST} ^local.boggle.pl$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^local.boggle.pl$
 RewriteCond %{REQUEST_URI} !public/
 RewriteRule (.*) /public/$1 [L]
 
-Header set Access-Control-Allow-Origin *
+Header set Access-Control-Allow-Origin "*"
