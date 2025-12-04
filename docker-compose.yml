@@ -3,12 +3,12 @@ services:
   php-apache-environement:
     container_name: boggle-web-server
     build:
-      context: ./public
+      context: .
       dockerfile: Dockerfile
     depends_on:
       - db
     volumes:
-      - ./public:/var/www/html/
+      - .:/var/www/html
     ports: 
       - 8000:80
   db:
@@ -17,7 +17,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: boogle
+      MYSQL_DATABASE: boggle
       MYSQL_USER: MYSQL_USER
       MYSQL_PASSWORD: MYSQL_PASSWORD
     ports:
