@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Letter from './Letter/';
+import Letter from './Letter';
 import './Letters.css';
 
 function Letters(props) {

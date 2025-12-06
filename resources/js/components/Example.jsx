@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Dutylist() {
+function Example() {
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -17,8 +17,10 @@ function Dutylist() {
     );
 }
 
-export default Dutylist;
+export default Example;
 
-if (document.getElementById('dutylist')) {
-    ReactDOM.render(<Dutylist />, document.getElementById('dutylist'));
+import { createRoot } from 'react-dom/client';
+
+if (document.getElementById('example')) {
+    createRoot(document.getElementById('example')).render(<Example />);    
 }

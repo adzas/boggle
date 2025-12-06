@@ -11,6 +11,8 @@ function App(props) {
 
 export default App;
 
+import { createRoot } from 'react-dom/client';
+
 if (document.getElementById('root')) {
-    ReactDOM.render(<App />, document.getElementById('root'));
+    createRoot(document.getElementById('root')).render(<App />);
 }

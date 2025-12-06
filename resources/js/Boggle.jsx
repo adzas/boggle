@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import Room from './components/Room';
 import './Boggle.css';
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
 
 function Boggle(props) {
     return (
-        <Router>
+        <BrowserRouter>
           <div>
             <div className="nav">
               <nav>
@@ -28,29 +28,22 @@ function Boggle(props) {
                 </ul>
               </nav>
             </div>
-    
-            {/* A <Switch> looks through its children <Route>s and
-                renders the first one that matches the current URL. */}
-            <Switch>
-              <Route path="/1">
-                <Room id="1" roomId="1" />
-              </Route>
-              <Route path="/2">
-                <Room id="2" roomId="2" />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
+            <Routes>
+              <Route path="/1" element={<Room id="1" roomId="1" />} />
+              <Route path="/2" element={<Room id="2" roomId="2" />} />
+              <Route path="/" element={<Home />} />
+            </Routes>
           </div>
-        </Router>
+        </BrowserRouter>
     );
 }
 
 export default Boggle;
 
+import { createRoot } from 'react-dom/client';
+
 if (document.getElementById('boggle')) {
-    ReactDOM.render(<Boggle />, document.getElementById('boggle'));
+    createRoot(document.getElementById('boggle')).render(<Boggle />);
 }
 
 
