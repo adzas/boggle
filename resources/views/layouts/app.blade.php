@@ -8,10 +8,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Boggle') }}</title>
-
-    <!-- Scripts -->
-    @viteReactRefresh
-    @vite(['resources/js/app.jsx'])
+    
+    @if (app()->environment('local'))
+        @include('vite')
+        {{-- @vite(['resources/js/app.jsx']) --}}
+    @else
+        <script type="module" src="{{ asset('build/assets/app.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
+    @endif
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

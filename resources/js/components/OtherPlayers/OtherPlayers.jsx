@@ -1,5 +1,5 @@
 import React from 'react';
-import Player from '../Player/Player.js';
+import Player from '../Player/Player';
 import './OtherPlayers.css';
 
 function OtherPlayers({otherPlayersArray}) {

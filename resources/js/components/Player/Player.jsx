@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import You from './You/You.js';
-import Other from './Other/Other.js';
+import You from './You/You';
+import Other from './Other/Other';
 import './Player.css';
 
 function Player(props) {

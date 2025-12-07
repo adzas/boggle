@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Room.css';
-import Letters from './Letters/Letters.js';
-import GenerateButton from './GenerateButton/GenerateButton.js';
-import ReadyButton from './ReadyButton/ReadyButton.js';
-import Timer from './Timer/Timer.js';
-import Player from './Player/Player.js';
-import OtherPlayers from './OtherPlayers/OtherPlayers.js';
-import ModalLogin from './ModalLogin/ModalLogin.js';
+import Letters from './Letters/Letters';
+import GenerateButton from './GenerateButton/GenerateButton';
+import ReadyButton from './ReadyButton/ReadyButton';
+import Timer from './Timer/Timer';
+import Player from './Player/Player';
+import OtherPlayers from './OtherPlayers/OtherPlayers';
+import ModalLogin from './ModalLogin/ModalLogin';
 
 
 function Room({roomId}) {

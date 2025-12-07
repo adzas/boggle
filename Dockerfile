@@ -9,6 +9,13 @@ WORKDIR /var/www/html
 
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
+RUN a2enmod rewrite \
+    && a2enmod headers
+
+# zezwól na .htaccess
+RUN sed -ri -e 's/AllowOverride None/AllowOverride All/g' \
+    /etc/apache2/apache2.conf
+
 RUN apt-get update
 
 RUN apt-get install -y git-core curl build-essential openssl libssl-dev
