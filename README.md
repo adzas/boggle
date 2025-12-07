@@ -31,7 +31,7 @@ docker exec -it boggle-web-server php artisan db:seed
 
 4. app is ready:
 
-localhost:8084
+localhost:8000
 
 5. If you want to off the application go this:
 

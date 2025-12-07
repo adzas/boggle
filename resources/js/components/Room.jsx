@@ -11,14 +11,12 @@ import ModalLogin from './ModalLogin/ModalLogin';
 
 
 function Room({roomId}) {
-        
-    const path = 'http://127.0.0.1/boggle/public/';
 
     /**
      * Czas na runde
      */
     const timer = 60; // wartość domyślna odliczania
-    const [counter, setCounter] = useState(counter); // zmienna licznika
+    const [counter, setCounter] = useState(timer); // zmienna licznika (inicjalizowana wartością timer)
     const [isStart, setIsStart] = useState(false);
     const [endRound, setEndRound] = useState(false);
 
@@ -70,20 +68,27 @@ function Room({roomId}) {
       }
     }
 
+    // jednorazowe sprawdzenie pomocnicze (możesz zmieniać zależności jeśli chcesz wywoływać częściej)
     useEffect(() => {
-        checkIfWordCanBeMaked('ABCD');
+        // checkIfWordCanBeMaked('ABCD');
+    }, []);
 
-        setTimeout(() => {
-          if(counter != 0 && isStart)
-            setCounter(counter-1);
-          else
-          {
-            setCounter(timer)
-            setEndRound(true);
-          }
-        }, 1000);
-    
-    }, [isStart, counter]);
+    // efekt odpowiedzialny za odliczanie. Używamy setInterval z cleanup,
+    // i funkcji aktualizującej stan opierającej się na poprzedniej wartości.
+    useEffect(() => {
+      if (!isStart) return undefined;
+
+      const id = setInterval(() => {
+        setCounter(prev => {
+          if (prev > 1) return prev - 1;
+          // osiągnięto 0: zakończ rundę i zresetuj licznik
+          setEndRound(true);
+          return timer;
+        });
+      }, 1000);
+
+      return () => clearInterval(id);
+    }, [isStart, timer]);
 
 
     useEffect(()=>{
@@ -112,8 +117,7 @@ function Room({roomId}) {
 
 
     const checkWords = () => {
-      
-      axios.get(path + 'checkDictionary', {
+      axios.get('checkDictionary', {
         params: {
           "room": roomId,
           "words": player.arrayWords
@@ -139,8 +143,7 @@ function Room({roomId}) {
       getPlayers();
       setTimeout(() => {
         setError(null)
-        const adress = 'generateLettersArray';
-        axios.get(path + adress, {
+        axios.get('generateLettersArray', {
           params: {
             id: roomId, 
             checkOldArray: checkOldArray
@@ -174,8 +177,7 @@ function Room({roomId}) {
 
   const resetRoom = () => {
     setError(null);
-    const adress = `resetRoom?room=${roomId}`;
-    axios.get(path + adress)
+    axios.get(`resetRoom?room=${roomId}`)
       .then(function(response) {
         checkLogin();
       })
@@ -186,8 +188,7 @@ function Room({roomId}) {
 
   const checkLogin = () => {
     setError(null);
-    const adress = `checkLogin?room=${roomId}`;
-    axios.get(path + adress)
+    axios.get(`checkLogin?room=${roomId}`)
     .then(function (response) {
       if(response.data.length == 0)
       {
@@ -236,8 +237,7 @@ function Room({roomId}) {
     }
     
     setErrorModal(null);
-    const adress = `login?nick=${e.target.value}&room=${roomId}`;
-    axios.post(path + adress, true, { 
+    axios.post(`login?nick=${e.target.value}&room=${roomId}`, true, { 
       params: {
         nick: e.target.value,
         room: roomId
@@ -264,8 +264,7 @@ function Room({roomId}) {
 
   const getPlayers = () => {
     if(loginAuthorization) {
-      const adress = `getPlayers?room=${roomId}`;
-      axios.get(path + adress)
+      axios.get(`getPlayers?room=${roomId}`)
       .then(function (response) {
         if(response.data.length == 0)
         {
@@ -312,7 +311,7 @@ function Room({roomId}) {
 
   const sendWords = () => {
     if(player.arrayWords.length > 0) {
-      axios.post(path + 'saveWords', true, { 
+      axios.post('saveWords', true, { 
         params: {
           'words': player.arrayWords,
           'room' : roomId
